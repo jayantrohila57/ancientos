@@ -1,6 +1,6 @@
 import { useRouter } from "next/router";
 import Link from "next/link";
-export default function device() {
+export default function Device() {
 	const router = useRouter();
 	const brandId = router.query.brandId;
 	const deviceId = router.query.deviceId;

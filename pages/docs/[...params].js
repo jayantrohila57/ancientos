@@ -1,5 +1,5 @@
 import { useRouter } from "next/router";
-export default function doc() {
+export default function Doc() {
 	const router = useRouter();
 	const { params = [] } = router.query;
 	console.log(params);
