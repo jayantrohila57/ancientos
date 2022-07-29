@@ -14,6 +14,9 @@ const theme = createTheme({
 			main: red.A400,
 		},
 	},
+	a: {
+		underline: "none",
+	},
 });
 
 export default theme;

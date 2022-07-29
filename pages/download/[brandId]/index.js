@@ -8,22 +8,23 @@ export default function Brand() {
 	};
 
 	const devices = ["6.1plus", "7.1", "5.3"];
-	const Model = (item) => {
-		return (
-			<Link href={`${brandId}/${item}`}>
-				<a key={item.length}>
-					{item}
-					<br />
-				</a>
-			</Link>
-		);
-	};
 	return (
 		<>
 			<div>Download by Model</div>
-			<div>{devices.map(Model)}</div>
 
 			<button onClick={handler}>Brands</button>
+			<div>
+				{devices.map((device, index) => {
+					return (
+						<Link key={index} href={`${brandId}/${device}`}>
+							<h1 key={index}>
+								{device}
+								<br />
+							</h1>
+						</Link>
+					);
+				})}
+			</div>
 			<Link href={`/download`}>
 				<a>
 					◀️ Go Back
