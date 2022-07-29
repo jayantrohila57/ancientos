@@ -1,3 +1,8 @@
+import LogoInfo from "../components/logoInfo/LogoInfo";
 export default function Home() {
-	return <>Home Page</>;
+	return (
+		<>
+			<LogoInfo />
+		</>
+	);
 }

@@ -16,9 +16,10 @@ import ListItemText from "@mui/material/ListItemText";
 import Tooltip from "@mui/material/Tooltip";
 import MenuItem from "@mui/material/MenuItem";
 import Link from "next/link";
-import { SwipeableDrawer } from "@mui/material";
+import { filledInputClasses, SwipeableDrawer } from "@mui/material";
+import { ThemeProvider, createTheme } from "@mui/material/styles";
 //icons
-import KeyboardArrowRightRoundedIcon from "@mui/icons-material/KeyboardArrowRightRounded";
+import ArrowCircleRightRoundedIcon from "@mui/icons-material/ArrowCircleRightRounded";
 import KeyboardArrowDownRoundedIcon from "@mui/icons-material/KeyboardArrowDownRounded";
 // import DownloadRoundedIcon from "@mui/icons-material/DownloadRounded";
 // import LogoDevRoundedIcon from "@mui/icons-material/LogoDevRounded";
@@ -26,6 +27,14 @@ import KeyboardArrowDownRoundedIcon from "@mui/icons-material/KeyboardArrowDownR
 // import VolunteerActivismRoundedIcon from "@mui/icons-material/VolunteerActivismRounded";
 
 // import settings from "../../assets/json/settings.json";
+import Image from "next/image";
+import Logo from "../../assets/img/ancientv2.png";
+const useStyles = createTheme((theme) => ({
+	customBorderRadius: {
+		borderRadius: 25,
+	},
+}));
+
 const Appbar = () => {
 	// mobile drawer
 
@@ -52,38 +61,55 @@ const Appbar = () => {
 	//drawer styling
 	const drawerBleeding = 0;
 	const StyledBox = styled(Box)(({ theme }) => ({
-		backgroundColor: theme.palette.mode === "light" ? "#fff" : grey[900],
+		// backgroundColor: theme.palette.mode === "light" ? "#fff" : grey[900],
 	}));
 	const Puller = styled(Box)(({ theme }) => ({
-		width: 60,
-		height: 6,
-		backgroundColor: theme.palette.mode === "dark" ? grey[300] : grey[600],
+		width: 100,
+		height: 5,
+		backgroundColor: theme.palette.mode === "dark" ? grey[700] : grey[600],
 		borderRadius: 3,
 		position: "absolute",
-		top: 8,
-		left: "calc(50% - 30px)",
+		top: 10,
+		left: "calc(50% - 50px)",
 	}));
 	return (
 		<AppBar color="transparent" elevation={0} position="static">
 			<Container maxWidth="xl">
 				<Toolbar disableGutters>
-					{/* <AdbIcon sx={{ display: { xs: "none", md: "flex" }, mr: 1 }} /> */}
-					<Typography
-						variant="h6"
+					<Box
 						noWrap
+						center
 						sx={{
 							mr: 2,
 							display: { xs: "none", md: "flex" },
-							fontFamily: "monospace",
-							fontWeight: 700,
-							letterSpacing: ".3rem",
-							color: "inherit",
-							textDecoration: "none",
 						}}
 					>
-						<Link href={"/"}>AncientOS</Link>
-					</Typography>
-					<Box sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }}>
+						<Link href={"/"}>
+							<Typography
+								style={{
+									background: "linear-gradient(to left, #FC5C7D, #6A82FB)",
+									WebkitBackgroundClip: "text",
+									WebkitTextFillColor: "transparent",
+									fontWeightLight: 200,
+									fontWeightRegular: 200,
+									fontWeightMedium: 400,
+									fontWeightBold: 500,
+									fontSize: 30,
+									fontFamily: "Poppins",
+									textDecoration: "none",
+								}}
+								align="center"
+							>
+								AncientOS
+							</Typography>
+						</Link>
+					</Box>
+					<Box
+						sx={{
+							// flexGrow: 1,
+							display: { xs: "flex", md: "none" },
+						}}
+					>
 						<IconButton
 							size="large"
 							aria-label="account of current user"
@@ -96,23 +122,39 @@ const Appbar = () => {
 						</IconButton>
 					</Box>
 					{/* <AdbIcon sx={{ display: { xs: "flex", md: "none" }, mr: 1 }} /> */}
-					<Typography
-						variant="h5"
+					<Box
 						noWrap
+						sx={{ m: 0, display: { xs: "flex", md: "none" }, flexGrow: 1 }}
+					>
+						{" "}
+						<Link href={"/"}>
+							<Typography
+								style={{
+									background: "linear-gradient(to left, #FC5C7D, #6A82FB)",
+									WebkitBackgroundClip: "text",
+									WebkitTextFillColor: "transparent",
+									fontWeightLight: 200,
+									// fontWeightRegular: 200,
+									// fontWeightMedium: 400,
+									// fontWeightBold: 800,
+									fontSize: 40,
+									fontFamily: "Poppins",
+									textDecoration: "none",
+								}}
+								align="center"
+							>
+								AncientOS
+							</Typography>
+						</Link>
+					</Box>
+					<Box
 						sx={{
-							mr: 2,
-							display: { xs: "flex", md: "none" },
+							mr: 10,
 							flexGrow: 1,
-							fontFamily: "monospace",
-							fontWeight: 700,
-							letterSpacing: ".3rem",
-							color: "dark",
-							textDecoration: "none",
+							display: { xs: "none", md: "flex" },
+							justifyContent: "flex-end",
 						}}
 					>
-						<Link href={"/"}>AncientOS</Link>
-					</Typography>
-					<Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}>
 						{link.map((links, index) => (
 							<MenuItem key={index}>
 								<Link key={index} href={`/${links}`}>
@@ -137,69 +179,88 @@ const Appbar = () => {
 					</Box>
 				</Toolbar>
 			</Container>
-			<div>
-				<SwipeableDrawer
-					anchor="bottom"
-					open={open}
-					onOpen={() => {}}
-					onClose={() => setOpen(false)}
-					PaperProps={{
-						elevation: 0,
-						square: false,
-						// style: { backgroundColor: "transparent" },
-					}}
-				>
-					<Box sx={{ m: 2 }}>
-						<StyledBox
-							sx={{
-								zIndex: 1100,
-								position: "absolute",
-								top: -drawerBleeding,
-								borderTopLeftRadius: 8,
-								borderTopRightRadius: 8,
-								visibility: "visible",
-								right: 0,
-								left: 0,
-							}}
-						>
-							<Puller />
-						</StyledBox>
-					</Box>
-					<Grid item xs={12} md={6}>
-						<Typography align="center" variant="h4">
-							Menu
-						</Typography>
 
-						<List sx={{ p: 2 }}>
-							{link.map((val, index) => (
-								<ListItem
-									key={index}
-									component="a"
-									sx={{
-										backgroundColor: "#bbbbbb",
-										mb: 1,
-										border: "1px solid rgba(200,200,200)",
-										borderRadius: 5,
-										textTransform: "uppercase",
-									}}
-									onClick={() => setOpen(false)}
-								>
-									<Link key={index} href={`/${val}`}>
-										<ListItemText
-											key={index}
-											primary={val}
-											secondary={linkInfo[index]}
-										/>
-									</Link>
-									<ListItemIcon>
-										<KeyboardArrowRightRoundedIcon />
-									</ListItemIcon>
-								</ListItem>
-							))}
-						</List>
-					</Grid>
-				</SwipeableDrawer>
-			</div>
+			<SwipeableDrawer
+				anchor="bottom"
+				open={open}
+				onOpen={() => {}}
+				onClose={() => setOpen(false)}
+				sx={{ borderRadius: 25 }}
+				PaperProps={{
+					// variant: "outlined",
+					elevation: 0,
+					square: false,
+				}}
+			>
+				<Box
+					sx={{
+						backgroundColor: "#f5e8e81",
+						m: 2,
+						borderTopLeftRadius: 8,
+						borderTopRightRadius: 8,
+					}}
+					className="jayant"
+				>
+					<StyledBox
+						sx={{
+							// zIndex: 1100,
+							position: "absolute",
+							top: -drawerBleeding,
+							borderTopLeftRadius: 8,
+							borderTopRightRadius: 8,
+							visibility: "visible",
+							right: 0,
+							left: 0,
+						}}
+					>
+						<Puller />
+					</StyledBox>
+				</Box>
+				<Grid item xs={12} md={6}>
+					<Typography
+						style={{
+							background: "linear-gradient(to left, #FC5C7D, #6A82FB)",
+							WebkitBackgroundClip: "text",
+							WebkitTextFillColor: "transparent",
+						}}
+						align="center"
+						variant="h2"
+					>
+						Menu
+					</Typography>
+
+					<List sx={{ p: 2 }}>
+						{link.map((val, index) => (
+							<ListItem
+								key={index}
+								sx={{
+									p: 2,
+									mb: 1.5,
+									borderRadius: 5,
+									border: "2px",
+									background: " #ffffff",
+									background: "linear-gradient(to left, #FC5C7D, #6A82FB)",
+									boxShadow: 3,
+									textTransform: "uppercase",
+								}}
+								onClick={() => setOpen(false)}
+							>
+								<Link key={index} href={`/${val}`}>
+									<ListItemText
+										fontSize="large"
+										key={index}
+										primary={val}
+										secondary={linkInfo[index]}
+									/>
+								</Link>
+								<ListItemIcon>
+									<ArrowCircleRightRoundedIcon fontSize="large" />
+								</ListItemIcon>
+							</ListItem>
+						))}
+					</List>
+				</Grid>
+			</SwipeableDrawer>
 		</AppBar>
 	);
 };
