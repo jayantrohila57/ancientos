@@ -1,17 +1,21 @@
 import React from "react";
-
-function team({ result }) {
+import Members from "../components/Members";
+function TeamUsers({ result }) {
 	return (
 		<>
 			<div>Team Member </div>
-			{result.map((user) => {
-				return <p key={user.id}>{user.name}</p>;
+			{result.map((member) => {
+				return (
+					<div key={member.id}>
+						<Members member={member} />
+					</div>
+				);
 			})}
 		</>
 	);
 }
 
-export default team;
+export default TeamUsers;
 
 export async function getStaticProps() {
 	const url = `https://jsonplaceholder.typicode.com/users`;
