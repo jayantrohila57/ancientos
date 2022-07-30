@@ -23,6 +23,7 @@ export default function Brand() {
 	};
 	
 	const brands = [
+		"Gsi ",
 		"Asus ",
 		"Motorola ",
 		"Nokia ",
@@ -39,7 +40,7 @@ export default function Brand() {
 				pri="Download Builds"
 				sub="Get Official builds for your device."
 			/>
-			
+
 			<Box
 				sx={{
 					// mt: 2,
@@ -70,26 +71,26 @@ export default function Brand() {
 							display: "flex",
 							flexDirection: "row",
 							flexWrap: "wrap",
-							alignContent: "space-around",
-							justifyContent: "space-around",
+							alignContent: "center",
+							justifyContent: "flex-start",
 							alignItems: "center",
 						}}
 					>
 						{Array.from(brands).map((brand, index) => {
 							return (
-								<Link key={index} href={`download/brand/device/${brand}`}>
+								<Link key={index} href={`${brandId}/${brand}`}>
 									<ListItem
 										key={index}
 										sx={{
-											width: 250,
+											width: 260,
 											p: 2,
-											mb: 3,
+											m: "1rem",
 											borderRadius: 5,
 											boxShadow: 6,
 											textTransform: "capitalize",
 											background: "linear-gradient(to left, #FC5C7D, #6A82FB)",
 										}}
-										onClick={() => {}}
+										// onClick={() => {}}
 									>
 										<ListItemText
 											key={index}
@@ -106,11 +107,8 @@ export default function Brand() {
 												</Typography>
 											}
 										/>
-										<ListItemIcon key={index}>
-											<ArrowCircleRightRoundedIcon
-												key={index}
-												fontSize="large"
-											/>
+										<ListItemIcon>
+											<ArrowCircleRightRoundedIcon fontSize="large" />
 										</ListItemIcon>
 									</ListItem>
 								</Link>
