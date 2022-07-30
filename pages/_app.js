@@ -2,7 +2,7 @@ import * as React from "react";
 import PropTypes from "prop-types";
 import Head from "next/head";
 import { ThemeProvider, createTheme } from "@mui/material/styles";
-
+import darkScrollbar from "@mui/material/darkScrollbar";
 import CssBaseline from "@mui/material/CssBaseline";
 import { CacheProvider } from "@emotion/react";
 import theme from "../src/theme";
@@ -18,6 +18,19 @@ export default function MyApp(props) {
 	const darkTheme = createTheme({
 		palette: {
 			mode: "dark",
+			// hoverColor: "red",
+		},
+		components: {
+			MuiCssBaseline: {
+				styleOverrides: (themeParam) => ({
+					body: themeParam.palette.mode === "dark" ? darkScrollbar() : null,
+				}),
+			},
+		},
+		hover: {
+			"&:hover": {
+				borderRadius: 5,
+			},
 		},
 	});
 	const { Component, emotionCache = clientSideEmotionCache, pageProps } = props;

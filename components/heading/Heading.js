@@ -34,7 +34,7 @@ export default function Heading({ pri, sub }) {
 					className="flex-box"
 					align="center"
 					justifyItems="center"
-					variant="body1"
+					variant="h6"
 				>
 					{sub}
 				</Typography>
