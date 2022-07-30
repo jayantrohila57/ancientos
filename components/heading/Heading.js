@@ -19,7 +19,7 @@ export default function Heading({ pri, sub }) {
 				<Typography
 					className="flex-box"
 					align="center"
-					bold
+					bold="true"
 					justifyItems="center"
 					variant="h3"
 					style={{

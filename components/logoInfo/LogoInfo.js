@@ -4,6 +4,7 @@ import Image from "next/image";
 import { Paper, Box } from "@mui/material";
 import Logo from "../../assets/img/ancientv2.png";
 import Typography from "@mui/material/Typography";
+import KeyboardArrowDownRoundedIcon from "@mui/icons-material/KeyboardArrowDownRounded";
 // import Aos from "aos";
 // import "aos/dist/aos.css";
 // import "../../styles/Header.css";
@@ -17,7 +18,7 @@ export default function LogoInfo() {
 			{" "}
 			<div
 				style={{
-					minHeight: "70vh",
+					minHeight: "100vh",
 					display: "flex",
 					flexDirection: "column",
 					justifyContent: "center",
@@ -33,7 +34,7 @@ export default function LogoInfo() {
 					sx={{ Height: "100vh", backgroundColor: "transparent" }}
 					align="center"
 				>
-					<Image src={Logo} alt={Logo} height="200" width="200" />
+					<Image src={Logo} alt={Logo} height="180" width="180" />
 				</Paper>
 				<Typography
 					className="flex-box"
@@ -50,8 +51,20 @@ export default function LogoInfo() {
 					variant="h5"
 				>
 					Craft with LOVE
-				</Typography>{" "}
-				{/* <div className="major-special" /> */}
+				</Typography>
+				<Box
+					sx={{
+						paddingTop: 15,
+						display: "flex",
+						flexDirection: "column",
+						alignItems: "center",
+					}}
+				>
+					<Typography align="center" justifyItems="center" variant="caption">
+						Let's see what we offer.
+					</Typography>
+					<KeyboardArrowDownRoundedIcon fontSize="large" />
+				</Box>
 			</div>
 		</Box>
 	);

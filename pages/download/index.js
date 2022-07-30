@@ -69,7 +69,7 @@ export default function Download() {
 						sx={{ m: 1, p: 1 }}
 						className="flex-box"
 						align="center"
-						bold
+						bold="true"
 						justifyItems="center"
 						variant="h5"
 					>
@@ -77,8 +77,8 @@ export default function Download() {
 					</Typography>
 					<Grid
 						container
-						spacing={{ xs: 2, md: 1 }}
-						columns={{ xs: 6, sm: 8, md: 8 }}
+						spacing={{ xs: 2, sm: 2, md: 1 }}
+						columns={{ xs: 6, sm: 20, md: 8 }}
 					>
 						{Array.from(brands).map((_, index) => (
 							<Grid item xs={2} sm={4} md={1} key={index}>
