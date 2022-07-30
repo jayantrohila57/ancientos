@@ -160,44 +160,6 @@ export default function Device() {
 					);
 				})}
 			</Box>
-			<Box>
-				{/* <Link key={index} href={`${brandId}/${brand}`}>
-							<ListItem
-								key={index}
-								sx={{
-									width: 260,
-									p: 2,
-									m: "1rem",
-									borderRadius: 5,
-									boxShadow: 6,
-									textTransform: "capitalize",
-									background: "linear-gradient(to left, #FC5C7D, #6A82FB)",
-								}}
-							>
-								<ListItemText
-									key={index}
-									primary={
-										<Typography key={index} className="flex-box" variant="h5">
-											{brand}
-										</Typography>
-									}
-									secondary={
-										<Typography
-											key={index}
-											className="flex-box"
-											component="p"
-											variant="body2"
-										>
-											Brand {brandId}
-										</Typography>
-									}
-								/>
-								<ListItemIcon>
-									<ArrowCircleRightRoundedIcon fontSize="large" />
-								</ListItemIcon>
-							</ListItem>
-						</Link> */}
-			</Box>
 
 			<GoBack props={"/download"} />
 		</Box>
