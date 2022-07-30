@@ -30,8 +30,15 @@ export default function MyApp(props) {
 			<ThemeProvider theme={darkTheme}>
 				{/* CssBaseline kickstart an elegant, consistent, and simple baseline to build upon. */}
 				<CssBaseline />
-				<Appbar />
-				<Component {...pageProps} />
+				<div
+					style={{
+						backgroundColor: "#1c1c322e",
+						background: "linear-gradient(to left, #ff003313, #002aff1a)",
+					}}
+				>
+					<Appbar />
+					<Component {...pageProps} />
+				</div>
 			</ThemeProvider>
 		</CacheProvider>
 	);
