@@ -24,7 +24,7 @@ export default function LinkHeading({ props }) {
 			<Link href={`${props.link}`}>
 				<ListItem
 					sx={{
-						height: "20vh",
+						maxHeight: 300,
 						width: "90vw",
 						p: 2,
 						pl: 5,
@@ -37,7 +37,6 @@ export default function LinkHeading({ props }) {
 					// onClick={() => {}}
 				>
 					<ListItemText
-						variant="body2"
 						primary={
 							<Typography component="p" variant="h5">
 								{props.primary}

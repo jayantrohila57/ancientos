@@ -2,7 +2,7 @@ import Typography from "@mui/material/Typography";
 import { Paper, Box } from "@mui/material";
 export default function Heading({ pri, sub }) {
 	return (
-		<Box sx={{ p: 10 }}>
+		<Box sx={{ p: 8 }}>
 			{" "}
 			<div
 				style={{
