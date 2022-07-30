@@ -77,7 +77,7 @@ export default function Brand() {
 					>
 						{Array.from(brands).map((brand, index) => {
 							return (
-								<Link href={`download/brand/device/${brand}`}>
+								<Link key={index} href={`download/brand/device/${brand}`}>
 									<ListItem
 										key={index}
 										sx={{
@@ -96,6 +96,7 @@ export default function Brand() {
 											fontSize="large"
 											primary={
 												<Typography
+													key={index}
 													className="flex-box"
 													align="center"
 													justifyItems="center"
@@ -105,7 +106,7 @@ export default function Brand() {
 												</Typography>
 											}
 										/>
-										<ListItemIcon>
+										<ListItemIcon key={index}>
 											<ArrowCircleRightRoundedIcon
 												key={index}
 												fontSize="large"
