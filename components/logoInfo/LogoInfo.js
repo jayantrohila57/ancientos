@@ -60,9 +60,7 @@ export default function LogoInfo() {
 						alignItems: "center",
 					}}
 				>
-					<Typography align="center" justifyItems="center" variant="caption">
-						Let's see what we offer.
-					</Typography>
+					<Typography variant="caption">Let's see what we offer.</Typography>
 					<KeyboardArrowDownRoundedIcon fontSize="large" />
 				</Box>
 			</div>
