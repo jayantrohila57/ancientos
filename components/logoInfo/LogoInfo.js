@@ -36,7 +36,7 @@ export default function LogoInfo() {
 					sx={{ Height: "100vh", backgroundColor: "transparent" }}
 					align="center"
 				>
-					<Image src={Logo} alt={Logo} height="180" width="180" />
+					<Image src={Logo} priority alt={Logo} height="180" width="180" />
 				</Paper>
 				<Typography
 					className="flex-box"

@@ -268,30 +268,29 @@ const Appbar = () => {
 
 						<List sx={{ p: 2 }}>
 							{link.map((val, index) => (
-								<ListItem
-									key={index}
-									sx={{
-										p: 2,
-										mb: 1.5,
-										borderRadius: 5,
-										boxShadow: 6,
-										textTransform: "capitalize",
-										background: "linear-gradient(to left, #FC5C7D, #6A82FB)",
-									}}
-									onClick={() => setOpen(false)}
-								>
-									<Link key={index} href={`/${val}`}>
+								<Link key={index} href={`/${val}`}>
+									<ListItem
+										sx={{
+											p: 2,
+											mb: 1.5,
+											borderRadius: 5,
+											boxShadow: 6,
+											textTransform: "capitalize",
+											background: "linear-gradient(to left, #FC5C7D, #6A82FB)",
+										}}
+										onClick={() => setOpen(false)}
+									>
 										<ListItemText
 											fontSize="large"
-											key={index}
 											primary={val}
 											secondary={linkInfo[index]}
 										/>
-									</Link>
-									<ListItemIcon>
-										<ArrowCircleRightRoundedIcon fontSize="large" />
-									</ListItemIcon>
-								</ListItem>
+
+										<ListItemIcon>
+											<ArrowCircleRightRoundedIcon fontSize="large" />
+										</ListItemIcon>
+									</ListItem>
+								</Link>
 							))}
 						</List>
 					</Grid>

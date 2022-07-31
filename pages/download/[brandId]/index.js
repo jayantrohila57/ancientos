@@ -66,6 +66,7 @@ export default function Device() {
 				{Array.from(devices).map((data, index) => {
 					return (
 						<Box
+							key={index}
 							sx={{
 								p: 2,
 								display: "flex",
@@ -76,13 +77,12 @@ export default function Device() {
 								alignItems: "center",
 							}}
 						>
-							<Link key={index} href={`${brandId}/${data.name}`}>
+							<Link href={`${brandId}/${data.name}`}>
 								<Card
 									// data-aos="fade-up"
 									// data-aos-duration="1200"
 
 									elevation={0}
-									key={index}
 									style={{
 										backgroundImage:
 											"linear-gradient(to left, #fc5c7cb5, #6a82fbc0)",
