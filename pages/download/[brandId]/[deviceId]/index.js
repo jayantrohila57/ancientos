@@ -214,6 +214,7 @@ export default function Device() {
 					>
 						{Array.from(DeviceInfo).map((data, index) => (
 							<Card
+								key={index}
 								variant="outlined"
 								sx={{
 									width: 280,
