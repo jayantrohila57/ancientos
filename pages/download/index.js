@@ -1,8 +1,9 @@
-import { Paper, Box, Grid } from "@mui/material";
+import { Paper, Box, Grid, Card } from "@mui/material";
 import Heading from "../../components/heading/Heading";
 import LinkHeading from "../../components/heading/LinkHeading";
 import GoBack from "../../components/goBack/GoBack";
 import Typography from "@mui/material/Typography";
+import IconButton from "@mui/material/IconButton";
 
 import List from "@mui/material/List";
 import ListItem from "@mui/material/ListItem";
@@ -47,56 +48,81 @@ export default function Download() {
 		<Box sx={{ pt: 5, minHeight: "100vh" }}>
 			<Heading pri="Download Builds" sub="These are all available Brands." />
 			<Box>
-				<Box
+				<Card
+					variant="outlined"
 					sx={{
-						p: 5,
+						borderRadius: 5,
+						m: 2,
+						p: 2,
 						display: "flex",
 						flexDirection: "row",
 						flexWrap: "wrap",
 						alignContent: "center",
-						justifyContent: "flex-start",
+						justifyContent: "center",
 						alignItems: "center",
+						background: "transparent",
 					}}
 				>
 					{Array.from(brands).map((brand, index) => {
 						return (
 							<Link key={index} href={`download/${brand}`}>
-								<ListItem
+								<Card
+									variant="outlined"
 									key={index}
 									sx={{
-										width: 260,
-										p: 2,
-										m: "1rem",
+										width: 250,
+										height: 180,
+										p: 1,
+										m: 2,
+										display: "flex",
+										flexDirection: "column",
+										justifyContent: "space-between",
 										borderRadius: 5,
 										boxShadow: 6,
 										textTransform: "capitalize",
-										background: "linear-gradient(to left, #FC5C7D, #6A82FB)",
+										background:
+											"linear-gradient(to left, #8f45544a, #3d498358)",
 									}}
-									// onClick={() => {}}
 								>
-									<ListItemText
-										key={index}
-										fontSize="large"
-										primary={
-											<Typography
-												key={index}
-												className="flex-box"
-												align="center"
-												justifyItems="center"
-												variant="h5"
-											>
-												{brand}
-											</Typography>
-										}
-									/>
-									<ListItemIcon>
-										<ArrowCircleRightRoundedIcon fontSize="large" />
-									</ListItemIcon>
-								</ListItem>
+									<Box
+										sx={{
+											display: "flex",
+											flexDirection: "row",
+											justifyContent: "flex-end",
+											alignItems: "flex-end",
+										}}
+									>
+										<IconButton
+											sx={{
+												boxShadow: 5,
+												background:
+													"linear-gradient(to left, #c14d6422, #4359c630)",
+											}}
+										>
+											<ArrowCircleRightRoundedIcon sx={{ fontSize: 40 }} />
+										</IconButton>
+									</Box>
+									<ListItem>
+										<ListItemText
+											key={index}
+											fontSize="large"
+											primary={
+												<Typography
+													key={index}
+													className="flex-box"
+													variant="h5"
+													sx={{ m: 0, justifyContent: "flex-start" }}
+												>
+													{brand}
+												</Typography>
+											}
+										/>
+									</ListItem>
+								</Card>
 							</Link>
 						);
 					})}
-				</Box>
+				</Card>
 			</Box>
 			<LinkHeading props={patreon} />
 			<LinkHeading props={obj} />

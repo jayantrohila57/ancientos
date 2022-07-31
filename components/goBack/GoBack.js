@@ -28,12 +28,15 @@ export default function GoBack({ props }) {
 						borderRadius: 5,
 						boxShadow: 6,
 						textTransform: "capitalize",
-						background: "linear-gradient(to left, #FC5C7D, #6A82FB)",
+						background: "linear-gradient(to left, #c14d647c, #4358c686)",
 					}}
 					onClick={() => {}}
 				>
 					<ListItemIcon>
-						<ArrowCircleLeftRoundedIcon fontSize="large" />
+						<ArrowCircleLeftRoundedIcon
+							fontSize="large"
+							sx={{ borderRadius: 5, boxShadow: 6 }}
+						/>
 					</ListItemIcon>
 
 					<ListItemText fontSize="large" primary={"Go Back"} />

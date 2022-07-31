@@ -32,7 +32,9 @@ export default function LinkHeading({ props }) {
 						borderRadius: 5,
 						boxShadow: 6,
 						textTransform: "capitalize",
-						background: "linear-gradient(to left, #FC5C7D, #6A82FB)",
+						background: "linear-gradient(to left, #8f45544a, #3d498358)",
+
+						// background: "linear-gradient(to left, #FC5C7D, #6A82FB)",
 					}}
 					// onClick={() => {}}
 				>

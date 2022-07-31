@@ -23,6 +23,7 @@ export default function Heading({ pri, sub }) {
 					justifyItems="center"
 					variant="h3"
 					style={{
+						textTransform: "capitalize",
 						background: "linear-gradient(to left, #FC5C7D, #6A82FB)",
 						WebkitBackgroundClip: "text",
 						WebkitTextFillColor: "transparent",

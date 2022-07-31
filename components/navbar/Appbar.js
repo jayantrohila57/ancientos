@@ -106,9 +106,10 @@ const Appbar = () => {
 						<Link href={"/"}>
 							<Typography
 								style={{
-									background: "linear-gradient(to left, #FC5C7D, #6A82FB)",
+									background: "linear-gradient(to left, #ff1745, #062ffc)",
 									WebkitBackgroundClip: "text",
 									WebkitTextFillColor: "transparent",
+									BoxShadow: 5,
 									fontWeightLight: 200,
 									fontWeightRegular: 200,
 									fontWeightMedium: 400,
@@ -152,7 +153,7 @@ const Appbar = () => {
 							<Typography
 								style={{
 									display: "flex",
-									background: "linear-gradient(to left, #FC5C7D, #6A82FB)",
+									background: "linear-gradient(to left, #c14d647c, #4358c686)",
 									WebkitBackgroundClip: "text",
 									WebkitTextFillColor: "transparent",
 									fontWeightLight: 100,
@@ -181,7 +182,12 @@ const Appbar = () => {
 								<Link key={index} href={`/${links}`}>
 									<Typography
 										key={index}
-										sx={{ textTransform: "capitalize" }}
+										sx={{
+											p: 1,
+											borderRadius: 3,
+											TextShadow: 15,
+											textTransform: "capitalize",
+										}}
 										textAlign="center"
 									>
 										{links}
@@ -194,7 +200,10 @@ const Appbar = () => {
 					<Box sx={{ flexGrow: 0 }}>
 						<Tooltip title="Open settings">
 							<Link href={"/account"}>
-								<IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
+								<IconButton
+									onClick={handleOpenUserMenu}
+									sx={{ borderRadius: 5, boxShadow: 15 }}
+								>
 									<Avatar
 										alt=""
 										src="https://avatars.githubusercontent.com/u/58130857?v=4"
@@ -256,7 +265,7 @@ const Appbar = () => {
 					<Grid item xs={12} md={6}>
 						<Typography
 							style={{
-								background: "linear-gradient(to left, #FC5C7D, #6A82FB)",
+								background: "linear-gradient(to left, #ff0033, #002aff)",
 								WebkitBackgroundClip: "text",
 								WebkitTextFillColor: "transparent",
 							}}
@@ -267,6 +276,7 @@ const Appbar = () => {
 						</Typography>
 
 						<List sx={{ p: 2 }}>
+							{/* Mobile  */}
 							{link.map((val, index) => (
 								<Link key={index} href={`/${val}`}>
 									<ListItem
@@ -274,20 +284,37 @@ const Appbar = () => {
 											p: 2,
 											mb: 1.5,
 											borderRadius: 5,
-											boxShadow: 6,
+											boxShadow: 15,
 											textTransform: "capitalize",
-											background: "linear-gradient(to left, #FC5C7D, #6A82FB)",
+											background:
+												"linear-gradient(to left, #c14d647c, #4358c686)",
+											backgroundColor: "#c14d647c",
 										}}
 										onClick={() => setOpen(false)}
 									>
 										<ListItemText
 											fontSize="large"
-											primary={val}
+											primary={
+												<Typography
+													style={{
+														background:
+															"linear-gradient(to left, #ffffff, #ffffff)",
+														WebkitBackgroundClip: "text",
+														WebkitTextFillColor: "transparent",
+													}}
+													variant="h4"
+												>
+													{val}
+												</Typography>
+											}
 											secondary={linkInfo[index]}
 										/>
 
 										<ListItemIcon>
-											<ArrowCircleRightRoundedIcon fontSize="large" />
+											<ArrowCircleRightRoundedIcon
+												fontSize="large"
+												sx={{ borderRadius: 5, boxShadow: 6 }}
+											/>
 										</ListItemIcon>
 									</ListItem>
 								</Link>

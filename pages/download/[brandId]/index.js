@@ -24,24 +24,49 @@ export default function Device() {
 	const devices = [
 		{
 			image:
-				"https://raw.githubusercontent.com/ancient-devices/ancient_official_devices_gallery/main/X00TD.png",
+				"https://raw.githubusercontent.com/ancient-devices/ancient_official_devices/main/DRG.png",
 			name: "6.1plus",
-		},
-		{
-			image:
-				"https://raw.githubusercontent.com/ancient-devices/ancient_official_devices_gallery/main/X00TD.png",
-			name: "7.1",
-		},
-		{
-			image:
-				"https://raw.githubusercontent.com/ancient-devices/ancient_official_devices_gallery/main/X00TD.png",
-			name: "5.3",
 		},
 
 		{
 			image:
-				"https://raw.githubusercontent.com/ancient-devices/ancient_official_devices_gallery/main/X00TD.png",
-			name: "5.2",
+				"https://raw.githubusercontent.com/ancient-devices/ancient_official_devices/main/DRG.png",
+			name: "6.1plus",
+		},
+		{
+			image:
+				"https://raw.githubusercontent.com/ancient-devices/ancient_official_devices/main/DRG.png",
+			name: "6.1plus",
+		},
+		{
+			image:
+				"https://raw.githubusercontent.com/ancient-devices/ancient_official_devices/main/DRG.png",
+			name: "6.1plus",
+		},
+		{
+			image:
+				"https://raw.githubusercontent.com/ancient-devices/ancient_official_devices/main/DRG.png",
+			name: "6.1plus",
+		},
+		{
+			image:
+				"https://raw.githubusercontent.com/ancient-devices/ancient_official_devices/main/DRG.png",
+			name: "6.1plus",
+		},
+		{
+			image:
+				"https://raw.githubusercontent.com/ancient-devices/ancient_official_devices/main/DRG.png",
+			name: "6.1plus",
+		},
+		{
+			image:
+				"https://raw.githubusercontent.com/ancient-devices/ancient_official_devices/main/DRG.png",
+			name: "6.1plus",
+		},
+		{
+			image:
+				"https://raw.githubusercontent.com/ancient-devices/ancient_official_devices/main/DRG.png",
+			name: "6.1plus",
 		},
 	];
 
@@ -52,8 +77,10 @@ export default function Device() {
 				sub={`Let's see if we have your ${brandId} device.`}
 			/>
 
-			<Box
+			<Card
+				variant="outlined"
 				sx={{
+					m: 2,
 					p: 2,
 					display: "flex",
 					flexDirection: "row",
@@ -61,105 +88,106 @@ export default function Device() {
 					alignContent: "center",
 					justifyContent: "space-around",
 					alignItems: "center",
+					borderRadius: 5,
+					minHeight: 400,
+					minWidth: 300,
+					background: "transparent",
+
+					//background: "linear-gradient(to left, #c14d647c, #4358c686)",
+					//background: "linear-gradient(to left, #c14d643f, #4359c651)",
 				}}
 			>
 				{Array.from(devices).map((data, index) => {
 					return (
-						<Box
-							key={index}
-							sx={{
-								p: 2,
-								display: "flex",
-								flexDirection: "row",
-								flexWrap: "wrap",
-								alignContent: "center",
-								justifyContent: "flex-start",
-								alignItems: "center",
-							}}
-						>
-							<Link href={`${brandId}/${data.name}`}>
-								<Card
-									// data-aos="fade-up"
-									// data-aos-duration="1200"
-
-									elevation={0}
-									style={{
-										backgroundImage:
-											"linear-gradient(to left, #fc5c7cb5, #6a82fbc0)",
-										// url(" +
-										// data.image +
-										// ")",
-
-										// backgroundSize: "contain",
-									}}
+						<Link key={index} href={`${brandId}/${data.name}`}>
+							<Card
+								variant="outlined"
+								sx={{
+									maxWidth: 350,
+									height: 250,
+									m: 1,
+									overflow: "none",
+									borderRadius: 5,
+									textTransform: "capitalize",
+									display: "flex",
+									flexDirection: "column",
+									justifyContent: "space-between",
+									boxShadow: 1,
+									backgroundImage:
+										"linear-gradient(to bottom, #00000049, #3d498358)",
+								}}
+							>
+								{" "}
+								<Box
 									sx={{
-										overflow: "none",
-										borderRadius: 5,
-										textTransform: "capitalize",
 										display: "flex",
-										width: 300,
-										height: 200,
+										flexDirection: "row",
+										justifyContent: "flex-end",
+										alignItems: "flex-start",
+										m: 1,
 									}}
 								>
-									<Box
+									<IconButton
 										sx={{
-											display: "flex",
-											flexDirection: "column",
-											justifyContent: "flex-end",
+											boxShadow: 5,
+											background:
+												"linear-gradient(to left, #c14d6422, #4359c630)",
 										}}
 									>
-										<Box
-											sx={{
-												display: "flex",
-												flexDirection: "row",
-												height: 200,
-												width: 300,
-											}}
+										<ArrowCircleRightRoundedIcon sx={{ fontSize: 40 }} />
+									</IconButton>
+								</Box>
+								<Box
+									sx={{
+										maxWidth: 350,
+										width: 250,
+										height: 250,
+										display: "flex",
+										flexDirection: "column",
+										flexWrap: "wrap",
+										justifyContent: "flex-end",
+										borderRadius: 5,
+										textTransform: "capitalize",
+										backgroundImage:
+											"linear-gradient(to bottom, #6717171a, #000000),url(" +
+											data.image +
+											")",
+										backgroundRepeat: "no-repeat",
+										backgroundSize: "contain",
+										backgroundPosition: "center",
+									}}
+								>
+									<CardContent
+										sx={{
+											maxWidth: 300,
+											display: "flex",
+											flexDirection: "column",
+											flexWrap: "wrap",
+											// 	alignContent: "flex-start",
+											// 	justifyContent: "flex-start",
+											// 	alignItems: "flex-start",
+										}}
+									>
+										<Typography
+											sx={{ m: 0, justifyContent: "flex-start" }}
+											variant="h6"
 										>
-											<AodRoundedIcon sx={{ mt: 3, ml: 1, fontSize: 60 }} />
-											<CardContent
-												sx={{
-													display: "flex",
-													flexDirection: "column",
-													flexWrap: "wrap",
-													alignContent: "flex-start",
-													justifyContent: "flex-start",
-													alignItems: "flex-start",
-												}}
-											>
-												<Typography
-													sx={{ m: 0, justifyContent: "flex-start" }}
-													variant="h4"
-												>
-													{data.name}
-												</Typography>
-												<Typography
-													sx={{ m: 0, justifyContent: "flex-start" }}
-													variant="h5"
-													color="text.secondary"
-												>
-													{brandId}
-												</Typography>
-											</CardContent>{" "}
-										</Box>
-										<Box
-											sx={{
-												display: "flex",
-												flexDirection: "row",
-												justifyContent: "flex-end",
-											}}
+											{data.name}
+										</Typography>
+										<Typography
+											sx={{ m: 0, justifyContent: "flex-start" }}
+											variant="body2"
+											color="text.secondary"
 										>
-											<IconButton>
-												<ArrowCircleRightRoundedIcon sx={{ fontSize: 40 }} />
-											</IconButton>
-										</Box>
-									</Box>
-								</Card>
-							</Link>{" "}
-						</Box>
+											{brandId}
+										</Typography>
+									</CardContent>{" "}
+								</Box>
+							</Card>
+						</Link>
 					);
 				})}
-			</Box>
+			</Card>
 
 			<GoBack props={"/download"} />
 		</Box>
