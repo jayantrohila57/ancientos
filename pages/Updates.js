@@ -104,7 +104,8 @@ export default function Updates() {
 					pb: 25,
 					p: 1,
 					dispay: "flex",
-					justifyContent: "flex-start",
+					justifyContent: "center",
+					alignItems: "center",
 				}}
 			>
 				<Heading pri="Change Logs" sub="These are all Builds versions" />

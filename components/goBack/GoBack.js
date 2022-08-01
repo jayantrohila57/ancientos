@@ -1,6 +1,6 @@
 import { useRouter } from "next/router";
 import Link from "next/link";
-
+import styles from "../../styles/Home.module.css";
 import List from "@mui/material/List";
 import ListItem from "@mui/material/ListItem";
 import ListItemIcon from "@mui/material/ListItemIcon";
@@ -21,6 +21,7 @@ export default function GoBack({ props }) {
 		>
 			<Link href={`${props}`}>
 				<ListItem
+					className={styles.back}
 					sx={{
 						width: 200,
 						p: 1,
@@ -28,14 +29,19 @@ export default function GoBack({ props }) {
 						borderRadius: 5,
 						boxShadow: 6,
 						textTransform: "capitalize",
-						background: "linear-gradient(to left, #c14d647c, #4358c686)",
+						background: "linear-gradient(to left, #c14d642e, #4359c64a)",
 					}}
 					onClick={() => {}}
 				>
 					<ListItemIcon>
 						<ArrowCircleLeftRoundedIcon
 							fontSize="large"
-							sx={{ borderRadius: 5, boxShadow: 6 }}
+							sx={{
+								p: 1,
+								borderRadius: 10,
+								boxShadow: 6,
+								background: "linear-gradient(to left, #c14d64fd, #062fffe4)",
+							}}
 						/>
 					</ListItemIcon>
 

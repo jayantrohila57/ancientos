@@ -10,6 +10,7 @@ import createEmotionCache from "../src/createEmotionCache";
 
 //components
 import Appbar from "../components/navbar/Appbar";
+import Footer from "../components/footer/Footer";
 import { AuthContextProvider } from "../context/AuthContext";
 
 // Client-side cache, shared for the whole session of the user in the browser.
@@ -53,6 +54,7 @@ export default function MyApp(props) {
 					>
 						<Appbar />
 						<Component {...pageProps} />
+						<Footer />
 					</div>
 				</ThemeProvider>
 			</CacheProvider>

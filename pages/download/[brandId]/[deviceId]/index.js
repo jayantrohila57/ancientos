@@ -64,7 +64,6 @@ export default function Device() {
 			<Box
 				sx={{
 					p: 0.5,
-
 					display: "flex",
 					flexDirection: "row",
 					flexWrap: "wrap",
@@ -73,10 +72,10 @@ export default function Device() {
 					alignItems: "center",
 				}}
 			>
-				<Card
-					variant="outlined"
+				<Box
+					// variant="outlined"
 					sx={{
-						p: 3,
+						p: 1,
 						display: "flex",
 						flexDirection: "row",
 						flexWrap: "wrap",
@@ -107,53 +106,34 @@ export default function Device() {
 								m: 1,
 								overflow: "none",
 								borderRadius: 5,
+								boxShadow: 5,
 								textTransform: "capitalize",
 								display: "flex",
 								flexDirection: "column",
 								justifyContent: "space-between",
-								boxShadow: 1,
-
-								backgroundImage:
-									"linear-gradient(to bottom,  #6717171a, #000000)",
+								background: "transparent",
 							}}
 						>
 							<Box
 								sx={{
 									m: 2,
+									p: 1,
 									borderRadius: 5,
-									height: 250,
-									width: 250,
+									height: 350,
+									width: 330,
 									display: "flex",
 									flexDirection: "column",
 									flexWrap: "wrap",
 									justifyContent: "flex-end",
 									borderRadius: 5,
+
 									textTransform: "capitalize",
-									backgroundImage:
-										"linear-gradient(to bottom, #6717171a, #000000),url(" +
-										linkk +
-										")",
+									backgroundImage: "url(" + linkk + ")",
 									backgroundRepeat: "no-repeat",
 									backgroundSize: "contain",
 									backgroundPosition: "center",
 								}}
-							>
-								<Box sx={{ p: 1 }}>
-									<Typography
-										sx={{ m: 0, justifyContent: "flex-start" }}
-										variant="h6"
-									>
-										Nokia
-									</Typography>
-									<Typography
-										sx={{ m: 0, justifyContent: "flex-start" }}
-										variant="body2"
-										color="text.secondary"
-									>
-										Nokia
-									</Typography>
-								</Box>
-							</Box>{" "}
+							></Box>{" "}
 						</Card>
 						<List
 							sx={{
@@ -185,12 +165,21 @@ export default function Device() {
 									<ListItemText
 										sx={{ ml: 2 }}
 										fontSize="large"
-										primary={<Typography variant="h5">Download</Typography>}
+										primary={<Typography variant="h4">Download</Typography>}
+										secondary={
+											<Typography variant="caption">Latest Build</Typography>
+										}
 									/>
 									<ListItemIcon>
 										<DownloadForOfflineRoundedIcon
-											fontSize="large"
-											sx={{ p: 0.5, borderRadius: 10, boxShadow: 6 }}
+											sx={{
+												fontSize: 50,
+												p: 1,
+												borderRadius: 10,
+												boxShadow: 6,
+												background:
+													"linear-gradient(to left, #c14d64fd, #062fffe4)",
+											}}
 										/>
 									</ListItemIcon>
 								</ListItem>
@@ -209,7 +198,7 @@ export default function Device() {
 							p: 1,
 							borderRadius: 5,
 							minHeight: 400,
-							maxWidth: 650,
+							maxWidth: 750,
 						}}
 					>
 						{Array.from(DeviceInfo).map((data, index) => (
@@ -217,7 +206,7 @@ export default function Device() {
 								key={index}
 								variant="outlined"
 								sx={{
-									width: 280,
+									width: 330,
 									height: 200,
 									p: 1,
 									mb: 2,
@@ -227,8 +216,8 @@ export default function Device() {
 									borderRadius: 5,
 									boxShadow: 6,
 									textTransform: "capitalize",
-									//background: "transparent",
 									background: "linear-gradient(to left, #8f45544a, #3d498358)",
+									background: "transparent",
 								}}
 							>
 								<Box
@@ -243,7 +232,7 @@ export default function Device() {
 										sx={{
 											boxShadow: 5,
 											background:
-												"linear-gradient(to left, #c14d6422, #4359c630)",
+												"linear-gradient(to left, #c14d64fd, #062fffe4)",
 										}}
 									>
 										<ArrowCircleRightRoundedIcon sx={{ fontSize: 40 }} />
@@ -267,7 +256,7 @@ export default function Device() {
 							</Card>
 						))}
 					</Box>
-				</Card>
+				</Box>
 			</Box>
 			<LinkHeading props={patreon} />
 			<LinkHeading props={obj} />

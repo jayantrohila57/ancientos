@@ -77,20 +77,19 @@ export default function Device() {
 				sub={`Let's see if we have your ${brandId} device.`}
 			/>
 
-			<Card
-				variant="outlined"
+			<Box
+				// variant="outlined"
 				sx={{
-					m: 2,
-					p: 2,
+					borderRadius: 5,
+					m: 1,
+					p: 1,
 					display: "flex",
 					flexDirection: "row",
 					flexWrap: "wrap",
 					alignContent: "center",
-					justifyContent: "space-around",
+					justifyContent: "center",
 					alignItems: "center",
-					borderRadius: 5,
-					minHeight: 400,
-					minWidth: 300,
+					background: "linear-gradient(to left, #3312122c, #1212312e)",
 					background: "transparent",
 
 					//background: "linear-gradient(to left, #c14d647c, #4358c686)",
@@ -103,91 +102,54 @@ export default function Device() {
 							<Card
 								variant="outlined"
 								sx={{
-									maxWidth: 350,
-									height: 250,
-									m: 1,
-									overflow: "none",
-									borderRadius: 5,
-									textTransform: "capitalize",
+									p: 2,
+									m: 2,
+									width: 330,
+									height: 200,
 									display: "flex",
 									flexDirection: "column",
 									justifyContent: "space-between",
-									boxShadow: 1,
-									backgroundImage:
-										"linear-gradient(to bottom, #00000049, #3d498358)",
+									borderRadius: 5,
+									boxShadow: 5,
+									textTransform: "capitalize",
+
+									background: "linear-gradient(to left, #63273382, #242b5291)",
+
+									background: "transparent",
 								}}
 							>
-								{" "}
 								<Box
 									sx={{
 										display: "flex",
 										flexDirection: "row",
 										justifyContent: "flex-end",
-										alignItems: "flex-start",
-										m: 1,
+										alignItems: "flex-end",
 									}}
 								>
 									<IconButton
 										sx={{
 											boxShadow: 5,
 											background:
-												"linear-gradient(to left, #c14d6422, #4359c630)",
+												"linear-gradient(to left, #c14d64fd, #062fffe4)",
 										}}
 									>
 										<ArrowCircleRightRoundedIcon sx={{ fontSize: 40 }} />
 									</IconButton>
 								</Box>
-								<Box
-									sx={{
-										maxWidth: 350,
-										width: 250,
-										height: 250,
-										display: "flex",
-										flexDirection: "column",
-										flexWrap: "wrap",
-										justifyContent: "flex-end",
-										borderRadius: 5,
-										textTransform: "capitalize",
-										backgroundImage:
-											"linear-gradient(to bottom, #6717171a, #000000),url(" +
-											data.image +
-											")",
-										backgroundRepeat: "no-repeat",
-										backgroundSize: "contain",
-										backgroundPosition: "center",
-									}}
-								>
-									<CardContent
-										sx={{
-											maxWidth: 300,
-											display: "flex",
-											flexDirection: "column",
-											flexWrap: "wrap",
-											// 	alignContent: "flex-start",
-											// 	justifyContent: "flex-start",
-											// 	alignItems: "flex-start",
-										}}
+								<Box>
+									<Typography
+										className="flex-box"
+										sx={{ m: 0.5, justifyContent: "flex-start" }}
+										variant="h4"
 									>
-										<Typography
-											sx={{ m: 0, justifyContent: "flex-start" }}
-											variant="h6"
-										>
-											{data.name}
-										</Typography>
-										<Typography
-											sx={{ m: 0, justifyContent: "flex-start" }}
-											variant="body2"
-											color="text.secondary"
-										>
-											{brandId}
-										</Typography>
-									</CardContent>{" "}
+										{data.name}
+									</Typography>
 								</Box>
 							</Card>
 						</Link>
 					);
 				})}
-			</Card>
+			</Box>
 
 			<GoBack props={"/download"} />
 		</Box>

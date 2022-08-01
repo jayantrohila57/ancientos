@@ -49,17 +49,18 @@ export default function Download() {
 			<Heading pri="Download Builds" sub="These are all available Brands." />
 			<Box>
 				<Card
-					variant="outlined"
+					// variant="outlined"
 					sx={{
 						borderRadius: 5,
-						m: 2,
-						p: 2,
+						m: 1,
+						p: 1,
 						display: "flex",
 						flexDirection: "row",
 						flexWrap: "wrap",
 						alignContent: "center",
 						justifyContent: "center",
 						alignItems: "center",
+						background: "linear-gradient(to left, #3312122c, #1212312e)",
 						background: "transparent",
 					}}
 				>
@@ -70,18 +71,21 @@ export default function Download() {
 									variant="outlined"
 									key={index}
 									sx={{
-										width: 250,
-										height: 180,
 										p: 1,
 										m: 2,
+										width: 330,
+										height: 200,
 										display: "flex",
 										flexDirection: "column",
 										justifyContent: "space-between",
 										borderRadius: 5,
-										boxShadow: 6,
+										boxShadow: 5,
 										textTransform: "capitalize",
+
 										background:
-											"linear-gradient(to left, #8f45544a, #3d498358)",
+											"linear-gradient(to left, #63273382, #242b5291)",
+
+										background: "transparent",
 									}}
 								>
 									<Box
@@ -96,7 +100,7 @@ export default function Download() {
 											sx={{
 												boxShadow: 5,
 												background:
-													"linear-gradient(to left, #c14d6422, #4359c630)",
+													"linear-gradient(to left, #c14d64fd, #062fffe4)",
 											}}
 										>
 											<ArrowCircleRightRoundedIcon sx={{ fontSize: 40 }} />
@@ -110,7 +114,7 @@ export default function Download() {
 												<Typography
 													key={index}
 													className="flex-box"
-													variant="h5"
+													variant="h4"
 													sx={{ m: 0, justifyContent: "flex-start" }}
 												>
 													{brand}

@@ -1,5 +1,7 @@
 import Typography from "@mui/material/Typography";
 import { Paper, Box } from "@mui/material";
+import styles from "../../styles/Home.module.css";
+
 export default function Heading({ pri, sub }) {
 	return (
 		<Box sx={{ p: 8 }}>
@@ -17,7 +19,7 @@ export default function Heading({ pri, sub }) {
 				// data-aos-duration="1200"
 			>
 				<Typography
-					className="flex-box"
+					className={("flex-box", styles.textGradient)}
 					align="center"
 					bold="true"
 					justifyItems="center"
