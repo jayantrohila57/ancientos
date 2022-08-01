@@ -9,6 +9,7 @@ import {
 import { auth } from "../config/firebase";
 export const AuthContext = createContext(null);
 export const useAuth = () => {
+	F;
 	useContext(AuthContext);
 };
 export const AuthContextProvider = ({ children }) => {
@@ -29,7 +30,7 @@ export const AuthContextProvider = ({ children }) => {
 			setLoading(false);
 		});
 		return () => unsubscribe();
-	}, []);
+	}, [user]);
 
 	const signup = (email, password) => {
 		return createUserWithEmailAndPassword(auth, email, password);

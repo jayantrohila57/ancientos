@@ -1,0 +1,32 @@
+[
+	{
+		"build": "7.0",
+		"version": "andriod13",
+		"config": ["Coming Soon..."]
+	},
+	{
+		"build": "6.7",
+		"version": "andriod12",
+		"config": [
+			"Android 12",
+			"January security",
+			"Allow user to select low power Refresh rate",
+			"Change network traffic from aosp krypton impl"
+		]
+	},
+	{
+		"build": "6.3",
+		"version": "andriod12",
+		"config": [
+			"Android 12",
+			"January security",
+			"Improve FPS Info",
+			"Update GMS"
+		]
+	},
+	{
+		"build": "5.7",
+		"version": "andriod11",
+		"config": ["January security", "Improve FPS Info"]
+	}
+]

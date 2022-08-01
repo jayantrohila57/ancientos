@@ -40,7 +40,7 @@ const Appbar = () => {
 	// 	"GroupsRoundedIcon",
 	// 	"VolunteerActivismRoundedIcon",
 	// ];
-	const link = ["download", "updates", "team", "donation"];
+	const link = ["download", "Updates", "team", "donation"];
 	const linkInfo = [
 		"Downloads builds",
 		"Check latest updates.",
@@ -106,7 +106,7 @@ const Appbar = () => {
 						<Link href={"/"}>
 							<Typography
 								style={{
-									background: "linear-gradient(to left, #ff1745, #062ffc)",
+									background: "linear-gradient(to left, #c14d647c, #4358c686)",
 									WebkitBackgroundClip: "text",
 									WebkitTextFillColor: "transparent",
 									BoxShadow: 5,
@@ -154,6 +154,7 @@ const Appbar = () => {
 								style={{
 									display: "flex",
 									background: "linear-gradient(to left, #c14d647c, #4358c686)",
+
 									WebkitBackgroundClip: "text",
 									WebkitTextFillColor: "transparent",
 									fontWeightLight: 100,
