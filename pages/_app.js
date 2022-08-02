@@ -9,7 +9,7 @@ import theme from "../src/theme";
 import createEmotionCache from "../src/createEmotionCache";
 
 //components
-import Appbar from "../components/navbar/Appbar";
+import Appbar from "../components/appbar/Appbar";
 import Footer from "../components/footer/Footer";
 import { AuthContextProvider } from "../context/AuthContext";
 

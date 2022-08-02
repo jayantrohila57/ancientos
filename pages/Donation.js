@@ -1,18 +1,17 @@
 import { Paper, Box, Grid, Card } from "@mui/material";
-import Heading from "../../components/heading/Heading";
-import LinkHeading from "../../components/heading/LinkHeading";
-import GoBack from "../../components/goBack/GoBack";
+import Heading from "../components/heading/Heading";
+import LinkHeading from "../components/heading/LinkHeading";
+import GoBack from "../components/goBack/GoBack";
 import Typography from "@mui/material/Typography";
 import IconButton from "@mui/material/IconButton";
-
 import List from "@mui/material/List";
 import ListItem from "@mui/material/ListItem";
 import ListItemIcon from "@mui/material/ListItemIcon";
 import ListItemText from "@mui/material/ListItemText";
 import ArrowCircleRightRoundedIcon from "@mui/icons-material/ArrowCircleRightRounded";
-
 import Link from "next/link";
-export default function Account() {
+
+export default function Donation() {
 	return (
 		<Box
 			sx={{
@@ -24,7 +23,7 @@ export default function Account() {
 				alignItems: "center",
 			}}
 		>
-			<Heading pri="Account" sub="View Your Account Details" />
+			<Heading pri="Consider Donation" sub="Let's Contribute to AncientOS" />
 			<Box
 				sx={{
 					display: "flex",
@@ -35,7 +34,7 @@ export default function Account() {
 					alignItems: "center",
 				}}
 			>
-				<Link href={`account/login`}>
+				<Link href="https://www.patreon.com/">
 					<Card
 						data-aos="fade-up"
 						data-aos-duration="600"
@@ -80,14 +79,14 @@ export default function Account() {
 										variant="h4"
 										sx={{ m: 0, justifyContent: "flex-start" }}
 									>
-										Login
+										Patreon
 									</Typography>
 								}
 							/>
 						</ListItem>
 					</Card>
 				</Link>
-				<Link href={`account/signup`}>
+				<Link href="https://paypal.com/paypalme/rezaadipangestu">
 					<Card
 						data-aos="fade-up"
 						data-aos-duration="600"
@@ -132,7 +131,7 @@ export default function Account() {
 										variant="h4"
 										sx={{ m: 0, justifyContent: "flex-start" }}
 									>
-										Sign Up
+										PayPal
 									</Typography>
 								}
 							/>

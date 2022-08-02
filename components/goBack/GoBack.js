@@ -1,4 +1,7 @@
 import { useRouter } from "next/router";
+import { useEffect } from "react";
+import Aos from "aos";
+import "aos/dist/aos.css";
 import Link from "next/link";
 import styles from "../../styles/Home.module.css";
 import List from "@mui/material/List";
@@ -7,6 +10,9 @@ import ListItemIcon from "@mui/material/ListItemIcon";
 import ListItemText from "@mui/material/ListItemText";
 import ArrowCircleLeftRoundedIcon from "@mui/icons-material/ArrowCircleLeftRounded";
 export default function GoBack({ props }) {
+	useEffect(() => {
+		Aos.init({ duration: 600 });
+	}, []);
 	return (
 		<List
 			sx={{
@@ -21,6 +27,8 @@ export default function GoBack({ props }) {
 		>
 			<Link href={`${props}`}>
 				<ListItem
+					data-aos="zoom-in"
+					data-aos-duration="600"
 					className={styles.back}
 					sx={{
 						width: 200,

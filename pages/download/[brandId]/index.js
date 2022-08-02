@@ -91,15 +91,14 @@ export default function Device() {
 					alignItems: "center",
 					background: "linear-gradient(to left, #3312122c, #1212312e)",
 					background: "transparent",
-
-					//background: "linear-gradient(to left, #c14d647c, #4358c686)",
-					//background: "linear-gradient(to left, #c14d643f, #4359c651)",
 				}}
 			>
 				{Array.from(devices).map((data, index) => {
 					return (
 						<Link key={index} href={`${brandId}/${data.name}`}>
 							<Card
+								data-aos="fade-up"
+								data-aos-duration="600"
 								variant="outlined"
 								sx={{
 									p: 2,
@@ -112,10 +111,8 @@ export default function Device() {
 									borderRadius: 5,
 									boxShadow: 5,
 									textTransform: "capitalize",
-
-									background: "linear-gradient(to left, #63273382, #242b5291)",
-
 									background: "transparent",
+									background: "linear-gradient(to left, #8f45544a, #3d498358)",
 								}}
 							>
 								<Box

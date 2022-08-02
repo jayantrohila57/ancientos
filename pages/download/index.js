@@ -42,7 +42,7 @@ export default function Download() {
 	const patreon = {
 		primary: "Want Early Build access ?",
 		secondary: "Those who want early build access, join us on patreon.",
-		link: "/donation",
+		link: "/Donation",
 	};
 	return (
 		<Box sx={{ pt: 5, minHeight: "100vh" }}>
@@ -68,6 +68,8 @@ export default function Download() {
 						return (
 							<Link key={index} href={`download/${brand}`}>
 								<Card
+									data-aos="fade-up"
+									data-aos-duration="600"
 									variant="outlined"
 									key={index}
 									sx={{
@@ -81,11 +83,9 @@ export default function Download() {
 										borderRadius: 5,
 										boxShadow: 5,
 										textTransform: "capitalize",
-
-										background:
-											"linear-gradient(to left, #63273382, #242b5291)",
-
 										background: "transparent",
+										background:
+											"linear-gradient(to left, #8f45544a, #3d498358)",
 									}}
 								>
 									<Box

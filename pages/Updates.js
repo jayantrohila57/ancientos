@@ -14,6 +14,7 @@ import MuiAccordion from "@mui/material/Accordion";
 import MuiAccordionSummary from "@mui/material/AccordionSummary";
 import MuiAccordionDetails from "@mui/material/AccordionDetails";
 import AndroidRoundedIcon from "@mui/icons-material/AndroidRounded";
+import GoBack from "../components/goBack/GoBack";
 
 import DateRangeRoundedIcon from "@mui/icons-material/DateRangeRounded";
 const Accordion = styled((props) => (
@@ -112,7 +113,11 @@ export default function Updates() {
 
 				<Timeline align="left">
 					{update.map((data, index) => (
-						<TimelineItem key={index}>
+						<TimelineItem
+							key={index}
+							data-aos="fade-up"
+							data-aos-duration="600"
+						>
 							<TimelineOppositeContent
 								variant="h5"
 								style={{ mt: 2, flex: 0.1 }}
@@ -165,6 +170,7 @@ export default function Updates() {
 						</TimelineItem>
 					))}
 				</Timeline>
+				<GoBack props="/" />
 			</Box>
 		</React.Fragment>
 	);

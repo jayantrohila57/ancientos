@@ -17,30 +17,15 @@ import Tooltip from "@mui/material/Tooltip";
 import MenuItem from "@mui/material/MenuItem";
 import CssBaseline from "@mui/material/CssBaseline";
 import { Global } from "@emotion/react";
-import { borders } from "@mui/system";
 import Link from "next/link";
 import { filledInputClasses, SwipeableDrawer } from "@mui/material";
-import { ThemeProvider, createTheme } from "@mui/material/styles";
-//icons
 import ArrowCircleRightRoundedIcon from "@mui/icons-material/ArrowCircleRightRounded";
-import ExpandCircleDownRoundedIcon from "@mui/icons-material/ExpandCircleDownRounded"; // import DownloadRoundedIcon from "@mui/icons-material/DownloadRounded";
-// import LogoDevRoundedIcon from "@mui/icons-material/LogoDevRounded";
-// import GroupsRoundedIcon from "@mui/icons-material/GroupsRounded";
-// import VolunteerActivismRoundedIcon from "@mui/icons-material/VolunteerActivismRounded";
+import ExpandCircleDownRoundedIcon from "@mui/icons-material/ExpandCircleDownRounded";
 
-// import settings from "../../assets/json/settings.json";
-import Image from "next/image";
-import Logo from "../../assets/img/ancientv2.png";
-
-// mobile drawer
 const Appbar = () => {
-	// const linkIcon = [
-	// 	"DownloadRoundedIcon",
-	// 	"LogoDevRoundedIcon",
-	// 	"GroupsRoundedIcon",
-	// 	"VolunteerActivismRoundedIcon",
-	// ];
-	const link = ["download", "Updates", "Team"];
+	////////////////////////////////////////////
+	const link = ["download", "Updates", "Team", "Donation"];
+	////////////////////////////////////////////
 	const linkInfo = [
 		"Downloads builds",
 		"Check latest updates.",
@@ -91,7 +76,7 @@ const Appbar = () => {
 			elevation={0}
 			position="fixed"
 		>
-			<Container maxWidth="xl">
+			<Container maxWidth="xl" data-aos="fade-down" data-aos-duration="600">
 				<Toolbar disableGutters>
 					<Box
 						noWrap
@@ -120,6 +105,7 @@ const Appbar = () => {
 									fontSize: 30,
 									fontFamily: "Poppins",
 									textDecoration: "none",
+									cursor: "pointer",
 								}}
 							>
 								AncientOS
@@ -152,7 +138,7 @@ const Appbar = () => {
 						sx={{ m: 0, display: { xs: "flex", md: "none" }, flexGrow: 1 }}
 					>
 						{" "}
-						<Link href={"/"}>
+						<Link href={"/"} passHref>
 							<Typography
 								style={{
 									display: "flex",
@@ -224,10 +210,13 @@ const Appbar = () => {
 					styles={{
 						".MuiDrawer-root > .MuiPaper-root": {
 							backgroundColor: "transparent",
-							backdropFilter: "blur(5px)",
+							backdropFilter: "blur(15px)",
 							overflow: "visible",
 							variant: "outlined",
 							background: " #24212122",
+							background: "linear-gradient(to left, #8f45544a, #3d498358)",
+							borderTopLeftRadius: 30,
+							borderTopRightRadius: 30,
 							elevation: 0,
 							square: false,
 						},
@@ -235,6 +224,8 @@ const Appbar = () => {
 				/>
 
 				<SwipeableDrawer
+					data-aos="fade-up"
+					data-aos-duration="600"
 					anchor="bottom"
 					open={open}
 					onOpen={() => {}}

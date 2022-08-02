@@ -32,6 +32,8 @@ export default function LogoInfo() {
 				// data-aos-duration="1200"
 			>
 				<Paper
+					data-aos="zoom-in"
+					data-aos-duration="600"
 					elevation={0}
 					sx={{ Height: "100vh", backgroundColor: "transparent" }}
 					align="center"
@@ -39,6 +41,8 @@ export default function LogoInfo() {
 					<Image src={Logo} priority alt={Logo} height="180" width="180" />
 				</Paper>
 				<Typography
+					data-aos="fade-up"
+					data-aos-duration="600"
 					className="flex-box"
 					align="center"
 					justifyItems="center"
@@ -47,6 +51,8 @@ export default function LogoInfo() {
 					AncientOS
 				</Typography>{" "}
 				<Typography
+					data-aos="fade-up"
+					data-aos-duration="600"
 					className="flex-box"
 					align="center"
 					justifyItems="center"
@@ -54,17 +60,6 @@ export default function LogoInfo() {
 				>
 					Craft with LOVE
 				</Typography>
-				<Box
-					sx={{
-						paddingTop: 15,
-						display: "flex",
-						flexDirection: "column",
-						alignItems: "center",
-					}}
-				>
-					<Typography variant="caption">Let's see what we offer.</Typography>
-					<KeyboardArrowDownRoundedIcon fontSize="large" />
-				</Box>
 			</div>
 		</Box>
 	);

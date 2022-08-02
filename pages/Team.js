@@ -7,6 +7,8 @@ import IconButton from "@mui/material/IconButton";
 import { useEffect } from "react";
 import Aos from "aos";
 import "aos/dist/aos.css";
+import GoBack from "../components/goBack/GoBack";
+
 import LinkHeading from "../components/heading/LinkHeading";
 import { Box } from "@mui/material";
 import Heading from "../components/heading/Heading";
@@ -79,6 +81,8 @@ export default function Team() {
 					return (
 						<>
 							<Card
+								data-aos="fade-up"
+								data-aos-duration="600"
 								variant="outlined"
 								elevation={5}
 								key={index}
@@ -146,6 +150,7 @@ export default function Team() {
 				})}
 			</Box>
 			<LinkHeading props={obj} />
+			<GoBack props="/" />
 		</Box>
 	);
 }

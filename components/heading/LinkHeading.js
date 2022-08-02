@@ -1,4 +1,7 @@
 import { useRouter } from "next/router";
+import { useEffect } from "react";
+import Aos from "aos";
+import "aos/dist/aos.css";
 import Link from "next/link";
 import List from "@mui/material/List";
 import ListItem from "@mui/material/ListItem";
@@ -8,7 +11,9 @@ import Typography from "@mui/material/Typography";
 import ArrowCircleRightRoundedIcon from "@mui/icons-material/ArrowCircleRightRounded";
 export default function LinkHeading({ props }) {
 	// const obj = { primary: "Alice", secondary: 29, link: "Austria" };
-
+	useEffect(() => {
+		Aos.init({ duration: 600 });
+	}, []);
 	return (
 		<List
 			sx={{
@@ -23,6 +28,8 @@ export default function LinkHeading({ props }) {
 		>
 			<Link href={`${props.link}`}>
 				<ListItem
+					data-aos="fade-up"
+					data-aos-duration="600"
 					sx={{
 						maxHeight: 300,
 						width: "90vw",

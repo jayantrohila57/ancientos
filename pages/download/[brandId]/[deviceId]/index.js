@@ -49,7 +49,7 @@ export default function Device() {
 	const patreon = {
 		primary: "Want Early Build access ?",
 		secondary: "Those who want early build access, join us on patreon.",
-		link: "/donation",
+		link: "/Donation",
 	};
 	const obj = {
 		primary: "Apply for MantainerShip",
@@ -99,6 +99,8 @@ export default function Device() {
 						}}
 					>
 						<Card
+							data-aos="fade-up"
+							data-aos-duration="600"
 							variant="outlined"
 							sx={{
 								maxWidth: 350,
@@ -126,7 +128,6 @@ export default function Device() {
 									flexWrap: "wrap",
 									justifyContent: "flex-end",
 									borderRadius: 5,
-
 									textTransform: "capitalize",
 									backgroundImage: "url(" + linkk + ")",
 									backgroundRepeat: "no-repeat",
@@ -137,7 +138,6 @@ export default function Device() {
 						</Card>
 						<List
 							sx={{
-								p: 2,
 								display: "flex",
 								flexDirection: "column",
 								// justifyContent: "center",
@@ -148,17 +148,18 @@ export default function Device() {
 						>
 							<Link href={"/"}>
 								<ListItem
+									data-aos="fade-up"
+									data-aos-duration="600"
 									sx={{
-										width: 300,
-										height: 100,
-										p: 1.5,
-										mt: 2,
-										mb: 2,
+										width: 330,
+										height: 150,
+										p: 1,
+										mb: 1,
 										borderRadius: 5,
 										boxShadow: 6,
 										textTransform: "capitalize",
 										background:
-											"linear-gradient(to left, #c14d647c, #4358c686)",
+											"linear-gradient(to left, #8f45544a, #3d498358)",
 									}}
 									onClick={() => {}}
 								>
@@ -203,6 +204,8 @@ export default function Device() {
 					>
 						{Array.from(DeviceInfo).map((data, index) => (
 							<Card
+								data-aos="fade-up"
+								data-aos-duration="600"
 								key={index}
 								variant="outlined"
 								sx={{
@@ -216,8 +219,9 @@ export default function Device() {
 									borderRadius: 5,
 									boxShadow: 6,
 									textTransform: "capitalize",
-									background: "linear-gradient(to left, #8f45544a, #3d498358)",
+
 									background: "transparent",
+									background: "linear-gradient(to left, #8f45544a, #3d498358)",
 								}}
 							>
 								<Box
