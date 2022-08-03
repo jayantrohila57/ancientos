@@ -21,9 +21,11 @@ export default function Donation() {
 				dispay: "flex",
 				justifyContent: "center",
 				alignItems: "center",
+				alignContent: "center",
 			}}
 		>
 			<Heading pri="Consider Donation" sub="Let's Contribute to AncientOS" />
+
 			<Box
 				sx={{
 					display: "flex",
@@ -34,110 +36,145 @@ export default function Donation() {
 					alignItems: "center",
 				}}
 			>
-				<Link href="https://www.patreon.com/">
-					<Card
-						data-aos="fade-up"
-						data-aos-duration="600"
-						variant="outlined"
+				<Box>
+					<Typography
+						variant="body1"
 						sx={{
-							p: 1,
+							p: 3,
 							m: 2,
-							width: 330,
-							height: 200,
+							maxWidth: 700,
+
 							display: "flex",
-							flexDirection: "column",
-							justifyContent: "space-between",
-							borderRadius: 5,
-							boxShadow: 5,
-							textTransform: "capitalize",
-							background: "linear-gradient(to left, #8f45544a, #3d498358)",
+							flexDirection: "row",
+							flexWrap: "wrap",
+							alignContent: "center",
+							justifyContent: "center",
+							alignItems: "center",
 						}}
 					>
-						<Box
+						We are working hard for you everyday to make this rom more better
+						and effective for you. All we need is your Love and Support ❤️ To
+						help Ancient for keeping it alive, Kindly do any little amount of
+						possible contributions from your side.
+					</Typography>
+				</Box>
+				<Box
+					sx={{
+						display: "flex",
+						flexDirection: "row",
+						flexWrap: "wrap",
+						alignContent: "center",
+						justifyContent: "center",
+						alignItems: "center",
+					}}
+				>
+					<Link href="https://www.patreon.com/">
+						<Card
+							data-aos="fade-up"
+							data-aos-duration="600"
+							variant="outlined"
 							sx={{
+								p: 1,
+								m: 2,
+								width: 330,
+								height: 200,
 								display: "flex",
-								flexDirection: "row",
-								justifyContent: "flex-end",
-								alignItems: "flex-end",
+								flexDirection: "column",
+								justifyContent: "space-between",
+								borderRadius: 5,
+								boxShadow: 5,
+								textTransform: "capitalize",
+								background: "linear-gradient(to left, #8f45544a, #3d498358)",
 							}}
 						>
-							<IconButton
+							<Box
 								sx={{
-									boxShadow: 5,
-									background: "linear-gradient(to left, #c14d64fd, #062fffe4)",
+									display: "flex",
+									flexDirection: "row",
+									justifyContent: "flex-end",
+									alignItems: "flex-end",
 								}}
 							>
-								<ArrowCircleRightRoundedIcon sx={{ fontSize: 40 }} />
-							</IconButton>
-						</Box>
-						<ListItem>
-							<ListItemText
-								fontSize="large"
-								primary={
-									<Typography
-										className="flex-box"
-										variant="h4"
-										sx={{ m: 0, justifyContent: "flex-start" }}
-									>
-										Patreon
-									</Typography>
-								}
-							/>
-						</ListItem>
-					</Card>
-				</Link>
-				<Link href="https://paypal.com/paypalme/rezaadipangestu">
-					<Card
-						data-aos="fade-up"
-						data-aos-duration="600"
-						variant="outlined"
-						sx={{
-							p: 1,
-							m: 2,
-							width: 330,
-							height: 200,
-							display: "flex",
-							flexDirection: "column",
-							justifyContent: "space-between",
-							borderRadius: 5,
-							boxShadow: 5,
-							textTransform: "capitalize",
-							background: "linear-gradient(to left, #8f45544a, #3d498358)",
-						}}
-					>
-						<Box
+								<IconButton
+									sx={{
+										boxShadow: 5,
+										background:
+											"linear-gradient(to left, #c14d64fd, #062fffe4)",
+									}}
+								>
+									<ArrowCircleRightRoundedIcon sx={{ fontSize: 40 }} />
+								</IconButton>
+							</Box>
+							<ListItem>
+								<ListItemText
+									fontSize="large"
+									primary={
+										<Typography
+											className="flex-box"
+											variant="h4"
+											sx={{ m: 0, justifyContent: "flex-start" }}
+										>
+											Patreon
+										</Typography>
+									}
+								/>
+							</ListItem>
+						</Card>
+					</Link>
+					<Link href="https://paypal.com/paypalme/rezaadipangestu">
+						<Card
+							data-aos="fade-up"
+							data-aos-duration="600"
+							variant="outlined"
 							sx={{
+								p: 1,
+								m: 2,
+								width: 330,
+								height: 200,
 								display: "flex",
-								flexDirection: "row",
-								justifyContent: "flex-end",
-								alignItems: "flex-end",
+								flexDirection: "column",
+								justifyContent: "space-between",
+								borderRadius: 5,
+								boxShadow: 5,
+								textTransform: "capitalize",
+								background: "linear-gradient(to left, #8f45544a, #3d498358)",
 							}}
 						>
-							<IconButton
+							<Box
 								sx={{
-									boxShadow: 5,
-									background: "linear-gradient(to left, #c14d64fd, #062fffe4)",
+									display: "flex",
+									flexDirection: "row",
+									justifyContent: "flex-end",
+									alignItems: "flex-end",
 								}}
 							>
-								<ArrowCircleRightRoundedIcon sx={{ fontSize: 40 }} />
-							</IconButton>
-						</Box>
-						<ListItem>
-							<ListItemText
-								fontSize="large"
-								primary={
-									<Typography
-										className="flex-box"
-										variant="h4"
-										sx={{ m: 0, justifyContent: "flex-start" }}
-									>
-										PayPal
-									</Typography>
-								}
-							/>
-						</ListItem>
-					</Card>
-				</Link>
+								<IconButton
+									sx={{
+										boxShadow: 5,
+										background:
+											"linear-gradient(to left, #c14d64fd, #062fffe4)",
+									}}
+								>
+									<ArrowCircleRightRoundedIcon sx={{ fontSize: 40 }} />
+								</IconButton>
+							</Box>
+							<ListItem>
+								<ListItemText
+									fontSize="large"
+									primary={
+										<Typography
+											className="flex-box"
+											variant="h4"
+											sx={{ m: 0, justifyContent: "flex-start" }}
+										>
+											PayPal
+										</Typography>
+									}
+								/>
+							</ListItem>
+						</Card>
+					</Link>
+				</Box>
 			</Box>
 			<GoBack props="/" />
 		</Box>
