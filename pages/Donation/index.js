@@ -38,6 +38,8 @@ export default function Donation() {
 			>
 				<Box>
 					<Typography
+						data-aos="fade-up"
+						data-aos-duration="600"
 						variant="body1"
 						sx={{
 							p: 3,

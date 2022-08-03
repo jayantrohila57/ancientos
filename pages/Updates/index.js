@@ -152,8 +152,8 @@ export default function Updates() {
 			],
 		},
 		{
-			build: "6.1 Beta",
-			version: "Android 12",
+			build: "6.1",
+			version: "Android 12 Beta",
 			config: [
 				"- November sec r12",
 				"- New design AncientUI 5.0 ( qs panel design, qsClock style, qsClock gravity, qsClock animation style)",
@@ -473,8 +473,8 @@ export default function Updates() {
 			],
 		},
 		{
-			build: "5.2 beta3",
-			version: "Android 11",
+			build: "5.2 ",
+			version: "Android 11 beta3",
 			config: [
 				"• February Security",
 				"• Redesign SystemUI and Settings",
@@ -520,8 +520,8 @@ export default function Updates() {
 			],
 		},
 		{
-			build: "5.1 beta2",
-			version: "Android 11",
+			build: "5.1 ",
+			version: "Android 11 beta2",
 			config: [
 				"• January sec r27",
 				"• Redesign SystemUI and Settings",
@@ -585,16 +585,16 @@ export default function Updates() {
 			],
 		},
 		{
-			build: "5.0 beta1",
-			version: "Android 11",
+			build: "5.0 ",
+			version: "Android 11 beta1",
 			config: [
 				"• Bring up new minimalist UI with great User experience combined with legacy ancientUI 3.0 on Android 11",
 				"• Added moar custom customization for ancientOS with megalithXI inside.",
 			],
 		},
 		{
-			build: "4.0 Final",
-			version: "Android 10",
+			build: "4.0 ",
+			version: "Android 10 Final",
 			config: [
 				"• Sept security patch",
 				"• Improve Doze",
@@ -637,80 +637,101 @@ export default function Updates() {
 			<Box
 				sx={{
 					minHeight: "100vh",
-					pb: 25,
-					p: 1,
-					dispay: "flex",
-					justifyContent: "center",
-					alignItems: "center",
 				}}
 			>
 				<Heading pri="Change Logs" sub="These are all Builds versions" />
 
-				<Timeline align="left">
-					{update.map((data, index) => (
-						<TimelineItem
-							key={index}
-							data-aos="fade-up"
-							data-aos-duration="600"
-						>
-							<TimelineOppositeContent
-								variant="h5"
-								style={{ mt: 2, flex: 0.1 }}
+				<Box
+					sx={{
+						dispay: "flex",
+						flexDirection: "column",
+						flexWrap: "wrap",
+						alignContent: "center",
+						alignItems: "center",
+						justifyContent: "center",
+					}}
+				>
+					<Timeline>
+						{update.map((data, index) => (
+							<TimelineItem
+								key={index}
+								data-aos="fade-up"
+								data-aos-duration="600"
 							>
-								{" "}
-								{data.build}
-							</TimelineOppositeContent>
-							<TimelineSeparator>
-								<TimelineDot />
-								<TimelineConnector />
-							</TimelineSeparator>
-							<TimelineContent>
-								<Typography variant="h5" color="text.secondary">
+								<TimelineOppositeContent
+									variant="body2"
+									style={{
+										// fontSize: 20,
+										mt: 2,
+										flex: 0.1,
+									}}
+								>
 									{" "}
-									<AndroidRoundedIcon /> {data.version}
-								</Typography>
+									{data.build}
+								</TimelineOppositeContent>
+								<TimelineSeparator>
+									<TimelineDot />
+									<TimelineConnector />
+								</TimelineSeparator>
+								<TimelineContent>
+									<Typography variant="body2" color="text.secondary">
+										{" "}
+										<AndroidRoundedIcon
+											sx={{
+												pt: 1.5,
+											}}
+										/>{" "}
+										{data.version}
+									</Typography>
 
-								<div>
-									<Accordion
-										sx={{
-											mt: 2,
-											mb: 1,
-											borderRadius: 5,
-											backgroundColor: "transparent",
-											background:
-												"linear-gradient(to left, #c14d6431, #4359c632)",
-										}}
-										expanded={expanded === `panel+${index}`}
-										onChange={handleChange(`panel+${index}`)}
-									>
-										<AccordionSummary
-											aria-controls="panel1d-content"
-											id="panel1d-header"
+									<div>
+										<Accordion
+											sx={{
+												mt: 2,
+												mb: 1,
+												borderRadius: 5,
+												backgroundColor: "transparent",
+												background:
+													"linear-gradient(to left, #c14d6431, #4359c632)",
+											}}
+											expanded={expanded === `panel+${index}`}
+											onChange={handleChange(`panel+${index}`)}
 										>
-											<Typography sx={{ pl: 3 }}>Source Change Logs</Typography>
-										</AccordionSummary>
-										<AccordionDetails>
-											<pre
-												sx={{
-													fontSize: "10",
-												}}
+											<AccordionSummary
+												aria-controls="panel1d-content"
+												id="panel1d-header"
 											>
-												{data.config.map((data) => data + "\n")}
-											</pre>
-										</AccordionDetails>
-									</Accordion>
-								</div>
-								{/* <Typography
+												<Typography sx={{ pl: 3 }}>
+													Source Change Logs
+												</Typography>
+											</AccordionSummary>
+											<AccordionDetails>
+												<Typography
+													variant="overline"
+													style={{
+														// fontSize: 12,
+														display: "block",
+														whiteSpace: "pre-wrap",
+														margin: "1em 0",
+													}}
+												>
+													{data.config.map((data) => data + "\n")}
+												</Typography>
+											</AccordionDetails>
+										</Accordion>
+									</div>
+									{/* <Typography
 									variant="caption"
 									sx={{ m: 2 }}
 									color="text.secondary"
 								>
 									Updated Date {data.date}
 								</Typography> */}
-							</TimelineContent>
-						</TimelineItem>
-					))}
-				</Timeline>
+								</TimelineContent>
+							</TimelineItem>
+						))}
+					</Timeline>
+				</Box>
 				<GoBack props="/" />
 			</Box>
 		</React.Fragment>
