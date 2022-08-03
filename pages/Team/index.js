@@ -7,11 +7,11 @@ import IconButton from "@mui/material/IconButton";
 import { useEffect } from "react";
 import Aos from "aos";
 import "aos/dist/aos.css";
-import GoBack from "../components/goBack/GoBack";
+import GoBack from "../../components/goBack/GoBack";
 
-import LinkHeading from "../components/heading/LinkHeading";
+import LinkHeading from "../../components/heading/LinkHeading";
 import { Box } from "@mui/material";
-import Heading from "../components/heading/Heading";
+import Heading from "../../components/heading/Heading";
 const Device = [
 	{
 		image:

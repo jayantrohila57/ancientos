@@ -1,7 +1,7 @@
 import { Paper, Box, Grid, Card } from "@mui/material";
-import Heading from "../components/heading/Heading";
-import LinkHeading from "../components/heading/LinkHeading";
-import GoBack from "../components/goBack/GoBack";
+import Heading from "../../components/heading/Heading";
+import LinkHeading from "../../components/heading/LinkHeading";
+import GoBack from "../../components/goBack/GoBack";
 import Typography from "@mui/material/Typography";
 import IconButton from "@mui/material/IconButton";
 import List from "@mui/material/List";

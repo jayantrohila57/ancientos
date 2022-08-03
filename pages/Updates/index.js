@@ -7,14 +7,14 @@ import TimelineContent from "@mui/lab/TimelineContent";
 import TimelineDot from "@mui/lab/TimelineDot";
 import TimelineOppositeContent from "@mui/lab/TimelineOppositeContent";
 import { Box, Typography } from "@mui/material";
-import Heading from "../components/heading/Heading";
+import Heading from "../../components/heading/Heading";
 import { styled } from "@mui/material/styles";
 import ArrowForwardIosSharpIcon from "@mui/icons-material/ArrowForwardIosSharp";
 import MuiAccordion from "@mui/material/Accordion";
 import MuiAccordionSummary from "@mui/material/AccordionSummary";
 import MuiAccordionDetails from "@mui/material/AccordionDetails";
 import AndroidRoundedIcon from "@mui/icons-material/AndroidRounded";
-import GoBack from "../components/goBack/GoBack";
+import GoBack from "../../components/goBack/GoBack";
 
 import DateRangeRoundedIcon from "@mui/icons-material/DateRangeRounded";
 const Accordion = styled((props) => (

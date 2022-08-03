@@ -55,11 +55,7 @@ export default function Home() {
 			<LinkHeading props={team} />
 			<Heading pri="Consider Donation" sub="Let's Contribute to AncientOS" />
 			<LinkHeading props={donation} />
-			<Heading
-				pri="Build AncientOS"
-				sub="Want to Build AncientOS for your Device"
-			/>
-
+			<Heading pri="Build AncientOS" sub="Build AncientOS for your Device" />
 			<LinkHeading props={obj} />
 		</>
 	);

@@ -1,5 +1,4 @@
 import React, { useEffect, useState, createContext, useContext } from "react";
-
 import {
 	onAuthStateChanged,
 	createUserWithEmailAndPassword,
@@ -9,7 +8,6 @@ import {
 import { auth } from "../config/firebase";
 export const AuthContext = createContext(null);
 export const useAuth = () => {
-	F;
 	useContext(AuthContext);
 };
 export const AuthContextProvider = ({ children }) => {
