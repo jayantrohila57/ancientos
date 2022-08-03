@@ -14,7 +14,7 @@ import Alert from "@mui/material/Alert";
 import CardActions from "@mui/material/CardActions";
 import HelpRoundedIcon from "@mui/icons-material/HelpRounded";
 import Link from "next/link";
-export default function login() {
+export default function Login() {
 	const [LoginError, setLoginError] = useState(false);
 	const [email, setEmail] = useState("");
 	const [password, setPassword] = useState("");
