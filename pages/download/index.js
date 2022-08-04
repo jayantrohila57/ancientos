@@ -1,28 +1,20 @@
+import { useEffect } from "react";
 import { Paper, Box, Grid, Card } from "@mui/material";
 import Heading from "../../components/heading/Heading";
 import LinkHeading from "../../components/heading/LinkHeading";
 import GoBack from "../../components/goBack/GoBack";
 import Typography from "@mui/material/Typography";
 import IconButton from "@mui/material/IconButton";
-
-import List from "@mui/material/List";
 import ListItem from "@mui/material/ListItem";
-import ListItemIcon from "@mui/material/ListItemIcon";
 import ListItemText from "@mui/material/ListItemText";
 import ArrowCircleRightRoundedIcon from "@mui/icons-material/ArrowCircleRightRounded";
-
 import Link from "next/link";
-// import { useEffect } from "react";
-// import Image from "next/image";
-// import Logo from "../../assets/img/ancientv2.png";
-// import Aos from "aos";
-// import "aos/dist/aos.css";
-// import "../../styles/Header.css";
+import Aos from "aos";
+import "aos/dist/aos.css";
 export default function Download() {
-	// const brand = ["nokia", "samsung", "realme"];
-	// useEffect(() => {
-	// 	Aos.init({ duration: 600 });
-	// }, []);
+	useEffect(() => {
+		Aos.init({ duration: 600 });
+	}, []);
 	const brands = [
 		"Gsi ",
 		"Asus ",
@@ -46,7 +38,7 @@ export default function Download() {
 	};
 	return (
 		<Box sx={{ pt: 5, minHeight: "100vh" }}>
-			<Heading pri="Download Builds" sub="These are all available Brands." />
+			<Heading pri="Download Builds" sub="List of Official Devices" />
 			<Box>
 				<Card
 					// variant="outlined"

@@ -2,6 +2,7 @@ import LogoInfo from "../components/logoInfo/LogoInfo";
 import LinkHeading from "../components/heading/LinkHeading";
 import Heading from "../components/heading/Heading";
 import Features from "../components/features/Features";
+import IntroDetails from "../components/features/IntroDetails";
 
 export default function Home() {
 	const patreon = {
@@ -34,6 +35,16 @@ export default function Home() {
 		secondary: "Do consider donating on Paypal or join us on Patreon",
 		link: "/Donation",
 	};
+	const screenshot = {
+		primary: "Screenshots are here",
+		secondary: "Check out All the exciting visual changes in the UI",
+		link: "/Screenshot",
+	};
+	const screenshotDonate = {
+		primary: "Donate Screenshot",
+		secondary: "Let's Share what we discover",
+		link: "/Screenshot/Donate-Screenshot",
+	};
 	const team = {
 		primary: "Meet Our Devs & Designers",
 		secondary: "Leading Members of the Ancient community.",
@@ -42,8 +53,12 @@ export default function Home() {
 	return (
 		<>
 			<LogoInfo />
+			<IntroDetails />
 			<Heading pri="Features" sub="Let's see Our Rom features." />
 			<Features />
+			<Heading pri="Screen Shots" sub="See All changes in New UI" />
+			<LinkHeading props={screenshot} />
+			<LinkHeading props={screenshotDonate} />
 			<Heading pri="Download Builds" sub="Download AOSP Roms" />
 			<LinkHeading props={download} />
 			<LinkHeading props={patreon} />

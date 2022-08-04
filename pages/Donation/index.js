@@ -36,15 +36,18 @@ export default function Donation() {
 					alignItems: "center",
 				}}
 			>
-				<Box>
+				<Card
+					data-aos="fade-up"
+					data-aos-duration="600"
+					variant="outlined"
+					sx={{ boxShadow: 5, borderRadius: 5, background: "transparent" }}
+				>
 					<Typography
-						data-aos="fade-up"
-						data-aos-duration="600"
 						variant="body1"
 						sx={{
-							p: 3,
+							p: 2,
 							m: 2,
-							maxWidth: 700,
+							maxWidth: 650,
 
 							display: "flex",
 							flexDirection: "row",
@@ -59,7 +62,7 @@ export default function Donation() {
 						help Ancient for keeping it alive, Kindly do any little amount of
 						possible contributions from your side.
 					</Typography>
-				</Box>
+				</Card>
 				<Box
 					sx={{
 						display: "flex",
