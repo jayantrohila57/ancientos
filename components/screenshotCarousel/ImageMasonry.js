@@ -20,7 +20,12 @@ export default function ImageMasonry() {
 			}}
 		>
 			{itemData.map((item) => (
-				<Box data-aos="fade-up" data-aos-duration="600" sx={{ m: 1 }}>
+				<Box
+					key={item[item.length]}
+					data-aos="fade-up"
+					data-aos-duration="600"
+					sx={{ m: 1 }}
+				>
 					<Card
 						data-aos="fade-up"
 						data-aos-duration="600"
