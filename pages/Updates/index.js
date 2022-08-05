@@ -19,11 +19,11 @@ export default function Updates({ data }) {
 	);
 }
 export async function getStaticProps() {
-	// const UPDATES_CHANGE_LOGS = "http://localhost:4000/update";
 	const UPDATES_CHANGE_LOGS =
-		"https://raw.githubusercontent.com/jayantrohila57/ancientos/Master/assets/json/changeLogs.json?token=GHSAT0AAAAAABVZ3CZMDMVI5HX2SU6LLSWWYXMZBKQ";
+		"https://raw.githubusercontent.com/jayantrohila57/API/main/changeLogs.json";
 	const response = await fetch(UPDATES_CHANGE_LOGS);
 	const data = await response.json();
+	console.log(data);
 	return {
 		props: {
 			data,
