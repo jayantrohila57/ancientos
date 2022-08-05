@@ -4,12 +4,12 @@
 	"private": true,
 	"scripts": {
 		"dev": "next dev",
-		"build": "next build && next export",
+		"build": "next build",
 		"start": "next start",
 		"lint": "next lint",
 		"export": "next export",
-		"xxx": "rm -r .next && rm -r out && next build && next export && firebase deploy",
-		"json-server": "json-server --watch database/db.json  --port 4000"
+		"xport": "rm -r .next && rm -r out && next build && next export && firebase deploy",
+		"xserver": "json-server --watch database/db.json  --port 4000"
 	},
 	"dependencies": {
 		"@emotion/cache": "latest",
