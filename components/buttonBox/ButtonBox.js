@@ -28,7 +28,9 @@ export default function ButtonBox({ title, link }) {
 					p: 1,
 					m: 2,
 					width: 330,
-					height: 200,
+					// height: 200,
+					maxHeight: 800,
+					minHeight: 200,
 					display: "flex",
 					flexDirection: "column",
 					justifyContent: "space-between",
@@ -61,7 +63,7 @@ export default function ButtonBox({ title, link }) {
 						primary={
 							<Typography
 								className="flex-box"
-								variant="h4"
+								variant="h5"
 								sx={{ m: 0, justifyContent: "flex-start" }}
 							>
 								{title}
