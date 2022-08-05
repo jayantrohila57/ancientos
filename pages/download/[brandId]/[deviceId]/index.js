@@ -268,3 +268,18 @@ export default function Device() {
 		</Box>
 	);
 }
+
+
+
+
+	    // <div id="${Data[index].brand}"  class="device-body">
+        // <div class="d-Head"><h3>${MyDevices[index].device_codename}</h3></div>
+        // <div class="d-img"><img height="150px" src=${MyDevices[index].phone_url}></img></div>
+        // <div class="d-info">
+        // <p>Maintainer Name : <span>${MyDevices[index].maintainer}</span>
+        // <br>Rom Support Group :<span><a href="${MyDevices[index].rom_support}">Link</a></span>
+        // <br>Device Support Group :<span> <a href="${MyDevices[index].device_supportgp_url}">Link</a></span>
+        // <br>Rom Changelog :<span> <a href="${MyDevices[index].changelog_url}">Link</a></span>
+        // <br>Date Updated :<span>${MyDevices[index].date_updated}</span>
+        // <br>Download Rom:<span><a href="${MyDevices[index].download_url}>">Download</a></p></span></div>
+        // </div>

@@ -5,7 +5,7 @@ import Box from "@mui/material/Box";
 import Image from "next/image";
 import { Card } from "@mui/material";
 
-export default function ImageMasonry() {
+export default function ImageMasonry({ props }) {
 	useEffect(() => {
 		Aos.init({ duration: 600 });
 	}, []);
@@ -19,9 +19,9 @@ export default function ImageMasonry() {
 				m: 1,
 			}}
 		>
-			{itemData.map((item) => (
+			{props.map((item, index) => (
 				<Box
-					key={item[item.length]}
+					key={index}
 					data-aos="fade-up"
 					data-aos-duration="600"
 					sx={{ m: 1 }}
@@ -43,7 +43,7 @@ export default function ImageMasonry() {
 							width="231px"
 							src={item.src}
 							alt={"hhh"}
-							// loading="lazy"
+							loading="lazy"
 						/>
 					</Card>
 				</Box>
@@ -51,36 +51,3 @@ export default function ImageMasonry() {
 		</Box>
 	);
 }
-
-const itemData = [
-	{
-		src: "https://raw.githubusercontent.com/keneankit01/screenshots/main/Android12/lockscreen.jpg",
-	},
-	{
-		src: "https://raw.githubusercontent.com/keneankit01/screenshots/main/Android12/unlockscreen.jpg",
-	},
-	{
-		src: "https://raw.githubusercontent.com/keneankit01/screenshots/main/Android12/1.png",
-	},
-	{
-		src: "https://raw.githubusercontent.com/keneankit01/screenshots/main/Android12/2.png",
-	},
-	{
-		src: "https://raw.githubusercontent.com/keneankit01/screenshots/main/Android12/3.png",
-	},
-	{
-		src: "https://raw.githubusercontent.com/keneankit01/screenshots/main/Android12/4.png",
-	},
-	{
-		src: "https://raw.githubusercontent.com/keneankit01/screenshots/main/Android12/5.png",
-	},
-	{
-		src: "https://raw.githubusercontent.com/keneankit01/screenshots/main/Android12/6.png",
-	},
-	{
-		src: "https://raw.githubusercontent.com/keneankit01/screenshots/main/Android12/7.png",
-	},
-	{
-		src: "https://raw.githubusercontent.com/keneankit01/screenshots/main/Android12/8.png",
-	},
-];

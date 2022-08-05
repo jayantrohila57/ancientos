@@ -1,41 +1,18 @@
 import { useEffect } from "react";
 import Carousel from "react-material-ui-carousel";
-import { Paper, Button, Box } from "@mui/material";
+import { Paper, Box } from "@mui/material";
 import Image from "next/image";
-
 import Aos from "aos";
 import "aos/dist/aos.css";
 export default function ScreenShotCarousel() {
-	const items = [
+	const screenshots = [
 		{
+			android: "12",
 			src: "https://raw.githubusercontent.com/keneankit01/screenshots/main/Android12/lockscreen.jpg",
 		},
 		{
+			android: "12",
 			src: "https://raw.githubusercontent.com/keneankit01/screenshots/main/Android12/unlockscreen.jpg",
-		},
-		{
-			src: "https://raw.githubusercontent.com/keneankit01/screenshots/main/Android12/1.png",
-		},
-		{
-			src: "https://raw.githubusercontent.com/keneankit01/screenshots/main/Android12/2.png",
-		},
-		{
-			src: "https://raw.githubusercontent.com/keneankit01/screenshots/main/Android12/3.png",
-		},
-		{
-			src: "https://raw.githubusercontent.com/keneankit01/screenshots/main/Android12/4.png",
-		},
-		{
-			src: "https://raw.githubusercontent.com/keneankit01/screenshots/main/Android12/5.png",
-		},
-		{
-			src: "https://raw.githubusercontent.com/keneankit01/screenshots/main/Android12/6.png",
-		},
-		{
-			src: "https://raw.githubusercontent.com/keneankit01/screenshots/main/Android12/7.png",
-		},
-		{
-			src: "https://raw.githubusercontent.com/keneankit01/screenshots/main/Android12/8.png",
 		},
 	];
 	useEffect(() => {
@@ -57,8 +34,9 @@ export default function ScreenShotCarousel() {
 				swipe={true}
 				sx={{ height: 600, maxWidth: 600, width: 300 }}
 			>
-				{items.map((item, i) => (
+				{screenshots.map((item, index) => (
 					<Paper
+						key={index}
 						sx={{
 							borderRadius: "28px",
 							display: "flex",
@@ -67,7 +45,6 @@ export default function ScreenShotCarousel() {
 							alignContent: "center",
 							background: "transparent",
 						}}
-						key={i}
 						elevation={0}
 					>
 						<Image
@@ -87,3 +64,5 @@ export default function ScreenShotCarousel() {
 		</Box>
 	);
 }
+
+

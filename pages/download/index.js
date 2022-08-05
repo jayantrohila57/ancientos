@@ -1,26 +1,11 @@
-import { useEffect } from "react";
-import { Paper, Box, Grid, Card } from "@mui/material";
+import { Box } from "@mui/material";
 import Heading from "../../components/heading/Heading";
 import LinkHeading from "../../components/heading/LinkHeading";
 import GoBack from "../../components/goBack/GoBack";
-import Aos from "aos";
 import ButtonBox from "../../components/buttonBox/ButtonBox";
-import "aos/dist/aos.css";
-export default function Download() {
-	useEffect(() => {
-		Aos.init({ duration: 600 });
-	}, []);
-	const brands = [
-		"Gsi ",
-		"Asus ",
-		"Motorola ",
-		"Nokia ",
-		"OnePlus ",
-		"Realme ",
-		"Xiaomi ",
-		"Samsung",
-		"Lenovo",
-	];
+export default function Download({ data }) {
+	const brands = [...new Set(data.map((a) => a.brand))];
+
 	const obj = {
 		primary: "Apply for MantainerShip",
 		secondary: "Join and grow the community of AncientOS.",
@@ -39,21 +24,31 @@ export default function Download() {
 		justifyContent: "center",
 		alignItems: "center",
 	};
-
 	return (
 		<Box sx={{ pt: 5, minHeight: "100vh" }}>
 			<Heading pri="Download Builds" sub="List of Official Devices" />
 			<Box sx={styles}>
-				{Array.from(brands).map((brand, index) => {
+				{Array.from(brands).map((value, index) => {
 					return (
-						<ButtonBox key={index} link={`download/${brand}`} title={brand} />
+						<ButtonBox key={index} link={`download/${value}`} title={value} />
 					);
 				})}
 			</Box>
 			<LinkHeading props={patreon} />
 			<LinkHeading props={obj} />
-
 			<GoBack props="/" />
 		</Box>
 	);
+}
+
+export async function getStaticProps() {
+	const DEVICE_BRANDS =
+		"https://raw.githubusercontent.com/ancient-devices/releases/main/website_api.json";
+	const response = await fetch(DEVICE_BRANDS);
+	const data = await response.json();
+	return {
+		props: {
+			data,
+		},
+	};
 }

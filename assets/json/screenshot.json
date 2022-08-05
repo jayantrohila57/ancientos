@@ -1,0 +1,66 @@
+[
+	{
+		"android": "12",
+		"screenshot": [
+			{
+				"src": "https://raw.githubusercontent.com/keneankit01/screenshots/main/Android12/lockscreen.jpg"
+			},
+			{
+				"src": "https://raw.githubusercontent.com/keneankit01/screenshots/main/Android12/unlockscreen.jpg"
+			},
+			{
+				"src": "https://raw.githubusercontent.com/keneankit01/screenshots/main/Android12/1.png"
+			},
+			{
+				"src": "https://raw.githubusercontent.com/keneankit01/screenshots/main/Android12/2.png"
+			},
+			{
+				"src": "https://raw.githubusercontent.com/keneankit01/screenshots/main/Android12/3.png"
+			},
+			{
+				"src": "https://raw.githubusercontent.com/keneankit01/screenshots/main/Android12/4.png"
+			},
+			{
+				"src": "https://raw.githubusercontent.com/keneankit01/screenshots/main/Android12/5.png"
+			},
+			{
+				"src": "https://raw.githubusercontent.com/keneankit01/screenshots/main/Android12/6.png"
+			},
+			{
+				"src": "https://raw.githubusercontent.com/keneankit01/screenshots/main/Android12/7.png"
+			},
+			{
+				"src": "https://raw.githubusercontent.com/keneankit01/screenshots/main/Android12/8.png"
+			}
+		]
+	},
+	{
+		"android": "11",
+		"screenshot": [
+			{
+				"src": "https://github.com/keneankit01/screenshots/blob/main/Android11/1.png"
+			},
+			{
+				"src": "https://github.com/keneankit01/screenshots/blob/main/Android11/2.png"
+			},
+			{
+				"src": "https://github.com/keneankit01/screenshots/blob/main/Android11/3.png"
+			},
+			{
+				"src": "https://github.com/keneankit01/screenshots/blob/main/Android11/4.png"
+			},
+			{
+				"src": "https://github.com/keneankit01/screenshots/blob/main/Android11/5.png"
+			},
+			{
+				"src": "https://github.com/keneankit01/screenshots/blob/main/Android11/6.png"
+			},
+			{
+				"src": "https://github.com/keneankit01/screenshots/blob/main/Android11/7.png"
+			},
+			{
+				"src": "https://github.com/keneankit01/screenshots/blob/main/Android11/8.png"
+			}
+		]
+	}
+]

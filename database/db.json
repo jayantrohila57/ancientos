@@ -571,5 +571,128 @@
 				"• More"
 			]
 		}
+	],
+	"team": [
+		{
+			"image": "https://avatars.githubusercontent.com/u/46237424?s=400&amp;u=50eac9a5583470b26e6a7dd8d0547b326f23e9a5&amp;v=4",
+			"name": "Beam Guide",
+			"post": "Lead Developer"
+		},
+		{
+			"image": "https://avatars.githubusercontent.com/u/39455862?s=400&amp;u=9e4d7158f87b5e325fe0e4f3239ecfad5731600e&amp;v=4",
+			"name": "Reza Adi Pangestu",
+			"post": "Lead Developer"
+		},
+		{
+			"image": "https://avatars.githubusercontent.com/u/59904122?s=400&amp;u=19ccf78a273aac32fca7a833f65ec341b095cc52&amp;v=4",
+			"name": "Idc(I Dont Care)",
+			"post": "UI Designer"
+		},
+
+		{
+			"image": "https://avatars.githubusercontent.com/u/17999613?s=400&amp;u=acfb6d4bba1ae71ea5358fdbee1d9d61529a0c6c&amp;v=4",
+			"name": " Vern Kuato",
+			"post": "UI Designer"
+		},
+		{
+			"image": "https://avatars.githubusercontent.com/u/47526753?s=400&amp;v=4",
+			"name": "Ankit Kene ",
+			"post": "Web Designer &  Weeabo UI "
+		},
+		{
+			"image": "https://avatars.githubusercontent.com/u/45154878?s=400&amp;u=44d28d9bf4676d953cd67bf9b40d677447538749&amp;v=4",
+			"name": " Nabil ABA ",
+			"post": "UI UX Designer & New Feature Maker"
+		},
+		{
+			"image": "https://avatars.githubusercontent.com/u/58130857?v=4",
+			"name": " Jayant Rohila",
+			"post": "Web Developer"
+		}
+	],
+	"donation": [
+		{
+			"link": "https://www.patreon.com/",
+			"title": "Patreon"
+		},
+		{
+			"link": "https://paypal.com/paypalme/rezaadipangestu",
+			"title": "Paypal"
+		}
+	],
+	"screenshot": [
+		{
+			"android": "12",
+			"src": "https://raw.githubusercontent.com/keneankit01/screenshots/main/Android12/lockscreen.jpg"
+		},
+		{
+			"android": "12",
+			"src": "https://raw.githubusercontent.com/keneankit01/screenshots/main/Android12/unlockscreen.jpg"
+		},
+		{
+			"android": "12",
+			"src": "https://raw.githubusercontent.com/keneankit01/screenshots/main/Android12/1.png"
+		},
+		{
+			"android": "12",
+			"src": "https://raw.githubusercontent.com/keneankit01/screenshots/main/Android12/2.png"
+		},
+		{
+			"android": "12",
+			"src": "https://raw.githubusercontent.com/keneankit01/screenshots/main/Android12/3.png"
+		},
+		{
+			"android": "12",
+			"src": "https://raw.githubusercontent.com/keneankit01/screenshots/main/Android12/4.png"
+		},
+		{
+			"android": "12",
+			"src": "https://raw.githubusercontent.com/keneankit01/screenshots/main/Android12/5.png"
+		},
+		{
+			"android": "12",
+			"src": "https://raw.githubusercontent.com/keneankit01/screenshots/main/Android12/6.png"
+		},
+		{
+			"android": "12",
+			"src": "https://raw.githubusercontent.com/keneankit01/screenshots/main/Android12/7.png"
+		},
+		{
+			"android": "12",
+			"src": "https://raw.githubusercontent.com/keneankit01/screenshots/main/Android12/8.png"
+		},
+		{
+			"android": "11",
+			"src": "https://github.com/keneankit01/screenshots/blob/main/Android11/1.png"
+		},
+		{
+			"android": "11",
+			"src": "https://github.com/keneankit01/screenshots/blob/main/Android11/2.png"
+		},
+		{
+			"android": "11",
+			"src": "https://github.com/keneankit01/screenshots/blob/main/Android11/3.png"
+		},
+		{
+			"android": "11",
+			"src": "https://github.com/keneankit01/screenshots/blob/main/Android11/4.png"
+		},
+		{
+			"android": "11",
+			"src": "https://github.com/keneankit01/screenshots/blob/main/Android11/5.png"
+		},
+		{
+			"android": "11",
+			"src": "https://github.com/keneankit01/screenshots/blob/main/Android11/6.png"
+		},
+		{
+			"android": "11",
+			"src": "https://github.com/keneankit01/screenshots/blob/main/Android11/7.png"
+		},
+		{
+			"android": "11",
+			"src": "https://github.com/keneankit01/screenshots/blob/main/Android11/8.png"
+		}
 	]
 }
+

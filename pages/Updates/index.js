@@ -23,7 +23,6 @@ export async function getStaticProps() {
 		"https://raw.githubusercontent.com/jayantrohila57/API/main/changeLogs.json";
 	const response = await fetch(UPDATES_CHANGE_LOGS);
 	const data = await response.json();
-	console.log(data);
 	return {
 		props: {
 			data,

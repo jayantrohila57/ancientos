@@ -4,57 +4,13 @@ import Heading from "../../../components/heading/Heading";
 import GoBack from "../../../components/goBack/GoBack";
 import ButtonBox from "../../../components/buttonBox/ButtonBox";
 
-export default function Device() {
+export default function Device({ data }) {
 	const router = useRouter();
 	const brandId = router.query.brandId;
-	const devices = [
-		{
-			image:
-				"https://raw.githubusercontent.com/ancient-devices/ancient_official_devices/main/DRG.png",
-			name: "6.1plus",
-		},
+	const DeviceCode = data.filter((Data) => {
+		return Data.brand === `${brandId}`;
+	});
 
-		{
-			image:
-				"https://raw.githubusercontent.com/ancient-devices/ancient_official_devices/main/DRG.png",
-			name: "6.1plus",
-		},
-		{
-			image:
-				"https://raw.githubusercontent.com/ancient-devices/ancient_official_devices/main/DRG.png",
-			name: "6.1plus",
-		},
-		{
-			image:
-				"https://raw.githubusercontent.com/ancient-devices/ancient_official_devices/main/DRG.png",
-			name: "6.1plus",
-		},
-		{
-			image:
-				"https://raw.githubusercontent.com/ancient-devices/ancient_official_devices/main/DRG.png",
-			name: "6.1plus",
-		},
-		{
-			image:
-				"https://raw.githubusercontent.com/ancient-devices/ancient_official_devices/main/DRG.png",
-			name: "6.1plus",
-		},
-		{
-			image:
-				"https://raw.githubusercontent.com/ancient-devices/ancient_official_devices/main/DRG.png",
-			name: "6.1plus",
-		},
-		{
-			image:
-				"https://raw.githubusercontent.com/ancient-devices/ancient_official_devices/main/DRG.png",
-			name: "6.1plus",
-		},
-		{
-			image:
-				"https://raw.githubusercontent.com/ancient-devices/ancient_official_devices/main/DRG.png",
-			name: "6.1plus",
-		},
-	];
 	const styles = {
 		display: "flex",
 		flexDirection: "row",
@@ -71,12 +27,12 @@ export default function Device() {
 			/>
 
 			<Box sx={styles}>
-				{Array.from(devices).map((brand, index) => {
+				{Array.from(DeviceCode).map((device, index) => {
 					return (
 						<ButtonBox
 							key={index}
-							link={`${brandId}/${brand.name}`}
-							title={brand.name}
+							link={`${brandId}/${device.device_codename}`}
+							title={device.device_codename}
 						/>
 					);
 				})}
@@ -85,4 +41,31 @@ export default function Device() {
 			<GoBack props={"/download"} />
 		</Box>
 	);
+}
+export async function getStaticPaths() {
+	const DEVICE_ROUTES =
+		"https://raw.githubusercontent.com/ancient-devices/releases/main/website_api.json";
+	const response = await fetch(DEVICE_ROUTES);
+	const data = await response.json();
+	const brands = [...new Set(data.map((a) => a.brand))];
+	// console.log("await " + brands);
+	const paths = brands.map((device) => {
+		return { params: { brandId: device } };
+	});
+
+	return {
+		paths,
+		fallback: false,
+	};
+}
+export async function getStaticProps() {
+	const DEVICES =
+		"https://raw.githubusercontent.com/ancient-devices/releases/main/website_api.json";
+	const response = await fetch(DEVICES);
+	const data = await response.json();
+	return {
+		props: {
+			data,
+		},
+	};
 }

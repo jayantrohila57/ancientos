@@ -4,7 +4,7 @@ import GoBack from "../../components/goBack/GoBack";
 import Typography from "@mui/material/Typography";
 import ButtonBox from "../../components/buttonBox/ButtonBox";
 
-export default function Donation() {
+export default function Donation({ data }) {
 	const styles = {
 		display: "flex",
 		flexDirection: "row",
@@ -26,20 +26,33 @@ export default function Donation() {
 				>
 					<Typography variant="body1" sx={(styles, { p: 2, maxWidth: 650 })}>
 						We are working hard for you everyday to make this rom more better
-						and effective for you. All we need is your Love and Support ❤️ To
-						help Ancient for keeping it alive, Kindly do any little amount of
-						possible contributions from your side.
+						and effective for you. <br /> All we need is your Love and Support
+						❤️ To help Ancient for keeping it alive, Kindly do any little amount
+						of possible contributions from your side.
 					</Typography>
 				</Card>
 				<Box sx={styles}>
-					<ButtonBox link="https://www.patreon.com/" title="Patreon" />
-					<ButtonBox
-						link="https://paypal.com/paypalme/rezaadipangestu"
-						title="Paypal"
-					/>
+					{data.map((data, index) => {
+						return (
+							<ButtonBox key={index} link={data.link} title={data.title} />
+						);
+					})}
 				</Box>
 			</Box>
 			<GoBack props="/" />
 		</Box>
 	);
 }
+
+export async function getStaticProps() {
+	const DONATION =
+		"https://raw.githubusercontent.com/jayantrohila57/API/main/donation.json";
+	const response = await fetch(DONATION);
+	const data = await response.json();
+	return {
+		props: {
+			data,
+		},
+	};
+}
+
