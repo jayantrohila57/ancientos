@@ -13,7 +13,7 @@ export const useAuth = () => {
 export const AuthContextProvider = ({ children }) => {
 	const [user, setUser] = useState(null);
 	const [loding, setLoading] = useState(true);
-	console.log("Firebase:" + user);
+	// console.log("Firebase:" + user);
 	useEffect(() => {
 		const unsubscribe = onAuthStateChanged(auth, (user) => {
 			if (user) {

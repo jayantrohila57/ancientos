@@ -8,7 +8,8 @@
 		"start": "next start",
 		"lint": "next lint",
 		"export": "next export",
-		"xxx": "rm -r .next && rm -r out && next build && next export && firebase deploy"
+		"xxx": "rm -r .next && rm -r out && next build && next export && firebase deploy",
+		"json-server": "json-server --watch database/db.json  --port 4000"
 	},
 	"dependencies": {
 		"@emotion/cache": "latest",
@@ -21,6 +22,7 @@
 		"aos": "latest",
 		"firebase": "latest",
 		"framer-motion": "latest",
+		"json-server": "^0.17.0",
 		"next": "latest",
 		"next-themes": "latest",
 		"prop-types": "latest",
