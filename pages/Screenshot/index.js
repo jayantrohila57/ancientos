@@ -5,16 +5,11 @@ import { Paper, Box, Grid } from "@mui/material";
 import Typography from "@mui/material/Typography";
 import Card from "@mui/material/Card";
 import Heading from "../../components/heading/Heading";
-import Link from "next/link";
-import styles from "../../styles/Home.module.css";
 import List from "@mui/material/List";
-import ListItem from "@mui/material/ListItem";
-import ListItemIcon from "@mui/material/ListItemIcon";
-import ListItemText from "@mui/material/ListItemText";
-import ArrowCircleLeftRoundedIcon from "@mui/icons-material/ArrowCircleLeftRounded";
 import ScreenShotCarousel from "../../components/screenshotCarousel/ScreenShotCarousel";
 import ImageMasonry from "../../components/screenshotCarousel/ImageMasonry";
 import GoBack from "../../components/goBack/GoBack";
+import ButtonBox from "../../components/buttonBox/ButtonBox";
 export default function Screenshot() {
 	useEffect(() => {
 		Aos.init({ duration: 600 });
@@ -101,42 +96,10 @@ export default function Screenshot() {
 								alignItems: "center",
 							}}
 						>
-							<Link href={`Screenshot/Donate-Screenshot`}>
-								<ListItem
-									data-aos="zoom-in"
-									data-aos-duration="600"
-									className={styles.back}
-									sx={{
-										width: 200,
-										p: 1,
-										mb: 1.5,
-										borderRadius: 5,
-										boxShadow: 6,
-										textTransform: "capitalize",
-										background:
-											"linear-gradient(to left, #c14d642e, #4359c64a)",
-									}}
-									onClick={() => {}}
-								>
-									<ListItemIcon>
-										<ArrowCircleLeftRoundedIcon
-											fontSize="large"
-											sx={{
-												p: 1,
-												borderRadius: 10,
-												boxShadow: 6,
-												background:
-													"linear-gradient(to left, #c14d64fd, #062fffe4)",
-											}}
-										/>
-									</ListItemIcon>
-
-									<ListItemText
-										fontSize="large"
-										primary={"Donate Screenshots"}
-									/>
-								</ListItem>
-							</Link>
+							<ButtonBox
+								link="Screenshot/Donate-Screenshot"
+								title="Donate Screenshot"
+							/>
 						</List>
 					</Box>
 				</Card>

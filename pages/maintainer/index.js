@@ -1,15 +1,8 @@
-import { Paper, Box, Grid, Card } from "@mui/material";
+import { Box } from "@mui/material";
 import Heading from "../../components/heading/Heading";
-import LinkHeading from "../../components/heading/LinkHeading";
 import GoBack from "../../components/goBack/GoBack";
-import Typography from "@mui/material/Typography";
-import IconButton from "@mui/material/IconButton";
-import List from "@mui/material/List";
-import ListItem from "@mui/material/ListItem";
-import ListItemIcon from "@mui/material/ListItemIcon";
-import ListItemText from "@mui/material/ListItemText";
-import ArrowCircleRightRoundedIcon from "@mui/icons-material/ArrowCircleRightRounded";
-import Link from "next/link";
+import ButtonBox from "../../components/buttonBox/ButtonBox";
+
 export default function Donation() {
 	return (
 		<Box
@@ -36,13 +29,12 @@ export default function Donation() {
 					alignItems: "center",
 				}}
 			>
-				<Typography
-					className="flex-box"
-					variant="h4"
-					sx={{ m: 0, justifyContent: "flex-start" }}
-				>
-					Maintainer Form will open soon...
-				</Typography>
+				<ButtonBox link="/maintainer/maintainer-form" title="Maintainer Form" />
+				<ButtonBox
+					link="/maintainer/maintainer-dashboard"
+					title="Maintainer Dashboard"
+				/>
+				<ButtonBox link="/maintainer/builds-update" title="Build Updates" />
 			</Box>
 			<GoBack props="/" />
 		</Box>
