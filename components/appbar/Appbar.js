@@ -24,13 +24,14 @@ import ExpandCircleDownRoundedIcon from "@mui/icons-material/ExpandCircleDownRou
 
 const Appbar = () => {
 	////////////////////////////////////////////
-	const link = ["download", "Updates", "Team", "Donation"];
+	const link = ["download", "Updates", "Team", "Donation", "Screenshot"];
 	////////////////////////////////////////////
 	const linkInfo = [
 		"Downloads builds",
 		"Check latest updates.",
 		"All team Members.",
-		"Support Us.",
+		"Consider Supporting Us.",
+		"Check Screenshots & donate",
 	];
 
 	//account link
@@ -67,7 +68,7 @@ const Appbar = () => {
 		<AppBar
 			sx={{
 				backgroundColor: "transparent",
-				backdropFilter: "blur(25px)",
+				backdropFilter: "blur(10px)",
 				// overflow: "visible",
 				boxShadow: 3,
 				borderBottomLeftRadius: 15,
@@ -76,13 +77,18 @@ const Appbar = () => {
 			elevation={0}
 			position="fixed"
 		>
-			<Container maxWidth="xl" data-aos="fade-down" data-aos-duration="600">
+			<Container
+				maxWidth="xl"
+				data-aos="fade-down"
+				data-aos-duration="600"
+				data-aos-anchor-placement="top-bottom"
+			>
 				<Toolbar disableGutters>
 					<Box
 						noWrap
 						center
 						sx={{
-							mr: 2,
+							mr: 1,
 							display: {
 								xs: "none",
 								md: "flex",
@@ -143,7 +149,6 @@ const Appbar = () => {
 								style={{
 									display: "flex",
 									background: "linear-gradient(to left, #e1244a, #3851d0)",
-
 									WebkitBackgroundClip: "text",
 									WebkitTextFillColor: "transparent",
 									fontWeightLight: 100,
@@ -173,7 +178,6 @@ const Appbar = () => {
 									<Typography
 										key={index}
 										sx={{
-											p: 1,
 											borderRadius: 3,
 											TextShadow: 15,
 											textTransform: "capitalize",
@@ -257,15 +261,7 @@ const Appbar = () => {
 						</StyledBox>
 					</Box>
 					<Grid item xs={10} md={6}>
-						<Typography
-							style={{
-								background: "linear-gradient(to left, #ff0033, #002aff)",
-								WebkitBackgroundClip: "text",
-								WebkitTextFillColor: "transparent",
-							}}
-							align="center"
-							variant="h2"
-						>
+						<Typography align="center" variant="h6">
 							Menu
 						</Typography>
 
@@ -282,7 +278,7 @@ const Appbar = () => {
 											textTransform: "capitalize",
 											background:
 												"linear-gradient(to left, #c14d647c, #4358c686)",
-											backgroundColor: "#c14d647c",
+											backgroundColor: "#4a43457b",
 										}}
 										onClick={() => setOpen(false)}
 									>
@@ -294,8 +290,9 @@ const Appbar = () => {
 															"linear-gradient(to left, #ffffff, #ffffff)",
 														WebkitBackgroundClip: "text",
 														WebkitTextFillColor: "transparent",
+														color: "#fff",
 													}}
-													variant="h4"
+													variant="h6"
 												>
 													{val}
 												</Typography>
@@ -308,7 +305,7 @@ const Appbar = () => {
 												sx={{
 													p: 1,
 													boxShadow: 5,
-													fontSize: 60,
+													fontSize: 50,
 													background:
 														"linear-gradient(to left, #c14d64cd, #4359c6c1)",
 													backgroundColor: "#c14d647c",

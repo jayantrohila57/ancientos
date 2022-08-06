@@ -19,11 +19,11 @@ export default function Account() {
 				<ButtonBox link="account/login" title="Login" />
 				<ButtonBox link="account/signup" title="Sign Up" />
 			</Box>
-			<Box sx={styles}>
+			{/* <Box sx={styles}>
 				<ButtonBox link="account/profile" title="Profile" />
 				<ButtonBox link="/maintainer" title="Maintainer (Not-Active)" />
 				<ButtonBox link="/logout" title="Logout" />
-			</Box>
+			</Box> */}
 			<GoBack props="/" />
 		</Box>
 	);

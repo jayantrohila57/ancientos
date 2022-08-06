@@ -13,7 +13,6 @@ import PhoneAndroidRoundedIcon from "@mui/icons-material/PhoneAndroidRounded";
 import Link from "next/link";
 import DownloadingRoundedIcon from "@mui/icons-material/DownloadingRounded";
 import { Box } from "@mui/material";
-import Image from "next/image";
 
 import Heading from "../../../../components/heading/Heading";
 import LinkHeading from "../../../../components/heading/LinkHeading";
@@ -81,12 +80,20 @@ export default function Device({ data }) {
 							p: 2,
 						}}
 					>
-						<Image
-							unsized
-							height="300px"
-							width="150px"
-							src={phone_url}
-							alt={deviceId}
+						<Box
+							style={{
+								backgroundImage: `url(${phone_url})`,
+								backgroundSize: "contain",
+								backgroundPosition: "center center",
+								backgroundRepeat: "no-repeat",
+								overflow: "hidden",
+							}}
+							sx={{
+								boxShadow: 15,
+								display: "flex",
+								width: 300,
+								height: 300,
+							}}
 						/>
 					</Box>
 					<Box

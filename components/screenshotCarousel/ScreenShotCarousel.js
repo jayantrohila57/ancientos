@@ -7,12 +7,34 @@ import "aos/dist/aos.css";
 export default function ScreenShotCarousel() {
 	const screenshots = [
 		{
-			android: "12",
 			src: "https://raw.githubusercontent.com/keneankit01/screenshots/main/Android12/lockscreen.jpg",
 		},
 		{
-			android: "12",
 			src: "https://raw.githubusercontent.com/keneankit01/screenshots/main/Android12/unlockscreen.jpg",
+		},
+		{
+			src: "https://raw.githubusercontent.com/keneankit01/screenshots/main/Android12/1.png",
+		},
+		{
+			src: "https://raw.githubusercontent.com/keneankit01/screenshots/main/Android12/2.png",
+		},
+		{
+			src: "https://raw.githubusercontent.com/keneankit01/screenshots/main/Android12/3.png",
+		},
+		{
+			src: "https://raw.githubusercontent.com/keneankit01/screenshots/main/Android12/4.png",
+		},
+		{
+			src: "https://raw.githubusercontent.com/keneankit01/screenshots/main/Android12/5.png",
+		},
+		{
+			src: "https://raw.githubusercontent.com/keneankit01/screenshots/main/Android12/6.png",
+		},
+		{
+			src: "https://raw.githubusercontent.com/keneankit01/screenshots/main/Android12/7.png",
+		},
+		{
+			src: "https://raw.githubusercontent.com/keneankit01/screenshots/main/Android12/8.png",
 		},
 	];
 	useEffect(() => {

@@ -30,11 +30,11 @@ export default function Donation() {
 				}}
 			>
 				<ButtonBox link="/maintainer/maintainer-form" title="Maintainer Form" />
-				<ButtonBox
+				{/* <ButtonBox
 					link="/maintainer/maintainer-dashboard"
 					title="Maintainer Dashboard"
 				/>
-				<ButtonBox link="/maintainer/builds-update" title="Build Updates" />
+				<ButtonBox link="/maintainer/builds-update" title="Build Updates" /> */}
 			</Box>
 			<GoBack props="/" />
 		</Box>

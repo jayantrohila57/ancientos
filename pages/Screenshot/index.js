@@ -1,20 +1,20 @@
 import { Box } from "@mui/material";
-import Typography from "@mui/material/Typography";
 import Heading from "../../components/heading/Heading";
-import ScreenShotCarousel from "../../components/screenshotCarousel/ScreenShotCarousel";
 import ImageMasonry from "../../components/screenshotCarousel/ImageMasonry";
 import GoBack from "../../components/goBack/GoBack";
-import ButtonBox from "../../components/buttonBox/ButtonBox";
+import LinkHeading from "../../components/heading/LinkHeading";
+
 export default function Screenshot({ data }) {
-	const styles = {
-		display: "flex",
-		flexDirection: "row",
-		flexWrap: "wrap",
-		alignContent: "center",
-		justifyContent: "center",
-		alignItems: "center",
+	const screenshotDonate = {
+		primary: "Donate Screenshot",
+		secondary: "Let's Share what we discover",
+		link: "/Screenshot/Donate-Screenshot",
 	};
-	console.log(data);
+	const donation = {
+		primary: "Donate to AncientOS",
+		secondary: "Do consider donating on Paypal or join us on Patreon",
+		link: "/Donation",
+	};
 	return (
 		<Box
 			sx={{
@@ -23,26 +23,9 @@ export default function Screenshot({ data }) {
 			}}
 		>
 			<Heading pri="Screenshot" sub="A look at the AncientOS" />
-			<Box sx={styles}>
-				<ScreenShotCarousel />
-
-				<Box sx={(styles, { m: 2, maxWidth: 450 })}>
-					<Box>
-						<Typography variant="body1">
-							All ScreenShots are Updated as soon as the new build version
-							publishes, make sure to check them all. If you want to submit the
-							Screenshots You are welcome. Donate screenshots here...
-						</Typography>
-						<Box sx={styles}>
-							<ButtonBox
-								link="Screenshot/Donate-Screenshot"
-								title="Donate Screenshot"
-							/>
-						</Box>
-					</Box>
-				</Box>
-			</Box>
 			<ImageMasonry props={data} />
+			<LinkHeading props={screenshotDonate} />
+			<LinkHeading props={donation} />
 			<GoBack props="/" />
 		</Box>
 	);

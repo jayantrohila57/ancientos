@@ -1,20 +1,9 @@
-// import { useEffect } from "react";
-
 import Image from "next/image";
 import { Paper, Box } from "@mui/material";
 import Logo from "../../assets/img/ancientv2.png";
 import Typography from "@mui/material/Typography";
 import KeyboardArrowDownRoundedIcon from "@mui/icons-material/KeyboardArrowDownRounded";
-
-
-// import Aos from "aos";
-// import "aos/dist/aos.css";
-// import "../../styles/Header.css";
-
 export default function LogoInfo() {
-	// useEffect(() => {
-	// 	Aos.init({ duration: 600 });
-	// }, []);
 	return (
 		<Box sx={{ height: "100vh" }}>
 			{" "}
@@ -28,8 +17,6 @@ export default function LogoInfo() {
 					flexWrap: "wrap",
 					alignItems: "center",
 				}}
-				// data-aos="zoom-in"
-				// data-aos-duration="1200"
 			>
 				<Paper
 					data-aos="zoom-in"
@@ -38,7 +25,7 @@ export default function LogoInfo() {
 					sx={{ Height: "100vh", backgroundColor: "transparent" }}
 					align="center"
 				>
-					<Image src={Logo} priority alt={Logo} height="180" width="180" />
+					<Image src={Logo} priority alt={Logo} height="250" width="250" />
 				</Paper>
 				<Typography
 					data-aos="fade-up"
@@ -60,6 +47,18 @@ export default function LogoInfo() {
 				>
 					Craft with LOVE
 				</Typography>
+				<Typography
+					sx={{ pt: 5, mt: 5 }}
+					data-aos="fade-up"
+					data-aos-duration="600"
+					className="flex-box"
+					align="center"
+					justifyItems="center"
+					variant="caption"
+				>
+					Scrolldown to see more
+				</Typography>
+				<KeyboardArrowDownRoundedIcon />
 			</div>
 		</Box>
 	);

@@ -32,12 +32,12 @@ export default function ImageMasonry({ props }) {
 						elevation={0}
 						sx={{
 							height: "100%",
-							boxShadow: 5,
 							width: 231,
 							background: "transparent",
 						}}
 					>
 						<Image
+							sx={{ boxShadow: 5 }}
 							key={item.img}
 							height="500px"
 							width="231px"
