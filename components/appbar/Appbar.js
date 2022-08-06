@@ -196,11 +196,19 @@ const Appbar = () => {
 							<Link href={"/account"}>
 								<IconButton
 									onClick={handleOpenUserMenu}
-									sx={{ borderRadius: 10, boxShadow: 0 }}
+									sx={{ borderRadius: 10, boxShadow: 5 }}
 								>
 									<Avatar
+										sx={{
+											// p: 1,
+											borderRadius: 10,
+											boxShadow: 6,
+											background:
+												"linear-gradient(to left, #c14d64fd, #062fffe4)",
+											color: "#fff",
+										}}
 										alt=""
-										src="https://avatars.githubusercontent.com/u/58130857?v=4"
+										src=""
 									/>
 								</IconButton>
 							</Link>

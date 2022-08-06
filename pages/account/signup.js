@@ -13,76 +13,141 @@ import Button from "@mui/material/Button";
 import Alert from "@mui/material/Alert";
 import CardActions from "@mui/material/CardActions";
 import HelpRoundedIcon from "@mui/icons-material/HelpRounded";
+import axios from "axios";
+import DesktopDatePicker from "@mui/lab/DesktopDatePicker";
 import Link from "next/link";
 export default function Signup() {
-	const [LoginError, setLoginError] = useState(false);
-	const [email, setEmail] = useState("");
-	const [password, setPassword] = useState("");
-	const handleSubmit = (event) => {
-		event.preventDefault();
+	const [signupError, setSignupError] = useState(false);
+	const [signupSucess, setSignupSucess] = useState(false);
+	const [records, setrecords] = useState([]);
+	const [userRegistration, setUserRegistration] = useState({
+		id: Date.now(),
+		first_name: "",
+		last_name: "",
+		email: "",
+		username: "",
+		date: "",
+		password: "",
+	});
+	const HandleInput = (e) => {
+		const name = e.target.name;
+		const value = e.target.value;
+
+		setUserRegistration({ ...userRegistration, [name]: value });
+		console.log(userRegistration);
+	};
+	const handleSubmit = async (e) => {
+		e.preventDefault();
+
+		const newRecord = {
+			...userRegistration,
+			id: new Date().getTime().toString(),
+		};
+		console.log(records);
+		setrecords([...records, newRecord]);
+		console.log(records);
+
+		e.preventDefault();
+		await axios
+			.post(
+				"https://newwebsite.ancientrom.xyz/ancient/api/signup.php",
+				newRecord
+			)
+			.then((result) => {
+				console.log(result);
+				if (result.data.status === "valid") {
+					setSignupError(false);
+					setSignupSucess(true);
+				} else {
+					alert("There is problem in adding,please try again");
+					setSignupSucess(false);
+					setSignupError(true);
+				}
+			});
+	};
+	const styles = {
+		display: "flex",
+		flexDirection: "row",
+		flexWrap: "wrap",
+		alignContent: "center",
+		justifyContent: "center",
+		alignItems: "center",
 	};
 
-	const CustomTextField = styled(TextField)({
-		"& input:valid + fieldset": {
-			borderColor: "#6e6e6efc",
-			borderWidth: 1,
-		},
-
-		"& input:invalid + fieldset": {
-			borderColor: "#747474fc",
-			borderWidth: 1,
-		},
-		"& input:valid:focus + fieldset": {
-			padding: "6px !important", // override inline-style
-		},
-	});
 	return (
 		<Box
-			sx={{
-				minHeight: "100vh",
-				pb: 25,
-				p: 1,
-				dispay: "flex",
-				justifyContent: "center",
-				alignItems: "center",
-			}}
+			sx={
+				(styles,
+				{
+					minHeight: "100vh",
+					pt: 5,
+				})
+			}
 		>
 			<Heading pri="Sign Up" sub="Sign in with Your New Account" />
-			<Box
-				sx={{
-					display: "flex",
-					flexDirection: "row",
-					flexWrap: "wrap",
-					alignContent: "center",
-					justifyContent: "center",
-					alignItems: "center",
-				}}
-			>
+			<Box sx={styles}>
 				<Card
-					variant="outlined"
-					sx={{
-						p: 2,
-						m: 2,
-						width: 330,
-						maxWidth: 600,
-						display: "flex",
-						flexDirection: "column",
-						alignContent: "center",
-						justifyContent: "center",
-						alignItems: "center",
-						borderRadius: 5,
-						boxShadow: 5,
-						textTransform: "capitalize",
-						background: "linear-gradient(to left, #8f45544a, #3d498358)",
-					}}
+					elevation={0}
+					sx={
+						(styles,
+						{
+							width: 330,
+							maxWidth: 400,
+							background: "transparent",
+						})
+					}
 				>
-					<Typography variant="h5" display="block" gutterBottom>
-						Sign Up
-					</Typography>
 					<Box component="form" onSubmit={handleSubmit} noValidate>
-						{" "}
-						<CustomTextField
-							onChange={(e) => setEmail(e.target.value)}
+						<TextField
+							style={{ color: "#fff" }}
+							margin="dense"
+							required
+							variant="standard"
+							fullWidth
+							label="First Name"
+							name="first_name"
+							id="first_name"
+							autoComplete="given-name"
+							value={userRegistration.first_name}
+							onChange={HandleInput}
+						/>
+						<TextField
+							margin="dense"
+							required
+							variant="standard"
+							fullWidth
+							label="Last Name"
+							name="last_name"
+							id="last_name"
+							autoComplete="family-name"
+							value={userRegistration.last_name}
+							onChange={HandleInput}
+						/>
+						<TextField
+							margin="dense"
+							required
+							variant="standard"
+							fullWidth
+							label="Username"
+							autoComplete="name"
+							name="username"
+							id="username"
+							value={userRegistration.username}
+							onChange={HandleInput}
+						/>
+						<TextField
+							placeholder="Date"
+							fullWidth
+							margin="normal"
+							variant="standard"
+							type="date"
+							name="date"
+							required
+							id="date"
+							value={userRegistration.date}
+							onChange={HandleInput}
+						/>
+						<TextField
 							margin="dense"
 							required
 							variant="standard"
@@ -90,10 +155,11 @@ export default function Signup() {
 							id="email"
 							label="Email Address"
 							name="email"
-							// autoComplete="email"
+							autoComplete="email"
+							value={userRegistration.email}
+							onChange={HandleInput}
 						/>
-						<CustomTextField
-							onChange={(e) => setPassword(e.target.value)}
+						<TextField
 							margin="dense"
 							required
 							fullWidth
@@ -102,46 +168,40 @@ export default function Signup() {
 							label="Password"
 							type="password"
 							id="password"
-							// autoComplete="current-password"
+							autoComplete="current-password"
+							value={userRegistration.password}
+							onChange={HandleInput}
 						/>
 						<Button
 							type="submit"
 							fullWidth
 							variant="outlined"
-							endIcon={
-								<ArrowCircleRightRoundedIcon
-									fontSize="large"
-									sx={{
-										borderRadius: 10,
-										boxShadow: 6,
-										background:
-											"linear-gradient(to left, #c14d64fd, #062fffe4)",
-									}}
-								/>
-							}
 							sx={{
 								mb: 1,
 								mt: 3,
-								p: 1,
+								p: 1.5,
 								boxShadow: 6,
-								borderRadius: 3,
-								background: "transparent",
+								borderRadius: 5,
+								// background: "transparent",
+								background: "linear-gradient(to left, #8f455489, #3d498397)",
 								color: "#fff",
 							}}
 						>
 							Sign Up
 						</Button>{" "}
-						{LoginError && (
+						{signupError && (
 							<Alert sx={{ mt: 1, mb: 3, borderRadius: 5 }} severity="error">
-								Wrong email or password
+								Please Enter All details or try again
 							</Alert>
 						)}
-						{/* <Typography variant="caption" display="block" gutterBottom>
-							Forgot password? or Don't have an account?
-						</Typography> */}
+						{signupSucess && (
+							<Alert sx={{ mt: 1, mb: 3, borderRadius: 5 }} severity="success">
+								Account Created Successfully
+							</Alert>
+						)}
 						<CardActions disableSpacing>
-							<Stack spacing={0} direction="row">
-								<Link href={`account/login`}>
+							<Stack spacing={3} direction="row">
+								<Link href={`/account/forgot-password`}>
 									<Button
 										fullWidth
 										size="small"
@@ -151,13 +211,22 @@ export default function Signup() {
 									</Button>
 								</Link>
 
-								<Link href={`account/signup`}>
+								<Link href={`/account/login`}>
 									<Button
 										fullWidth
 										size="small"
 										sx={{ borderRadius: 5, color: "#fff" }}
 									>
 										Login
+									</Button>
+								</Link>
+								<Link href={`/Help`}>
+									<Button
+										fullWidth
+										size="small"
+										sx={{ borderRadius: 5, color: "#fff" }}
+									>
+										<HelpRoundedIcon />
 									</Button>
 								</Link>
 							</Stack>

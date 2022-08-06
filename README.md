@@ -17,8 +17,8 @@ url [ https://ancient-os.app.web]
 ├── Donation
 │   └── index.js
 ├── download
-│   ├── [brandId ]
-│   │   ├── [deviceId ]
+│   ├── [brandId]
+│   │   ├── [deviceId]
 │   │   │   └── index.js
 │   │   └── index.js
 │   └── index.js
@@ -41,6 +41,12 @@ url [ https://ancient-os.app.web]
 ├── _document.js
 └── index.js
 
+# Needs to fix
+seo
+meta tags
+head tags
+fix next image
+
 # Pending pages to make
 device download page
 maintainer page
@@ -59,7 +65,7 @@ getServerSideProps()
 
 ----->   in next version
 # Admin
-dashboard > maintain-device, maintain-maintainers, maintain-changelogs, maintain-users 
+dashboard > maintain-device, maintain-maintainers, maintain-changelogs, maintain-users
 admin login page
 
 

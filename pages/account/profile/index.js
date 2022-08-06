@@ -1,4 +1,5 @@
-import { Box } from "@mui/material";
+import { useState } from "react";
+import { Box, Button } from "@mui/material";
 import Heading from "../../../components/heading/Heading";
 import GoBack from "../../../components/goBack/GoBack";
 import Typography from "@mui/material/Typography";
@@ -20,6 +21,7 @@ export default function Profile() {
 					Profile will open soon...
 				</Typography>
 			</Box>
+
 			<GoBack props="/account" />
 		</Box>
 	);
