@@ -16,8 +16,8 @@ export default function Account() {
 			<Heading pri="Account" sub="View Your Account Details" />
 
 			<Box sx={styles}>
-				<ButtonBox link="account/login" title="Login" />
-				<ButtonBox link="account/signup" title="Sign Up" />
+				<ButtonBox link="auth/login" title="Login" />
+				<ButtonBox link="auth/signup" title="Sign Up" />
 			</Box>
 			<Box sx={styles}>
 				<ButtonBox link="account/profile" title="Profile" />

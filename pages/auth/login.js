@@ -23,7 +23,6 @@ export default function Login() {
 	const HandleLoginInput = (e) => {
 		const name = e.target.name;
 		const value = e.target.value;
-		console.log(name, value);
 
 		setUserLogin({ ...UserLogin, [name]: value });
 	};
@@ -33,10 +32,8 @@ export default function Login() {
 		e.preventDefault();
 
 		const newRecord1 = { ...UserLogin, id: new Date().getTime().toString() };
-		console.log(records1);
 
 		setrecords1([...records1, newRecord1]);
-		console.log(records1);
 
 		e.preventDefault();
 		await axios
@@ -45,9 +42,7 @@ export default function Login() {
 				UserLogin
 			)
 			.then((result) => {
-				console.log(result);
 				if (result.data.status === "valid") {
-					// history(LogginVarLink);
 					setLoginSuccess(true);
 					setLoginError(false);
 				} else {
@@ -153,7 +148,7 @@ export default function Login() {
 									</Button>
 								</Link>
 
-								<Link href={`/account/signup`}>
+								<Link href={`/auth/signup`}>
 									<Button
 										fullWidth
 										size="small"

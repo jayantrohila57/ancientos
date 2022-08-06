@@ -43,9 +43,7 @@ export default function Signup() {
 			...userRegistration,
 			id: new Date().getTime().toString(),
 		};
-		console.log(records);
 		setrecords([...records, newRecord]);
-		console.log(records);
 
 		e.preventDefault();
 		await axios
@@ -54,7 +52,6 @@ export default function Signup() {
 				newRecord
 			)
 			.then((result) => {
-				console.log(result);
 				if (result.data.status === "valid") {
 					setSignupError(false);
 					setSignupSucess(true);
@@ -211,7 +208,7 @@ export default function Signup() {
 									</Button>
 								</Link>
 
-								<Link href={`/account/login`}>
+								<Link href={`/auth/login`}>
 									<Button
 										fullWidth
 										size="small"
