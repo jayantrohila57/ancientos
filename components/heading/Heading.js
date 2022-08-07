@@ -9,7 +9,16 @@ export default function Heading({ pri, sub }) {
 		Aos.init({ duration: 600 });
 	}, []);
 	return (
-		<Box sx={{ p: 8 }}>
+		<Box
+			sx={{
+				display: "flex",
+				alignItems: "center",
+				justifyContent: "center",
+
+				width: "100%",
+				p: 5,
+			}}
+		>
 			{" "}
 			<div
 				data-aos="fade-up"
@@ -17,34 +26,26 @@ export default function Heading({ pri, sub }) {
 				style={{
 					display: "flex",
 					flexDirection: "column",
-					// justifyContent: "center",
 					alignContent: "center",
 					flexWrap: "wrap",
 					alignItems: "center",
 				}}
-				// data-aos="zoom-in"
-				// data-aos-duration="1200"
 			>
 				<Typography
-					className={("flex-box", styles.textGradient)}
+					className={"flex-box"}
 					align="center"
-					bold="true"
 					justifyItems="center"
 					variant="h3"
-					style={{
-						textTransform: "capitalize",
-						background: "linear-gradient(to left, #FC5C7D, #6A82FB)",
-						WebkitBackgroundClip: "text",
-						WebkitTextFillColor: "transparent",
-					}}
 				>
 					{pri}
 				</Typography>
+
 				<Typography
 					className="flex-box"
 					align="center"
 					justifyItems="center"
-					variant="h6"
+					variant="h5"
+					color="primary"
 				>
 					{sub}
 				</Typography>

@@ -74,7 +74,7 @@ export default function ScreenShotCarousel() {
 								border: "4px",
 								borderRadius: "28px",
 							}}
-							sx={{ boxShadow: 15 }}
+							sx={{ boxShadow: "10px 10px 35px 0.1px #381f2048" }}
 							src={item.src}
 							alt="device"
 							height="500px"

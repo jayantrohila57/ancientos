@@ -9,6 +9,7 @@ import ListItem from "@mui/material/ListItem";
 import ListItemIcon from "@mui/material/ListItemIcon";
 import ListItemText from "@mui/material/ListItemText";
 import ArrowCircleLeftRoundedIcon from "@mui/icons-material/ArrowCircleLeftRounded";
+import { Button, Card, Typography } from "@mui/material";
 export default function GoBack({ props }) {
 	useEffect(() => {
 		Aos.init({ duration: 600 });
@@ -25,37 +26,41 @@ export default function GoBack({ props }) {
 				alignItems: "center",
 			}}
 		>
-			<Link href={`${props}`}>
-				<ListItem
-					data-aos="zoom-in"
-					data-aos-duration="600"
-					className={styles.back}
-					sx={{
-						width: 200,
-						p: 1,
-						mb: 1.5,
-						borderRadius: 5,
-						boxShadow: 6,
-						textTransform: "capitalize",
-						background: "linear-gradient(to left, #c14d642e, #4359c64a)",
-					}}
-					onClick={() => {}}
-				>
-					<ListItemIcon>
-						<ArrowCircleLeftRoundedIcon
-							fontSize="large"
-							sx={{
-								p: 1,
-								borderRadius: 10,
-								boxShadow: 6,
-								background: "linear-gradient(to left, #c14d64fd, #062fffe4)",
-							}}
-						/>
-					</ListItemIcon>
+			<Card
+				data-aos="zoom-in"
+				data-aos-duration="600"
+				sx={{
+					width: 250,
+					p: 1,
+					mb: 1.5,
+					borderRadius: 10,
+					boxShadow: "10px 10px 35px 0.1px #381f2048",
+					textTransform: "capitalize",
+				}}
+			>
+				<Link href={`${props}`}>
+					<ListItem className={styles.back} onClick={() => {}}>
+						<ListItemIcon>
+							<Button
+								sx={{
+									p: 1,
+									mr: 1,
+									color: "text.primary",
+									borderRadius: 10,
+									boxShadow: "10px 10px 35px 0.1px #381f2048",
+								}}
+							>
+								<ArrowCircleLeftRoundedIcon fontSize="large" />
+							</Button>
+						</ListItemIcon>
 
-					<ListItemText fontSize="large" primary={"Go Back"} />
-				</ListItem>
-			</Link>
+						<ListItemText
+							sx={{ color: "text.primary" }}
+							primary={<Typography variant="h5">Go Back</Typography>}
+						/>
+					</ListItem>
+				</Link>
+			</Card>{" "}
 		</List>
 	);
 }

@@ -74,7 +74,7 @@ export default function MaintainerForm() {
 		alignItems: "center",
 	};
 
-	const typeBoxstyle = { maxWidth: 280, m: 0.5 };
+	const typeBoxstyle = { maxWidth: 260, m: 1 };
 	const typeBoxstyleBig = { m: 0.5 };
 	const CardStyle = {
 		m: 2,
@@ -85,7 +85,7 @@ export default function MaintainerForm() {
 		justifyContent: "space-between",
 		background: "transparent",
 		borderRadius: 5,
-		boxShadow: 5,
+		boxShadow: "10px 10px 35px 0.1px #381f2048",
 	};
 
 	return (
@@ -101,7 +101,9 @@ export default function MaintainerForm() {
 			/>
 			<Box sx={styles}>
 				<Box sx={{ maxWidth: 650 }} component="form" onSubmit={handleSubmit}>
-					<Card variant="outlined" sx={CardStyle}>
+					<Card
+						sx={(CardStyle, { p: 3, m: 1, borderRadius: 8, maxWidth: 650 })}
+					>
 						<Typography
 							variant="h4"
 							align="center"
@@ -112,9 +114,12 @@ export default function MaintainerForm() {
 
 						<TextField
 							sx={typeBoxstyle}
+							InputLabelProps={{
+								style: { color: "white" },
+							}}
 							margin="dense"
 							required
-							variant="standard"
+							variant="filled"
 							fullWidth
 							className="TextareaMod"
 							onChange={HandleInput}
@@ -124,9 +129,12 @@ export default function MaintainerForm() {
 						></TextField>
 						<TextField
 							sx={typeBoxstyle}
+							InputLabelProps={{
+								style: { color: "white" },
+							}}
 							margin="dense"
 							required
-							variant="standard"
+							variant="filled"
 							fullWidth
 							className="TextareaMod"
 							onChange={HandleInput}
@@ -136,9 +144,12 @@ export default function MaintainerForm() {
 						></TextField>
 						<TextField
 							sx={typeBoxstyle}
+							InputLabelProps={{
+								style: { color: "white" },
+							}}
 							margin="dense"
 							required
-							variant="standard"
+							variant="filled"
 							fullWidth
 							className="TextareaMod"
 							onChange={HandleInput}
@@ -147,7 +158,9 @@ export default function MaintainerForm() {
 							label="Email Address"
 						></TextField>
 					</Card>
-					<Card variant="outlined" sx={CardStyle}>
+					<Card
+						sx={(CardStyle, { p: 3, m: 1, borderRadius: 8, maxWidth: 650 })}
+					>
 						<Typography
 							variant="h4"
 							align="center"
@@ -157,9 +170,12 @@ export default function MaintainerForm() {
 						</Typography>
 						<TextField
 							sx={typeBoxstyle}
+							InputLabelProps={{
+								style: { color: "white" },
+							}}
 							margin="dense"
 							required
-							variant="standard"
+							variant="filled"
 							fullWidth
 							className="TextareaMod"
 							onChange={HandleInput}
@@ -169,9 +185,12 @@ export default function MaintainerForm() {
 						></TextField>
 						<TextField
 							sx={typeBoxstyle}
+							InputLabelProps={{
+								style: { color: "white" },
+							}}
 							margin="dense"
 							required
-							variant="standard"
+							variant="filled"
 							fullWidth
 							className="TextareaMod"
 							onChange={HandleInput}
@@ -181,42 +200,51 @@ export default function MaintainerForm() {
 						></TextField>
 						<TextField
 							sx={typeBoxstyle}
+							InputLabelProps={{
+								style: { color: "white" },
+							}}
 							margin="dense"
 							required
-							variant="standard"
+							variant="filled"
 							fullWidth
-							className="TextareaMod"
 							onChange={HandleInput}
 							id="TUsername"
 							name="TUsername"
 							label="Telegram UserName"
-						></TextField>{" "}
+						></TextField>
 						<TextField
 							sx={typeBoxstyle}
+							InputLabelProps={{
+								style: { color: "white" },
+							}}
 							margin="dense"
 							required
-							variant="standard"
+							variant="filled"
 							fullWidth
-							className="TextareaMod align_change"
 							onChange={HandleInput}
 							id="XUsername"
 							name="XUsername"
 							label="XDA Username"
 						></TextField>{" "}
 					</Card>
-					<Card variant="outlined" sx={CardStyle}>
+					<Card
+						sx={(CardStyle, { p: 3, m: 1, borderRadius: 8, maxWidth: 650 })}
+					>
 						<Typography
 							variant="h4"
 							align="center"
 							sx={(styles, { width: "100%" })}
 						>
-							Device Tree Details
+							Device Tree
 						</Typography>
 						<TextField
 							sx={typeBoxstyle}
+							InputLabelProps={{
+								style: { color: "white" },
+							}}
 							margin="dense"
 							required
-							variant="standard"
+							variant="filled"
 							fullWidth
 							className="TextareaMod align_change"
 							onChange={HandleInput}
@@ -226,9 +254,12 @@ export default function MaintainerForm() {
 						></TextField>{" "}
 						<TextField
 							sx={typeBoxstyle}
+							InputLabelProps={{
+								style: { color: "white" },
+							}}
 							margin="dense"
 							required
-							variant="standard"
+							variant="filled"
 							fullWidth
 							className="TextareaMod align_change"
 							onChange={HandleInput}
@@ -238,9 +269,12 @@ export default function MaintainerForm() {
 						></TextField>{" "}
 						<TextField
 							sx={typeBoxstyle}
+							InputLabelProps={{
+								style: { color: "white" },
+							}}
 							margin="dense"
 							required
-							variant="standard"
+							variant="filled"
 							fullWidth
 							className="TextareaMod align_change"
 							onChange={HandleInput}
@@ -250,9 +284,12 @@ export default function MaintainerForm() {
 						></TextField>{" "}
 						<TextField
 							sx={typeBoxstyle}
+							InputLabelProps={{
+								style: { color: "white" },
+							}}
 							margin="dense"
 							required
-							variant="standard"
+							variant="filled"
 							fullWidth
 							className="TextareaMod align_change"
 							onChange={HandleInput}
@@ -261,7 +298,9 @@ export default function MaintainerForm() {
 							label="Vendor Tree"
 						></TextField>
 					</Card>
-					<Card variant="outlined" sx={CardStyle}>
+					<Card
+						sx={(CardStyle, { p: 3, m: 1, borderRadius: 8, maxWidth: 650 })}
+					>
 						<Typography
 							variant="h4"
 							align="center"
@@ -271,9 +310,12 @@ export default function MaintainerForm() {
 						</Typography>
 						<TextField
 							sx={typeBoxstyleBig}
+							InputLabelProps={{
+								style: { color: "white" },
+							}}
 							margin="dense"
 							required
-							variant="standard"
+							variant="filled"
 							fullWidth
 							className="TextareaMod align_change"
 							onChange={HandleInput}
@@ -285,9 +327,12 @@ export default function MaintainerForm() {
 						<br />
 						<TextField
 							sx={typeBoxstyleBig}
+							InputLabelProps={{
+								style: { color: "white" },
+							}}
 							margin="dense"
 							required
-							variant="standard"
+							variant="filled"
 							fullWidth
 							className="TextareaMod align_change"
 							onChange={HandleInput}
@@ -299,9 +344,12 @@ export default function MaintainerForm() {
 						<br />
 						<TextField
 							sx={typeBoxstyleBig}
+							InputLabelProps={{
+								style: { color: "white" },
+							}}
 							margin="dense"
 							required
-							variant="standard"
+							variant="filled"
 							fullWidth
 							className="TextareaMod align_change"
 							onChange={HandleInput}
@@ -313,9 +361,12 @@ export default function MaintainerForm() {
 						<br />
 						<TextField
 							sx={typeBoxstyleBig}
+							InputLabelProps={{
+								style: { color: "white" },
+							}}
 							margin="dense"
 							required
-							variant="standard"
+							variant="filled"
 							fullWidth
 							className="TextareaMod align_change"
 							onChange={HandleInput}
@@ -327,9 +378,12 @@ export default function MaintainerForm() {
 						<br />
 						<TextField
 							sx={typeBoxstyleBig}
+							InputLabelProps={{
+								style: { color: "white" },
+							}}
 							margin="dense"
 							required
-							variant="standard"
+							variant="filled"
 							fullWidth
 							className="TextareaMod align_change bottom"
 							onChange={HandleInput}
@@ -339,7 +393,9 @@ export default function MaintainerForm() {
 							helperText="Dose your device need any exta patches if yes mentioned repo name which needs patches and link to patches?"
 						></TextField>{" "}
 					</Card>
-					<Card variant="outlined" sx={CardStyle}>
+					<Card
+						sx={(CardStyle, { p: 3, m: 1, borderRadius: 8, maxWidth: 650 })}
+					>
 						<Typography
 							variant="h4"
 							align="center"
@@ -348,39 +404,27 @@ export default function MaintainerForm() {
 							Terms & Conditions
 						</Typography>
 						<Typography variant="caption" sx={(styles, { width: "100%" })}>
-							<br /> 1) GCP/AZURE/AWS free trail based server not allowed <br />
+							1) GCP/AZURE/AWS free trail based server not allowed
 							<br />
 							2) if you are going to build on server it must be 100% private you
-							cant share it with your friend
-							<br />
-							<br />
-							3) Dont tag admins to get update regarding your forum status
-							<br />
+							cant share it with your friend <br />
+							3) Dont tag admins to get update regarding your forum status{" "}
 							<br />
 							4) You MUST have a way to check your builds, OWNED the device,
 							TEST it by YOURSELF or send the builds for SOMEONE TO TEST.
-							Completely BLINDBUILD and(or) UNTESTED BUILD ARE NOT ALLOWED.
+							Completely BLINDBUILD and(or) UNTESTED BUILD ARE NOT ALLOWED.{" "}
 							<br />
+							5) You MUST have KNOWLEDGE of git. <br />
+							6) You SHOULD have your device sources open for us to verify!{" "}
 							<br />
-							5) You MUST have KNOWLEDGE of git.
-							<br />
-							<br />
-							6) You SHOULD have your device sources open for us to verify!
-							<br />
-							<br />
-							7) Fixing bug by yourself is a plus! unless its source side.
-							<br />
+							7) Fixing bug by yourself is a plus! unless its source side.{" "}
 							<br />
 							8) Under any conditions you cant share rom source with anyone we
 							dont care its your BestFriend or the person who paid to get the
 							source <br />
-							<br />
 							9) The Device tree must be compitable with lineage os which out
-							any extra patches being applied to rom source from your side
-							<br />
-							<br />
-							IF YOU UNDERSTAND THE TERMS & CONDITION ABOVE, SUBMIT THE FORM
-							<br />
+							any extra patches being applied to rom source from your side IF
+							YOU UNDERSTAND THE TERMS & CONDITION ABOVE, SUBMIT THE FORM
 						</Typography>
 						<Box sx={styles}>
 							<FormControlLabel
@@ -405,14 +449,13 @@ export default function MaintainerForm() {
 								fullWidth
 								variant="outlined"
 								sx={{
-									m2: 3,
-									p: 2,
-									maxWidth: 300,
-									boxShadow: 6,
+									mb: 1,
+									mt: 3,
+									p: 1.5,
+									boxShadow: "10px 10px 35px 0.1px #381f2048",
 									borderRadius: 5,
-									// background: "transparent",
-									background: "linear-gradient(to left, #8f455489, #3d498397)",
-									color: "#fff",
+									color: "text.primary",
+									bgcolor: "text.secondary",
 								}}
 							>
 								Summit Form

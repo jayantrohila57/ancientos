@@ -60,7 +60,7 @@ export default function Features() {
 							key={index}
 							variant="outlined"
 							sx={{
-								p: 2,
+								p: 3,
 								m: 2,
 								minWidth: 330,
 								maxWidth: 500,
@@ -69,31 +69,24 @@ export default function Features() {
 								display: "flex",
 								flexDirection: "column",
 								justifyContent: "space-between",
-								borderRadius: 5,
-								boxShadow: 5,
+								borderRadius: 10,
+								boxShadow: "10px 10px 35px 0.1px #381f2048",
 								textTransform: "capitalize",
-								background: "transparent",
-								background: "linear-gradient(to left, #8f45544a, #3d498358)",
 							}}
 						>
 							<Box>
 								<Typography
-									style={{
-										textTransform: "capitalize",
-										background: "linear-gradient(to left, #FC5C7D, #6A82FB)",
-										WebkitBackgroundClip: "text",
-										WebkitTextFillColor: "transparent",
-									}}
 									className="flex-box"
 									sx={{ m: 0.5, justifyContent: "flex-start" }}
-									variant="h6"
+									variant="h4"
 								>
 									{data.pri}
 								</Typography>
 								<Typography
 									className="flex-box"
+									color="text.secondary"
 									sx={{ m: 0.5, justifyContent: "flex-start" }}
-									variant="caption"
+									variant="subtitle2"
 								>
 									{data.sec}
 								</Typography>

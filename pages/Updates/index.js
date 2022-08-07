@@ -6,11 +6,7 @@ import AccordionBox from "../../components/accordionBox/AccordionBox";
 export default function Updates({ data }) {
 	return (
 		<React.Fragment>
-			<Box
-				sx={{
-					minHeight: "100vh",
-				}}
-			>
+			<Box sx={{ pt: 5, minHeight: "100vh" }}>
 				<Heading pri="Change Logs" sub="These are all Builds versions" />
 				<AccordionBox logs={data} />
 				<GoBack props="/" />

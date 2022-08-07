@@ -17,7 +17,7 @@ export default function IntroDetails() {
 				// variant="outlined"
 				sx={{
 					borderRadius: 5,
-					m: 1,
+					m: 2,
 					p: 1,
 					display: "flex",
 					flexDirection: "row",
@@ -45,39 +45,32 @@ export default function IntroDetails() {
 						flexDirection: "column",
 
 						justifyContent: "space-between",
-						borderRadius: 5,
-						boxShadow: 5,
+						borderRadius: 10,
+						boxShadow: "10px 10px 35px 0.1px #381f2048",
 						textTransform: "capitalize",
-						background: "linear-gradient(to left, #8f45544a, #3d498358)",
-						background: "transparent",
 					}}
 				>
 					<Box>
 						<Typography
-							style={{
-								textTransform: "capitalize",
-								background: "linear-gradient(to left, #FC5C7D, #6A82FB)",
-								WebkitBackgroundClip: "text",
-								WebkitTextFillColor: "transparent",
-							}}
 							className="flex-box"
-							sx={{ m: 0.5, justifyContent: "flex-start" }}
+							sx={{ m: 1, p: 1, justifyContent: "flex-start" }}
 							variant="h4"
 						>
 							Let's do some UI Modifications...
 						</Typography>
 						<Typography
 							className="flex-box"
-							sx={{ m: 0.5, justifyContent: "flex-start" }}
-							variant="body1"
+							sx={{ m: 1, p: 1, justifyContent: "flex-start" }}
+							variant="subtitle2"
+							color="text.secondary"
 						>
-							A Custom rom based on AOSP (Android Open Source Porject)
-							CrafetedWithLove. With the Aim To Provide "Performance",
-							"Security" and "Stability", with Multiple Customisation option. So
-							that every User can customise thier phone as per their taste.
-							While you get Best in class Customisation options you also get a
-							unique UI without any security Comprimises, Monthly Security
-							patches are merged, Every Update has something new with bug fixes.
+							A Custom rom based on AOSP (Android Open Source Project) Crafted
+							With Love. With the Aim To Provide "Performance", "Security" and
+							"Stability", with Multiple Customisation option. So that every
+							User can customise thier phone as per their taste. While you get
+							Best in class Customisation options you also get a unique UI
+							without any security Comprimises, Monthly Security patches are
+							merged, Every Update has something new with bug fixes.
 						</Typography>
 					</Box>
 				</Card>

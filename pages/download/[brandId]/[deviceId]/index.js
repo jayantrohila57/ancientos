@@ -4,15 +4,13 @@ import List from "@mui/material/List";
 import ListItem from "@mui/material/ListItem";
 import ListItemIcon from "@mui/material/ListItemIcon";
 import ListItemText from "@mui/material/ListItemText";
-import ListItemAvatar from "@mui/material/ListItemAvatar";
-import Avatar from "@mui/material/Avatar";
 import EventRepeatRoundedIcon from "@mui/icons-material/EventRepeatRounded";
 import EngineeringRoundedIcon from "@mui/icons-material/EngineeringRounded";
 import AndroidRoundedIcon from "@mui/icons-material/AndroidRounded";
 import PhoneAndroidRoundedIcon from "@mui/icons-material/PhoneAndroidRounded";
 import Link from "next/link";
 import DownloadingRoundedIcon from "@mui/icons-material/DownloadingRounded";
-import { Box } from "@mui/material";
+import { Box, Card, Typography } from "@mui/material";
 
 import Heading from "../../../../components/heading/Heading";
 import LinkHeading from "../../../../components/heading/LinkHeading";
@@ -46,7 +44,7 @@ export default function Device({ data }) {
 	};
 
 	const obj = {
-		primary: "Apply for MantainerShip",
+		primary: "Apply for Mantainer Ship",
 		secondary: "Join and grow the community of AncientOS.",
 		link: "/maintainer",
 	};
@@ -60,12 +58,7 @@ export default function Device({ data }) {
 	};
 
 	const iconStyle = {
-		m: 1,
-		p: 1,
-		borderRadius: 10,
-		boxShadow: 6,
-		color: "white",
-		background: "linear-gradient(to left, #c14d64fd, #062fffe4)",
+		background: "transparent",
 	};
 	return (
 		<Box sx={{ pt: 5, minHeight: "100vh" }}>
@@ -89,7 +82,6 @@ export default function Device({ data }) {
 								overflow: "hidden",
 							}}
 							sx={{
-								boxShadow: 15,
 								display: "flex",
 								width: 300,
 								height: 300,
@@ -105,42 +97,58 @@ export default function Device({ data }) {
 					>
 						<List sx={{ width: "100%", maxWidth: 460, bgcolor: "transparent" }}>
 							<ListItem>
-								<ListItemAvatar>
-									<Avatar>
-										<PhoneAndroidRoundedIcon fontSize="large" sx={iconStyle} />
-									</Avatar>
-								</ListItemAvatar>
+								<ListItemIcon>
+									<PhoneAndroidRoundedIcon fontSize="large" sx={iconStyle} />
+								</ListItemIcon>
 								<ListItemText
-									primary={device_codename}
-									secondary="Device Code Name"
+									primary={
+										<Typography variant="h5">{device_codename}</Typography>
+									}
+									secondary={
+										<Typography variant="h6" color="primary">
+											Device Code Name
+										</Typography>
+									}
 								/>
 							</ListItem>
 							<ListItem>
-								<ListItemAvatar>
-									<Avatar>
-										<AndroidRoundedIcon fontSize="large" sx={iconStyle} />
-									</Avatar>
-								</ListItemAvatar>
-								<ListItemText primary={brand} secondary="Device Brand" />
-							</ListItem>
-							<ListItem>
-								<ListItemAvatar>
-									<Avatar>
-										<EngineeringRoundedIcon fontSize="large" sx={iconStyle} />
-									</Avatar>
-								</ListItemAvatar>
+								<ListItemIcon>
+									<AndroidRoundedIcon fontSize="large" sx={iconStyle} />
+								</ListItemIcon>
 								<ListItemText
-									primary={maintainer}
-									secondary="Device Maintainer"
+									primary={<Typography variant="h5">{brand}</Typography>}
+									secondary={
+										<Typography color="primary" variant="h6">
+											Device Brand
+										</Typography>
+									}
 								/>
 							</ListItem>
 							<ListItem>
-								<ListItemAvatar>
-									<Avatar>
-										<EventRepeatRoundedIcon fontSize="large" sx={iconStyle} />
-									</Avatar>
-								</ListItemAvatar>
-								<ListItemText primary={date_updated} secondary="Date Updated" />
+								<ListItemIcon>
+									<EngineeringRoundedIcon fontSize="large" sx={iconStyle} />
+								</ListItemIcon>
+								<ListItemText
+									primary={<Typography variant="h5">{maintainer}</Typography>}
+									secondary={
+										<Typography variant="h6" color="primary">
+											Device Maintainer
+										</Typography>
+									}
+								/>
+							</ListItem>
+							<ListItem>
+								<ListItemIcon>
+									<EventRepeatRoundedIcon fontSize="large" sx={iconStyle} />
+								</ListItemIcon>
+								<ListItemText
+									primary={<Typography variant="h5">{date_updated}</Typography>}
+									secondary={
+										<Typography variant="h6" color="primary">
+											Date Updated
+										</Typography>
+									}
+								/>
 							</ListItem>
 						</List>
 					</Box>
@@ -155,49 +163,40 @@ export default function Device({ data }) {
 								alignItems: "center",
 							}}
 						>
-							<Link href={`${download_url}`}>
-								<ListItem
-									data-aos="zoom-in"
-									data-aos-duration="600"
-									sx={{
-										width: 330,
-										p: 1,
-										mb: 1.5,
-										borderRadius: 5,
-										boxShadow: 6,
-										textTransform: "capitalize",
-										background:
-											"linear-gradient(to left, #c14d642e, #4359c64a)",
-									}}
-									onClick={() => {}}
-								>
-									<ListItemText
-										sx={{ m: 2, p: 1 }}
-										fontSize="large"
-										primary={"Download"}
-										secondary={"Latest Update"}
-									/>
-									<ListItemIcon>
-										<DownloadingRoundedIcon
-											fontSize="large"
-											sx={{
-												m: 2,
-												p: 0.5,
-												borderRadius: 10,
-												boxShadow: 6,
-												background:
-													"linear-gradient(to left, #c14d64fd, #062fffe4)",
-											}}
+							<Card
+								data-aos="zoom-in"
+								data-aos-duration="600"
+								sx={{
+									width: 330,
+									p: 1,
+									mb: 1.5,
+									borderRadius: 5,
+									boxShadow: "10px 10px 35px 0.1px #381f2048",
+									textTransform: "capitalize",
+								}}
+							>
+								<Link href={`${download_url}`}>
+									<ListItem onClick={() => {}}>
+										<ListItemText
+											primary={<Typography variant="h5">Download</Typography>}
+											secondary={
+												<Typography variant="h6" color="text.secondary">
+													Latest Update
+												</Typography>
+											}
 										/>
-									</ListItemIcon>
-								</ListItem>
-							</Link>
+										<ListItemIcon>
+											<DownloadingRoundedIcon fontSize="large" />
+										</ListItemIcon>
+									</ListItem>
+								</Link>
+							</Card>
 						</List>
 					</Box>
 				</Box>
 				<Box sx={styles}>
 					{" "}
-					<ButtonBox link={changelog_url} title="Change Logs" />
+					<ButtonBox link={changelog_url} title="Source Change Logs" />
 					<ButtonBox link={rom_support} title="Rom Support Group" />
 					<ButtonBox link={device_supportgp_url} title="Device Support Group" />
 				</Box>

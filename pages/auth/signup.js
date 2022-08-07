@@ -66,9 +66,9 @@ export default function Signup() {
 		display: "flex",
 		flexDirection: "row",
 		flexWrap: "wrap",
-		alignContent: "center",
+		// alignContent: "center",
 		justifyContent: "center",
-		alignItems: "center",
+		// alignItems: "center",
 	};
 
 	return (
@@ -78,29 +78,29 @@ export default function Signup() {
 				{
 					minHeight: "100vh",
 					pt: 5,
+					p: 2,
 				})
 			}
 		>
 			<Heading pri="Sign Up" sub="Sign in with Your New Account" />
 			<Box sx={styles}>
-				<Card
-					elevation={0}
-					sx={
-						(styles,
-						{
-							width: 330,
-							maxWidth: 400,
-							background: "transparent",
-						})
-					}
-				>
+				<Card sx={(styles, { p: 3, borderRadius: 8, maxWidth: 500 })}>
 					<Box component="form" onSubmit={handleSubmit} noValidate>
+						<Typography
+							variant="h3"
+							align="center"
+							sx={(styles, { width: "100%", mb: 3 })}
+						>
+							Sign Up
+						</Typography>
 						<TextField
-							style={{ color: "#fff" }}
+							InputLabelProps={{
+								style: { color: "white" },
+							}}
 							margin="dense"
 							required
-							variant="standard"
 							fullWidth
+							variant="filled"
 							label="First Name"
 							name="first_name"
 							id="first_name"
@@ -109,10 +109,13 @@ export default function Signup() {
 							onChange={HandleInput}
 						/>
 						<TextField
+							InputLabelProps={{
+								style: { color: "white" },
+							}}
 							margin="dense"
 							required
-							variant="standard"
 							fullWidth
+							variant="filled"
 							label="Last Name"
 							name="last_name"
 							id="last_name"
@@ -121,10 +124,13 @@ export default function Signup() {
 							onChange={HandleInput}
 						/>
 						<TextField
+							InputLabelProps={{
+								style: { color: "white" },
+							}}
 							margin="dense"
 							required
-							variant="standard"
 							fullWidth
+							variant="filled"
 							label="Username"
 							autoComplete="name"
 							name="username"
@@ -133,22 +139,29 @@ export default function Signup() {
 							onChange={HandleInput}
 						/>
 						<TextField
-							placeholder="Date"
+							InputLabelProps={{
+								style: { color: "white" },
+							}}
+							sx={{ color: "#fff" }}
+							styles={{ color: "text.primary" }}
+							margin="dense"
+							required
 							fullWidth
-							margin="normal"
-							variant="standard"
+							variant="filled"
 							type="date"
 							name="date"
-							required
 							id="date"
 							value={userRegistration.date}
 							onChange={HandleInput}
 						/>
 						<TextField
+							InputLabelProps={{
+								style: { color: "white" },
+							}}
 							margin="dense"
 							required
-							variant="standard"
 							fullWidth
+							variant="filled"
 							id="email"
 							label="Email Address"
 							name="email"
@@ -157,10 +170,13 @@ export default function Signup() {
 							onChange={HandleInput}
 						/>
 						<TextField
+							InputLabelProps={{
+								style: { color: "white" },
+							}}
 							margin="dense"
 							required
 							fullWidth
-							variant="standard"
+							variant="filled"
 							name="password"
 							label="Password"
 							type="password"
@@ -177,11 +193,10 @@ export default function Signup() {
 								mb: 1,
 								mt: 3,
 								p: 1.5,
-								boxShadow: 6,
+								boxShadow: "10px 10px 35px 0.1px #381f2048",
 								borderRadius: 5,
-								// background: "transparent",
-								background: "linear-gradient(to left, #8f455489, #3d498397)",
-								color: "#fff",
+								color: "text.primary",
+								bgcolor: "text.secondary",
 							}}
 						>
 							Sign Up

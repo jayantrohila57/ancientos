@@ -38,6 +38,7 @@ export default function LogoInfo() {
 					AncientOS
 				</Typography>{" "}
 				<Typography
+					sx={{ color: "primary.main" }}
 					data-aos="fade-up"
 					data-aos-duration="600"
 					className="flex-box"

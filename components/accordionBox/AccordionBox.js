@@ -28,17 +28,7 @@ const Accordion = styled((props) => (
 }));
 const AccordionSummary = styled((props) => (
 	<MuiAccordionSummary
-		expandIcon={
-			<ArrowForwardIosSharpIcon
-				fontSize="large"
-				sx={{
-					p: 1,
-					borderRadius: 5,
-					boxShadow: 5,
-					background: "linear-gradient(to left, #c14d6422, #4359c630)",
-				}}
-			/>
-		}
+		expandIcon={<ArrowForwardIosSharpIcon fontSize="small" />}
 		{...props}
 	/>
 ))(({ theme }) => ({
@@ -53,7 +43,7 @@ const AccordionSummary = styled((props) => (
 }));
 const AccordionDetails = styled(MuiAccordionDetails)(({ theme }) => ({
 	padding: theme.spacing(2),
-	borderTop: "1px solid rgba(0, 0, 0, .125)",
+	borderTop: "1px solid #00000035",
 }));
 export default function AccordionBox({ logs }) {
 	const [expanded, setExpanded] = React.useState("panel1");
@@ -75,9 +65,8 @@ export default function AccordionBox({ logs }) {
 				{logs.map((data, index) => (
 					<TimelineItem key={index} data-aos="fade-up" data-aos-duration="600">
 						<TimelineOppositeContent
-							variant="body2"
+							variant="h5"
 							style={{
-								// fontSize: 20,
 								mt: 2,
 								flex: 0.1,
 							}}
@@ -90,25 +79,16 @@ export default function AccordionBox({ logs }) {
 							<TimelineConnector />
 						</TimelineSeparator>
 						<TimelineContent>
-							<Typography variant="body2" color="text.secondary">
-								{" "}
-								<AndroidRoundedIcon
-									sx={{
-										pt: 1.5,
-									}}
-								/>{" "}
-								{data.version}
+							<Typography variant="h5" color="text.primary">
+								<AndroidRoundedIcon /> {data.version}
 							</Typography>
 
 							<div>
 								<Accordion
 									sx={{
 										mt: 2,
-										mb: 1,
+										mb: 2,
 										borderRadius: 5,
-										backgroundColor: "transparent",
-										background:
-											"linear-gradient(to left, #c14d6431, #4359c632)",
 									}}
 									expanded={expanded === `panel+${index}`}
 									onChange={handleChange(`panel+${index}`)}
@@ -121,11 +101,10 @@ export default function AccordionBox({ logs }) {
 									</AccordionSummary>
 									<AccordionDetails>
 										<Typography
-											variant="overline"
+											variant="caption"
 											style={{
 												display: "block",
 												whiteSpace: "pre-wrap",
-												margin: "1em 0",
 											}}
 										>
 											{data.config.map((data) => data + "\n")}

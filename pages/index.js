@@ -26,7 +26,7 @@ export default function Home() {
 		link: "/Updates",
 	};
 	const obj = {
-		primary: "Apply for MantainerShip",
+		primary: "Apply for Mantainer Ship",
 		secondary: "Join and grow the community of AncientOS.",
 		link: "/maintainer",
 	};

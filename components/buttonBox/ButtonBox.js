@@ -25,19 +25,17 @@ export default function ButtonBox({ title, link }) {
 				data-aos-duration="600"
 				variant="outlined"
 				sx={{
-					p: 1,
+					p: 2,
 					m: 2,
 					width: 330,
-					// height: 200,
 					maxHeight: 800,
 					minHeight: 200,
 					display: "flex",
 					flexDirection: "column",
 					justifyContent: "space-between",
-					borderRadius: 5,
-					boxShadow: 5,
+					borderRadius: 10,
 					textTransform: "capitalize",
-					background: "linear-gradient(to left, #8f45544a, #3d498358)",
+					boxShadow: "10px 10px 35px 0.1px #381f2048",
 				}}
 			>
 				<Box
@@ -48,22 +46,16 @@ export default function ButtonBox({ title, link }) {
 						alignItems: "flex-end",
 					}}
 				>
-					<IconButton
-						sx={{
-							boxShadow: 5,
-							background: "linear-gradient(to left, #c14d64fd, #062fffe4)",
-						}}
-					>
-						<ArrowCircleRightRoundedIcon sx={{ fontSize: 40 }} />
+					<IconButton>
+						<ArrowCircleRightRoundedIcon sx={{ fontSize: 50 }} />
 					</IconButton>
 				</Box>
 				<ListItem>
 					<ListItemText
-						fontSize="large"
 						primary={
 							<Typography
 								className="flex-box"
-								variant="h5"
+								variant="h4"
 								sx={{ m: 0, justifyContent: "flex-start" }}
 							>
 								{title}

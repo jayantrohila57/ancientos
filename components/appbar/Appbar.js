@@ -1,4 +1,6 @@
 import React, { useState } from "react";
+import CheckIcon from "@mui/icons-material/Check";
+import ToggleButton from "@mui/material/ToggleButton";
 import AppBar from "@mui/material/AppBar";
 import { styled } from "@mui/material/styles";
 import { grey } from "@mui/material/colors";
@@ -18,11 +20,12 @@ import MenuItem from "@mui/material/MenuItem";
 import CssBaseline from "@mui/material/CssBaseline";
 import { Global } from "@emotion/react";
 import Link from "next/link";
-import { filledInputClasses, SwipeableDrawer } from "@mui/material";
+import DarkModeRoundedIcon from "@mui/icons-material/DarkModeRounded";
+import { Card, filledInputClasses, SwipeableDrawer } from "@mui/material";
 import ArrowCircleRightRoundedIcon from "@mui/icons-material/ArrowCircleRightRounded";
 import ExpandCircleDownRoundedIcon from "@mui/icons-material/ExpandCircleDownRounded";
 
-const Appbar = () => {
+const Appbar = ({ data }) => {
 	////////////////////////////////////////////
 	const link = ["download", "Updates", "Team", "Donation", "Screenshot"];
 	////////////////////////////////////////////
@@ -34,10 +37,6 @@ const Appbar = () => {
 		"Check Screenshots & donate",
 	];
 
-	//account link
-	const handleOpenUserMenu = () => {
-		console.log("first");
-	};
 	//drawer styling
 	const drawerBleeding = 0;
 	const Root = styled("div")(({ theme }) => ({
@@ -50,7 +49,7 @@ const Appbar = () => {
 		// 		: theme.palette.background.default,
 	}));
 	const StyledBox = styled(Box)(({ theme }) => ({
-		// backgroundColor: theme.palette.mode === "dark" ? grey[900] : grey[900],
+		// backgroundColor: theme.palette.mode === "dark" ? grey[400] : grey[900],
 	}));
 	const Puller = styled(Box)(({ theme }) => ({
 		width: 100,
@@ -69,10 +68,10 @@ const Appbar = () => {
 			sx={{
 				backgroundColor: "transparent",
 				backdropFilter: "blur(10px)",
-				// overflow: "visible",
-				boxShadow: 3,
-				borderBottomLeftRadius: 15,
-				borderBottomRightRadius: 15,
+				overflow: "visible",
+				boxShadow: "0px 0px 15px 0.1px #381f2048",
+				borderBottomLeftRadius: 30,
+				borderBottomRightRadius: 30,
 			}}
 			elevation={0}
 			position="fixed"
@@ -99,17 +98,9 @@ const Appbar = () => {
 					>
 						<Link href={"/"}>
 							<Typography
+								color="primary.main"
 								style={{
-									background: "linear-gradient(to left, #e1244a, #3851d0)",
-									WebkitBackgroundClip: "text",
-									WebkitTextFillColor: "transparent",
-									BoxShadow: 5,
-									fontWeightLight: 200,
-									fontWeightRegular: 200,
-									fontWeightMedium: 400,
-									fontWeightBold: 500,
 									fontSize: 30,
-									fontFamily: "Poppins",
 									textDecoration: "none",
 									cursor: "pointer",
 								}}
@@ -134,11 +125,18 @@ const Appbar = () => {
 								onClick={() => setOpen(true)}
 								color="inherit"
 							>
-								<ExpandCircleDownRoundedIcon fontSize="large" />
+								<ExpandCircleDownRoundedIcon
+									fontSize="large"
+									sx={{
+										p: 0,
+										fontSize: 40,
+										borderRadius: 10,
+									}}
+								/>
 							</IconButton>
 						</Box>
 					</Tooltip>
-					{/* <AdbIcon sx={{ display: { xs: "flex", md: "none" }, mr: 1 }} /> */}
+
 					<Box
 						noWrap
 						sx={{ m: 0, display: { xs: "flex", md: "none" }, flexGrow: 1 }}
@@ -146,18 +144,11 @@ const Appbar = () => {
 						{" "}
 						<Link href={"/"} passHref>
 							<Typography
+								color="primary.main"
 								style={{
-									display: "flex",
-									background: "linear-gradient(to left, #e1244a, #3851d0)",
-									WebkitBackgroundClip: "text",
-									WebkitTextFillColor: "transparent",
-									fontWeightLight: 100,
-									fontWeightRegular: 200,
-									fontWeightMedium: 400,
-									fontWeightBold: 800,
 									fontSize: 40,
-									fontFamily: "Poppins",
 									textDecoration: "none",
+									cursor: "pointer",
 								}}
 							>
 								AncientOS
@@ -166,20 +157,20 @@ const Appbar = () => {
 					</Box>
 					<Box
 						sx={{
-							mr: 10,
+							p: 1,
+
 							flexGrow: 1,
 							display: { xs: "none", md: "flex" },
 							justifyContent: "flex-end",
 						}}
 					>
 						{link.map((links, index) => (
-							<MenuItem key={index}>
+							<MenuItem sx={{ borderRadius: 5 }} key={index}>
 								<Link key={index} href={`/${links}`}>
 									<Typography
+										variant="h6"
 										key={index}
 										sx={{
-											borderRadius: 3,
-											TextShadow: 15,
 											textTransform: "capitalize",
 										}}
 										textAlign="center"
@@ -189,23 +180,40 @@ const Appbar = () => {
 								</Link>
 							</MenuItem>
 						))}
+						<Box sx={{ flexGrow: 0 }}>
+							<Tooltip title="Open settings">
+								<IconButton
+									onClick={data}
+									sx={{
+										borderRadius: 10,
+									}}
+								>
+									<DarkModeRoundedIcon
+										sx={{
+											p: 0.5,
+											fontSize: 40,
+											borderRadius: 10,
+										}}
+									/>
+								</IconButton>
+							</Tooltip>
+						</Box>
 					</Box>
 
 					<Box sx={{ flexGrow: 0 }}>
 						<Tooltip title="Open settings">
 							<Link href={"/account"}>
 								<IconButton
-									onClick={handleOpenUserMenu}
-									sx={{ borderRadius: 10, boxShadow: 5 }}
+									sx={{
+										borderRadius: 10,
+									}}
 								>
 									<Avatar
 										sx={{
-											// p: 1,
-											borderRadius: 10,
-											boxShadow: 6,
-											background:
-												"linear-gradient(to left, #c14d64fd, #062fffe4)",
-											color: "#fff",
+											p: 0,
+											fontSize: 60,
+											bgcolor: "primary.main",
+											color: "text.primary",
 										}}
 										alt=""
 										src=""
@@ -221,112 +229,84 @@ const Appbar = () => {
 				<Global
 					styles={{
 						".MuiDrawer-root > .MuiPaper-root": {
-							backgroundColor: "transparent",
+							backgroundColor: "#00000029",
 							backdropFilter: "blur(15px)",
 							overflow: "visible",
 							variant: "outlined",
-							background: " #24212122",
-							background: "linear-gradient(to left, #8f45544a, #3d498358)",
 							borderTopLeftRadius: 30,
 							borderTopRightRadius: 30,
-							elevation: 0,
-							square: false,
 						},
 					}}
 				/>
 
 				<SwipeableDrawer
 					data-aos="fade-up"
-					data-aos-duration="600"
+					data-aos-duration="300"
 					anchor="bottom"
 					open={open}
 					onOpen={() => {}}
 					onClose={() => setOpen(false)}
-					sx={{
-						borderRadius: 25,
-						overflow: "visible",
-						variant: "outlined",
-						elevation: 0,
-						square: false,
-					}}
 				>
-					<Box
-						sx={{
-							m: 2,
-						}}
-					>
-						<StyledBox
-							sx={{
-								// zIndex: 1100,
-								position: "absolute",
-								top: -drawerBleeding,
-								visibility: "visible",
-								right: 0,
-								left: 0,
-							}}
-						>
+					<Box sx={{ m: 2 }}>
+						<StyledBox>
 							<Puller />
 						</StyledBox>
 					</Box>
 					<Grid item xs={10} md={6}>
-						<Typography align="center" variant="h6">
+						<Typography align="center" color="primary.main" variant="h3">
 							Menu
 						</Typography>
-
+						<Box sx={{ flexGrow: 0 }}>
+							<IconButton
+								sx={{ position: "absolute", top: 30, right: 30 }}
+								onClick={data}
+							>
+								{" "}
+								<DarkModeRoundedIcon
+									sx={{
+										p: 1,
+										fontSize: 50,
+										backgroundColor: "primary.main",
+										borderRadius: 10,
+									}}
+								/>
+							</IconButton>
+						</Box>
 						<List sx={{ mr: 2 }}>
 							{/* Mobile  */}
 							{link.map((val, index) => (
 								<Link key={index} href={`/${val}`}>
-									<ListItem
+									<Card
 										sx={{
+											p: 1,
 											m: 1,
-											mb: 2,
-											borderRadius: 5,
-											boxShadow: 5,
+											ml: 2,
+											borderRadius: 8,
+											boxShadow: "10px 10px 35px 0.1px #381f2048",
 											textTransform: "capitalize",
-											background:
-												"linear-gradient(to left, #c14d647c, #4358c686)",
-											backgroundColor: "#4a43457b",
 										}}
-										onClick={() => setOpen(false)}
 									>
-										<ListItemText
-											primary={
-												<Typography
-													style={{
-														background:
-															"linear-gradient(to left, #ffffff, #ffffff)",
-														WebkitBackgroundClip: "text",
-														WebkitTextFillColor: "transparent",
-														color: "#fff",
-													}}
-													variant="h6"
-												>
-													{val}
-												</Typography>
-											}
-											secondary={linkInfo[index]}
-										/>
-
-										<ListItemIcon>
-											<ArrowCircleRightRoundedIcon
-												sx={{
-													p: 1,
-													boxShadow: 5,
-													fontSize: 50,
-													background:
-														"linear-gradient(to left, #c14d64cd, #4359c6c1)",
-													backgroundColor: "#c14d647c",
-													borderRadius: 10,
-												}}
+										<ListItem onClick={() => setOpen(false)}>
+											<ListItemText
+												primary={<Typography variant="h4">{val}</Typography>}
+												secondary={linkInfo[index]}
 											/>
-										</ListItemIcon>
-									</ListItem>
+
+											<ListItemIcon>
+												<ArrowCircleRightRoundedIcon
+													sx={{
+														fontSize: 50,
+														borderRadius: 10,
+													}}
+												/>
+											</ListItemIcon>
+										</ListItem>
+									</Card>
 								</Link>
 							))}
 						</List>
 					</Grid>
-					<Typography sx={{ pt: 0, p: 2 }} align="center" variant="caption">
+					<Typography sx={{ pt: 0, pb: 2 }} align="center" variant="caption">
 						Swipe down to exit.
 					</Typography>
 				</SwipeableDrawer>

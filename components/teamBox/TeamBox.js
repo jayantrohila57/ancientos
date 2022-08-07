@@ -17,60 +17,40 @@ export default function TeamBox({ name, post, image }) {
 			data-aos="fade-up"
 			data-aos-duration="600"
 			variant="outlined"
-			elevation={5}
 			sx={{
-				boxShadow: 6,
-				display: "flex",
+				p: 1,
 				margin: 2,
-				borderRadius: 5,
 				width: 330,
 				height: 200,
-				background: "transparent",
+				display: "flex",
+				borderRadius: 10,
+				boxShadow: "10px 10px 35px 0.1px #381f2048",
 			}}
 		>
 			<Box sx={{ display: "flex", flexDirection: "column" }}>
-				<CardContent sx={{ flex: "1 0 auto", width: 180 }}>
-					<Typography component="div" variant="h5">
-						{name}
-					</Typography>
-					<Typography
-						variant="caption"
-						color="text.secondary"
-						component="div"
-						style={{
-							textTransform: "capitalize",
-							background: "linear-gradient(to left, #FC5C7D, #6A82FB)",
-							WebkitBackgroundClip: "text",
-							WebkitTextFillColor: "transparent",
-						}}
-					>
+				<CardContent sx={{ flex: "1 0 auto", width: 160 }}>
+					<Typography variant="h5">{name}</Typography>
+					<Typography variant="body2" color="text.secondary" component="div">
 						{post}
 					</Typography>
 				</CardContent>
-				<Box
-					sx={{
-						display: "flex",
-						alignItems: "center",
-						pl: 1,
-						pb: 1,
-					}}
-				>
+				{/* <Box sx={{ p: 1, display: "flex", alignItems: "center" }}>
 					<IconButton>
-						<ShareRoundedIcon
-							fontSize="large"
-							sx={{ p: 1, borderRadius: 5, boxShadow: 5 }}
-						/>
+						<ShareRoundedIcon fontSize="large" />
 					</IconButton>
-				</Box>
+				</Box> */}
 			</Box>
 			<CardMedia
 				component="img"
 				sx={{
+					p: 1,
 					width: 150,
-					boxShadow: 5,
+					height: 150,
+					borderRadius: 100,
 					backgroundRepeat: "no-repeat",
 					backgroundSize: "contain",
 					backgroundPosition: "center",
+					boxShadow: "10px 10px 35px 0.1px #381f2048",
 				}}
 				image={image}
 				alt={name}

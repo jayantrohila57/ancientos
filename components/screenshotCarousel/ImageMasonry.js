@@ -37,7 +37,7 @@ export default function ImageMasonry({ props }) {
 						}}
 					>
 						<Image
-							sx={{ boxShadow: 5 }}
+							sx={{ boxShadow: "10px 10px 35px 0.1px #381f2048" }}
 							key={item.img}
 							height="500px"
 							width="231px"

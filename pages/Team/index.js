@@ -6,7 +6,7 @@ import TeamBox from "../../components/teamBox/TeamBox";
 
 export default function Team({ data }) {
 	const obj = {
-		primary: "Apply for MantainerShip",
+		primary: "Apply for Mantainer Ship",
 		secondary: "Join and grow the community of AncientOS.",
 		link: "/maintainer",
 	};
@@ -19,7 +19,7 @@ export default function Team({ data }) {
 		alignItems: "center",
 	};
 	return (
-		<Box sx={{ pt: 5, minHeight: "100vh" }}>
+		<Box sx={{ minHeight: "100vh" }}>
 			<Heading pri=" Ancient Team" sub="These are all Ancient Team Members" />
 			<Box sx={styles}>
 				{data.map((data, index) => {

@@ -5,58 +5,151 @@ import { ThemeProvider, createTheme } from "@mui/material/styles";
 import darkScrollbar from "@mui/material/darkScrollbar";
 import CssBaseline from "@mui/material/CssBaseline";
 import { CacheProvider } from "@emotion/react";
-import theme from "../src/theme";
 import createEmotionCache from "../src/createEmotionCache";
-
-//components
 import Appbar from "../components/appbar/Appbar";
 import Footer from "../components/footer/Footer";
 import { AuthContextProvider } from "../context/AuthContext";
-
-// Client-side cache, shared for the whole session of the user in the browser.
+import { grey, deepOrange } from "@mui/material/colors";
 const clientSideEmotionCache = createEmotionCache();
+const ColorModeContext = React.createContext({ toggleColorMode: () => {} });
+// import theme from "../src/theme";
 
 export default function MyApp(props) {
-	const darkTheme = createTheme({
-		palette: {
-			mode: "dark",
-			// hoverColor: "red",
-		},
-		components: {
-			MuiCssBaseline: {
-				styleOverrides: (themeParam) => ({
-					body: themeParam.palette.mode === "dark" ? darkScrollbar() : null,
-				}),
-			},
-		},
-		hover: {
-			"&:hover": {
-				borderRadius: 5,
-			},
-		},
-	});
-	const { Component, emotionCache = clientSideEmotionCache, pageProps } = props;
+	const [mode, setMode] = React.useState("light");
 
+	React.useEffect(() => {
+		const GetDarkModeState = JSON.parse(localStorage.getItem("darkMode"));
+
+		if (GetDarkModeState === null) {
+			localStorage.setItem("darkMode", JSON.stringify(mode));
+		}
+	});
+	React.useEffect(() => {
+		const GetDarkModeState = JSON.parse(localStorage.getItem("darkMode"));
+		setMode(GetDarkModeState);
+	}, [mode]);
+
+	const colorMode = React.useMemo(
+		() => ({
+			toggleColorMode: () => {
+				if (mode === "dark") {
+					localStorage.setItem("darkMode", JSON.stringify("light"));
+					const GetDarkModeState = JSON.parse(localStorage.getItem("darkMode"));
+					setMode(GetDarkModeState);
+				} else {
+					localStorage.setItem("darkMode", JSON.stringify("dark"));
+					const GetDarkModeState = JSON.parse(localStorage.getItem("darkMode"));
+					setMode(GetDarkModeState);
+				}
+			},
+		}),
+		[mode]
+	);
+	const theme = React.useMemo(
+		() =>
+			createTheme({
+				palette: {
+					mode,
+					...(mode === "light"
+						? {
+								primary: {
+									main: "#FF9999",
+									light: "#fdf6f04f",
+								},
+								background: {
+									default: "#FDF6F0",
+									paper: "#FF9999",
+								},
+								text: {
+									primary: "#2d2d2d",
+									secondary: "#FDF6F0",
+								},
+						  }
+						: {
+								primary: {
+									main: "#8b5ab0",
+									light: "#2b1a3434",
+								},
+
+								background: {
+									default: "#2b1a34",
+									paper: "#8b5ab0",
+								},
+
+								text: {
+									primary: "#ffffff",
+									secondary: "#2b1a34",
+								},
+						  }),
+				},
+				shape: {
+					borderRadius: 5,
+				},
+
+				spacing: 10,
+				props: {
+					MuiAppBar: {
+						color: "transparent",
+					},
+					MuiTooltip: {
+						arrow: true,
+					},
+				},
+
+				typography: {
+					fontFamily: "Poppins",
+					fontSize: 15,
+					fontWeightLight: 400,
+					fontWeightMedium: 600,
+					fontWeightBold: 500,
+					htmlFontSize: 20,
+					button: {
+						fontWeight: 800,
+						lineHeight: 1.7,
+						fontSize: "1.5em",
+					},
+				},
+				components: {
+					MuiCssBaseline: {
+						styleOverrides: (themeParam) => ({
+							body:
+								themeParam.palette.mode === "dark"
+									? darkScrollbar()
+									: darkScrollbar(),
+						}),
+					},
+				},
+			}),
+		[mode]
+	);
+
+	const { Component, emotionCache = clientSideEmotionCache, pageProps } = props;
 	return (
 		<AuthContextProvider>
 			<CacheProvider value={emotionCache}>
 				<Head>
 					<meta name="viewport" content="initial-scale=1, width=device-width" />
 				</Head>
-				<ThemeProvider theme={darkTheme}>
-					{/* CssBaseline kickstart an elegant, consistent, and simple baseline to build upon. */}
-					<CssBaseline />
-					<div
-						style={{
-							backgroundColor: "#1c1c322e",
-							background: "linear-gradient(to left, #ff003313, #002aff1a)",
-						}}
-					>
-						<Appbar />
-						<Component {...pageProps} />
-						<Footer />
-					</div>
-				</ThemeProvider>
+				<ColorModeContext.Provider value={colorMode}>
+					<ThemeProvider theme={theme}>
+						<CssBaseline />
+						<div
+						// style={{
+						// 	color: "#000",
+						// 	backgroundColor: "#ffffff",
+						// 	background: "linear-gradient(to left, #FDF6F0, #FDF6F0)",
+						// }}
+						// style={{
+						// 	backgroundColor: "#1c1c322e",
+						// 	background: "linear-gradient(to left, #ff003313, #002aff1a)",
+						// }}
+						>
+							<Appbar data={colorMode.toggleColorMode} />
+							<Component {...pageProps} />
+							<Footer />
+						</div>
+					</ThemeProvider>
+				</ColorModeContext.Provider>
 			</CacheProvider>
 		</AuthContextProvider>
 	);

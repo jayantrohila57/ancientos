@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Box, Card } from "@mui/material";
+import { Box, Card, Typography } from "@mui/material";
 import Heading from "../../components/heading/Heading";
 import GoBack from "../../components/goBack/GoBack";
 import Stack from "@mui/material/Stack";
@@ -10,6 +10,7 @@ import CardActions from "@mui/material/CardActions";
 import HelpRoundedIcon from "@mui/icons-material/HelpRounded";
 import axios from "axios";
 import Link from "next/link";
+import VpnKeyRoundedIcon from "@mui/icons-material/VpnKeyRounded";
 export default function Login() {
 	const [LoginError, setLoginError] = useState(false);
 	const [LoginSuccess, setLoginSuccess] = useState(false);
@@ -65,6 +66,7 @@ export default function Login() {
 			sx={{
 				minHeight: "100vh",
 				pt: 5,
+				p: 2,
 				dispay: "flex",
 				justifyContent: "center",
 				alignItems: "center",
@@ -72,22 +74,22 @@ export default function Login() {
 		>
 			<Heading pri="Login" sub="Login with Your Account Details" />
 			<Box sx={styles}>
-				<Card
-					elevation={0}
-					sx={
-						(styles,
-						{
-							width: 330,
-							maxWidth: 400,
-							background: "transparent",
-						})
-					}
-				>
+				<Card sx={(styles, { p: 3, borderRadius: 8, maxWidth: 500 })}>
 					<Box component="form" onSubmit={handleLoginSubmit} noValidate>
+						<Typography
+							variant="h3"
+							align="center"
+							sx={(styles, { width: "100%", mb: 3 })}
+						>
+							Login
+						</Typography>
 						<TextField
-							margin="dense"
+							InputLabelProps={{
+								style: { color: "white" },
+							}}
+							// margin="dense"
 							required
-							variant="standard"
+							variant="filled"
 							fullWidth
 							type="text"
 							label="Username"
@@ -97,10 +99,13 @@ export default function Login() {
 							onChange={HandleLoginInput}
 						/>
 						<TextField
+							InputLabelProps={{
+								style: { color: "white" },
+							}}
 							margin="dense"
 							required
 							fullWidth
-							variant="standard"
+							variant="filled"
 							name="password"
 							label="Password"
 							type="password"
@@ -117,11 +122,10 @@ export default function Login() {
 								mb: 1,
 								mt: 3,
 								p: 1.5,
-								boxShadow: 6,
+								boxShadow: "10px 10px 35px 0.1px #381f2048",
 								borderRadius: 5,
-								// background: "transparent",
-								background: "linear-gradient(to left, #8f455489, #3d498397)",
-								color: "#fff",
+								color: "text.primary",
+								bgcolor: "text.secondary",
 							}}
 						>
 							Login
@@ -137,12 +141,12 @@ export default function Login() {
 							</Alert>
 						)}
 						<CardActions disableSpacing>
-							<Stack spacing={3} direction="row">
+							<Stack spacing={2} direction="row">
 								<Link href={`/account/forgot-password`}>
 									<Button
 										fullWidth
 										size="small"
-										sx={{ borderRadius: 5, color: "#fff" }}
+										sx={{ borderRadius: 5, color: "text.secondary" }}
 									>
 										Forgot password
 									</Button>
@@ -152,7 +156,7 @@ export default function Login() {
 									<Button
 										fullWidth
 										size="small"
-										sx={{ borderRadius: 5, color: "#fff" }}
+										sx={{ borderRadius: 5, color: "text.secondary" }}
 									>
 										Sign Up
 									</Button>
@@ -161,7 +165,7 @@ export default function Login() {
 									<Button
 										fullWidth
 										size="small"
-										sx={{ borderRadius: 5, color: "#fff" }}
+										sx={{ borderRadius: 5, color: "text.secondary" }}
 									>
 										<HelpRoundedIcon />
 									</Button>

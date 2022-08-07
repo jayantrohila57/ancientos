@@ -22,9 +22,17 @@ export default function Donation({ data }) {
 					data-aos="fade-up"
 					data-aos-duration="600"
 					variant="outlined"
-					sx={{ boxShadow: 5, borderRadius: 5, background: "transparent" }}
+					sx={{
+						m: 2,
+						boxShadow: "10px 10px 35px 0.1px #381f2048",
+						borderRadius: 10,
+					}}
 				>
-					<Typography variant="body1" sx={(styles, { p: 2, maxWidth: 650 })}>
+					<Typography
+						color="text.primary"
+						variant="h5"
+						sx={(styles, { p: 2, m: 1, maxWidth: 680 })}
+					>
 						We are working hard for you everyday to make this rom more better
 						and effective for you. <br /> All we need is your Love and Support
 						❤️ To help Ancient for keeping it alive, Kindly do any little amount
