@@ -1,76 +1,75 @@
-# Ancient Website
+# AncientOS
 
-url [ https://ancient-os.app.web]
+Repository of the Official AncientOS website code.
+This Website is made for the following Community:
 
-# Pages
-.
-├── account
-│   ├── profile
-│   │   └── index.js
-│   ├── index.js
-│   ├── login.js
-│   └── signup.js
-├── admin
-│   ├── dashboard
-│   └── maintain-device
-├── api
-├── Donation
-│   └── index.js
-├── download
-│   ├── [brandId]
-│   │   ├── [deviceId]
-│   │   │   └── index.js
-│   │   └── index.js
-│   └── index.js
-├── maintainer
-│   ├── builds-update
-│   │   └── index.js
-│   ├── maintainer-dashboard
-│   │   └── index.js
-│   ├── maintainer-form
-│   │   └── index.js
-│   └── index.js
-├── Screenshot
-│   ├── Donate-Screenshot.js
-│   └── index.js
-├── Team
-│   └── index.js
-├── Updates
-│   └── index.js
-├── _app.js
-├── _document.js
-└── index.js
+- Ancient OS
 
-# Needs to fix
-seo
-meta tags
-head tags
-fix next image
+## View Website
 
-# Pending pages to make
-device download page
-maintainer page
-profile page
-login /signup /forgot password page
-donate screenshot page
-404 page
+https://ancient-os.netlify.app/
 
-# Pending work
+## Tech Stack
 
-make a common json folder
-add
-getStaticPaths()
-getStaticProps()
-getServerSideProps()
+**Framework & Libraries Used:** Nextjs, Reactjs, Material-UI, Next-auth, Axios, AOS, Async/await fetch API from ancient servers
 
------>   in next version
-# Admin
-dashboard > maintain-device, maintain-maintainers, maintain-changelogs, maintain-users
-admin login page
+## Installation
 
+### To Install Dependency
 
-# less priority work
-maintainer status, profile, logout,
-admin panel page
-review page for device
-blog & blog posts
+```bash
+npm run Install
+```
+
+### For Develpoment Environment
+
+```bash
+npm run dev
+```
+
+### For Production Environment
+
+```bash
+npm run build
+```
+
+### For Production Export
+
+```bash
+npm run build && npm run export
+```
+
+## Deployment
+
+To deploy publish on Firebase run
+
+```bash
+  npm run xport
+```
+
+## Roadmap
+
+- Add next-auth
+- Profile Page
+- Admin Dashboard
+- fix Navbar with login/signup
+- fix profile and account with login/sigin
+- fix maintainer Dashboard
+- maintainer post build
+- Many feature to add...
+
+## Contributing
+
+Contributions are always welcome!
+
+See `contributing.md` for ways to get started.
+
+Please adhere to this project's `code of conduct`.
+
+## Feedback
+
+If you have any feedback, please reach out to us at fake@fake.com
+
+## License
+
+[MIT](https://choosealicense.com/licenses/mit/)

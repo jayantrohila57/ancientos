@@ -36,6 +36,12 @@ export default function ButtonBox({ title, link }) {
 					borderRadius: 10,
 					textTransform: "capitalize",
 					boxShadow: "10px 10px 35px 0.1px #381f2048",
+					backgroundColor: "primary",
+					// "&:hover": {
+					// 	backgroundColor: "primary.hover",
+					// 	borderRadius: 4,
+					// 	width: 330,
+					// },
 				}}
 			>
 				<Box

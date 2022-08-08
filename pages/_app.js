@@ -53,12 +53,13 @@ export default function MyApp(props) {
 					...(mode === "light"
 						? {
 								primary: {
-									main: "#FF9999",
+									main: "#ff6969",
 									light: "#fdf6f04f",
+									hover: "#FF9999",
 								},
 								background: {
 									default: "#FDF6F0",
-									paper: "#FF9999",
+									paper: "#ff6969",
 								},
 								text: {
 									primary: "#2d2d2d",
@@ -67,18 +68,19 @@ export default function MyApp(props) {
 						  }
 						: {
 								primary: {
-									main: "#8b5ab0",
+									main: "#ff6969",
 									light: "#2b1a3434",
+									hover: "#FF9999",
 								},
 
 								background: {
-									default: "#2b1a34",
-									paper: "#8b5ab0",
+									default: "#1a1a1a",
+									paper: "#ff6969",
 								},
 
 								text: {
 									primary: "#ffffff",
-									secondary: "#2b1a34",
+									secondary: "#431c1c",
 								},
 						  }),
 				},
@@ -97,10 +99,10 @@ export default function MyApp(props) {
 				},
 
 				typography: {
-					fontFamily: "Poppins",
+					fontFamily: "Google Sans",
 					fontSize: 15,
 					fontWeightLight: 400,
-					fontWeightMedium: 600,
+					fontWeightMedium: 400,
 					fontWeightBold: 500,
 					htmlFontSize: 20,
 					button: {

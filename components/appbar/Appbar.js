@@ -24,7 +24,7 @@ import DarkModeRoundedIcon from "@mui/icons-material/DarkModeRounded";
 import { Card, filledInputClasses, SwipeableDrawer } from "@mui/material";
 import ArrowCircleRightRoundedIcon from "@mui/icons-material/ArrowCircleRightRounded";
 import ExpandCircleDownRoundedIcon from "@mui/icons-material/ExpandCircleDownRounded";
-
+import MenuRoundedIcon from "@mui/icons-material/MenuRounded";
 const Appbar = ({ data }) => {
 	////////////////////////////////////////////
 	const link = ["download", "Updates", "Team", "Donation", "Screenshot"];
@@ -125,7 +125,7 @@ const Appbar = ({ data }) => {
 								onClick={() => setOpen(true)}
 								color="inherit"
 							>
-								<ExpandCircleDownRoundedIcon
+								<MenuRoundedIcon
 									fontSize="large"
 									sx={{
 										p: 0,

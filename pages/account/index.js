@@ -19,11 +19,11 @@ export default function Account() {
 				<ButtonBox link="auth/login" title="Login" />
 				<ButtonBox link="auth/signup" title="Sign Up" />
 			</Box>
-			<Box sx={styles}>
+			{/* <Box sx={styles}>
 				<ButtonBox link="account/profile" title="Profile" />
-				{/* <ButtonBox link="/maintainer" title="Maintainer (Not-Active)" />
-				<ButtonBox link="/logout" title="Logout" /> */}
-			</Box>
+				<ButtonBox link="/maintainer" title="Maintainer (Not-Active)" />
+				<ButtonBox link="/admin/Dashboard-admin" title="Admin Dashboard" />
+			</Box> */}
 			<GoBack props="/" />
 		</Box>
 	);
