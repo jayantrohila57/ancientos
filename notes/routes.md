@@ -1,6 +1,27 @@
-login > maintainer form > if approve > move to dashboard
+# routes
 
+├── admin
+│   ├── manage-builds
+│   │   ├── publish-builds
+│   ├── manage-changelogs
+│   │   ├── publish-changelogs
+│   ├── manage-devices
+│   │   ├── device-requests
+│   │   ├── publish-device
+│   ├── manage-maintainer
+│   │   ├── maintainers-forms
+│   │   ├── manage-form-status
+│   ├── manage-screenshots
+│   │   ├── publish-screenshots
+│   ├── manage-users
+│   │   ├── user-roles
+│   └── index.js
 
-submit > pending > underReview >  result > ( succes, reject, change fix ) > if fix accept
-
-dashboard > form
+├── maintainer
+│   ├── maintainer-form
+│   │   ├── complete-form
+│   │   ├── form-status
+│   ├── manage-builds
+│   │   ├── publish-builds
+│   ├── request-new-device
+│   └── index.js

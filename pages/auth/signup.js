@@ -1,33 +1,29 @@
-import React, { useContext, useState, useEffect } from "react";
-import { Paper, Box, Grid, Card } from "@mui/material";
+import React, { useState } from "react";
+import { Box, Card } from "@mui/material";
 import Heading from "../../components/heading/Heading";
-import { alpha, styled } from "@mui/material/styles";
-import LinkHeading from "../../components/heading/LinkHeading";
 import GoBack from "../../components/goBack/GoBack";
 import Stack from "@mui/material/Stack";
 import Typography from "@mui/material/Typography";
-import ArrowCircleRightRoundedIcon from "@mui/icons-material/ArrowCircleRightRounded";
-import IconButton from "@mui/material/IconButton";
 import TextField from "@mui/material/TextField";
 import Button from "@mui/material/Button";
 import Alert from "@mui/material/Alert";
 import CardActions from "@mui/material/CardActions";
 import HelpRoundedIcon from "@mui/icons-material/HelpRounded";
 import axios from "axios";
-import DesktopDatePicker from "@mui/lab/DesktopDatePicker";
 import Link from "next/link";
 export default function Signup() {
 	const [signupError, setSignupError] = useState(false);
 	const [signupSucess, setSignupSucess] = useState(false);
-	const [records, setrecords] = useState([]);
 	const [userRegistration, setUserRegistration] = useState({
-		id: Date.now(),
-		first_name: "",
-		last_name: "",
-		email: "",
-		username: "",
-		date: "",
-		password: "",
+		user_id: Date.now(),
+		user_name: "",
+		user_username: "",
+		user_email: "",
+		user_image: "",
+		user_password: "",
+		user_dob: "",
+		if_maintainer: "false",
+		if_admin: "false",
 	});
 	const HandleInput = (e) => {
 		const name = e.target.name;
@@ -38,18 +34,10 @@ export default function Signup() {
 	};
 	const handleSubmit = async (e) => {
 		e.preventDefault();
-
-		const newRecord = {
-			...userRegistration,
-			id: new Date().getTime().toString(),
-		};
-		setrecords([...records, newRecord]);
-
-		e.preventDefault();
 		await axios
 			.post(
-				"https://newwebsite.ancientrom.xyz/ancient/api/signup.php",
-				newRecord
+				"https://newwebsite.ancientrom.xyz/ancient/api/insert/usersInsertDATA.php",
+				userRegistration
 			)
 			.then((result) => {
 				if (result.data.status === "valid") {
@@ -101,26 +89,11 @@ export default function Signup() {
 							required
 							fullWidth
 							variant="filled"
-							label="First Name"
-							name="first_name"
-							id="first_name"
-							autoComplete="given-name"
-							value={userRegistration.first_name}
-							onChange={HandleInput}
-						/>
-						<TextField
-							InputLabelProps={{
-								style: { color: "white" },
-							}}
-							margin="dense"
-							required
-							fullWidth
-							variant="filled"
-							label="Last Name"
-							name="last_name"
-							id="last_name"
-							autoComplete="family-name"
-							value={userRegistration.last_name}
+							label="Full Name"
+							name="user_name"
+							id="user_name"
+							autoComplete="name"
+							value={userRegistration.user_name}
 							onChange={HandleInput}
 						/>
 						<TextField
@@ -133,9 +106,9 @@ export default function Signup() {
 							variant="filled"
 							label="Username"
 							autoComplete="name"
-							name="username"
-							id="username"
-							value={userRegistration.username}
+							name="user_username"
+							id="user_username"
+							value={userRegistration.user_username}
 							onChange={HandleInput}
 						/>
 						<TextField
@@ -149,9 +122,9 @@ export default function Signup() {
 							fullWidth
 							variant="filled"
 							type="date"
-							name="date"
-							id="date"
-							value={userRegistration.date}
+							name="user_dob"
+							id="user_dob"
+							value={userRegistration.user_dob}
 							onChange={HandleInput}
 						/>
 						<TextField
@@ -162,11 +135,26 @@ export default function Signup() {
 							required
 							fullWidth
 							variant="filled"
-							id="email"
+							id="user_image"
+							label="Image URL"
+							name="user_image"
+							autoComplete="url"
+							value={userRegistration.user_image}
+							onChange={HandleInput}
+						/>
+						<TextField
+							InputLabelProps={{
+								style: { color: "white" },
+							}}
+							margin="dense"
+							required
+							fullWidth
+							variant="filled"
+							id="user_email"
 							label="Email Address"
-							name="email"
+							name="user_email"
 							autoComplete="email"
-							value={userRegistration.email}
+							value={userRegistration.user_email}
 							onChange={HandleInput}
 						/>
 						<TextField
@@ -177,12 +165,12 @@ export default function Signup() {
 							required
 							fullWidth
 							variant="filled"
-							name="password"
+							name="user_password"
 							label="Password"
 							type="password"
-							id="password"
+							id="user_password"
 							autoComplete="current-password"
-							value={userRegistration.password}
+							value={userRegistration.user_password}
 							onChange={HandleInput}
 						/>
 						<Button

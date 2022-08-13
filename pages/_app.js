@@ -55,14 +55,14 @@ export default function MyApp(props) {
 								primary: {
 									main: "#ff6969",
 									light: "#fdf6f04f",
-									hover: "#FF9999",
+									hover: "#ff1d1d",
 								},
 								background: {
 									default: "#FDF6F0",
 									paper: "#ff6969",
 								},
 								text: {
-									primary: "#2d2d2d",
+									primary: "#3d3d3d",
 									secondary: "#FDF6F0",
 								},
 						  }
@@ -70,11 +70,11 @@ export default function MyApp(props) {
 								primary: {
 									main: "#ff6969",
 									light: "#2b1a3434",
-									hover: "#FF9999",
+									hover: "#b03030",
 								},
 
 								background: {
-									default: "#1a1a1a",
+									default: "#252525",
 									paper: "#ff6969",
 								},
 

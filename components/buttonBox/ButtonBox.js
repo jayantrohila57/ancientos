@@ -9,10 +9,13 @@ import ListItem from "@mui/material/ListItem";
 import ListItemIcon from "@mui/material/ListItemIcon";
 import ListItemText from "@mui/material/ListItemText";
 import ArrowCircleLeftRoundedIcon from "@mui/icons-material/ArrowCircleLeftRounded";
-import { Card, Box } from "@mui/material";
+import { Card, Box, Button } from "@mui/material";
 import Typography from "@mui/material/Typography";
 import IconButton from "@mui/material/IconButton";
 import ArrowCircleRightRoundedIcon from "@mui/icons-material/ArrowCircleRightRounded";
+import ArrowForwardRoundedIcon from "@mui/icons-material/ArrowForwardRounded";
+import Clover from "../../assets/svg/Clover";
+import Image from "next/image";
 
 export default function ButtonBox({ title, link }) {
 	useEffect(() => {
@@ -33,29 +36,41 @@ export default function ButtonBox({ title, link }) {
 					display: "flex",
 					flexDirection: "column",
 					justifyContent: "space-between",
-					borderRadius: 10,
+					borderRadius: 6,
 					textTransform: "capitalize",
 					boxShadow: "10px 10px 35px 0.1px #381f2048",
 					backgroundColor: "primary",
-					// "&:hover": {
-					// 	backgroundColor: "primary.hover",
-					// 	borderRadius: 4,
-					// 	width: 330,
-					// },
+					"&:hover": {
+						backgroundColor: "primary.hover",
+						borderRadius: 6,
+						width: 330,
+					},
 				}}
 			>
 				<Box
 					sx={{
+						height: "100",
+						width: "100",
 						display: "flex",
 						flexDirection: "row",
 						justifyContent: "flex-end",
 						alignItems: "flex-end",
 					}}
 				>
-					<IconButton>
-						<ArrowCircleRightRoundedIcon sx={{ fontSize: 50 }} />
-					</IconButton>
+					<Box
+						sx={{
+							"&:hover": {
+								// transform: "rotate(45deg)",
+							},
+						}}
+					>
+						<Clover props="#ffffff84"></Clover>
+					</Box>
+					<ArrowForwardRoundedIcon
+						sx={{ position: "absolute", top: 35, right: 35, fontSize: 35 }}
+					/>
 				</Box>
+
 				<ListItem>
 					<ListItemText
 						primary={

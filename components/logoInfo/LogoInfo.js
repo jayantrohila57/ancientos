@@ -1,12 +1,13 @@
 import Image from "next/image";
-import { Paper, Box } from "@mui/material";
+import { Paper, Box, Card } from "@mui/material";
 import Logo from "../../assets/img/ancientv2.png";
 import Typography from "@mui/material/Typography";
 import KeyboardArrowDownRoundedIcon from "@mui/icons-material/KeyboardArrowDownRounded";
+import Comp1 from "../../components/svgBox/Comp1";
 export default function LogoInfo() {
 	return (
-		<Box sx={{ height: "100vh" }}>
-			{" "}
+		<Box sx={{ height: "100vh", pt: 2 }}>
+			<Comp1 />
 			<div
 				style={{
 					minHeight: "100vh",
@@ -33,7 +34,7 @@ export default function LogoInfo() {
 					className="flex-box"
 					align="center"
 					justifyItems="center"
-					variant="h3"
+					variant="h2"
 				>
 					AncientOS
 				</Typography>{" "}
@@ -44,18 +45,18 @@ export default function LogoInfo() {
 					className="flex-box"
 					align="center"
 					justifyItems="center"
-					variant="h5"
+					variant="h4"
 				>
 					Craft with LOVE
 				</Typography>
 				<Typography
-					sx={{ pt: 5, mt: 5 }}
+					sx={{ pt: 2, mt: 2 }}
 					data-aos="fade-up"
 					data-aos-duration="600"
 					className="flex-box"
 					align="center"
 					justifyItems="center"
-					variant="caption"
+					variant="h6"
 				>
 					Scrolldown to see more
 				</Typography>

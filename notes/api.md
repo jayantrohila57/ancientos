@@ -1,0 +1,39 @@
+VARIABLE_FETCH = https://newwebsite.ancientrom.xyz/ancient/api/fetch/deviceFetchData.php
+VARIABLE_FETCH = https://newwebsite.ancientrom.xyz/ancient/api/fetch/device_requestFetchData.php
+VARIABLE_FETCH = https://newwebsite.ancientrom.xyz/ancient/api/fetch/deviceFetchData.php
+VARIABLE_FETCH = https://newwebsite.ancientrom.xyz/ancient/api/fetch/maintainer_form_completeFetchData.php
+VARIABLE_FETCH = https://newwebsite.ancientrom.xyz/ancient/api/fetch/maintainer_registrationFetchData.php
+VARIABLE_FETCH = https://newwebsite.ancientrom.xyz/ancient/api/fetch/maintainer_statusFetchData.php
+VARIABLE_FETCH = https://newwebsite.ancientrom.xyz/ancient/api/fetch/screenshotsFetchData.php
+VARIABLE_FETCH = https://newwebsite.ancientrom.xyz/ancient/api/fetch/source_changelogsFetchData.php
+VARIABLE_FETCH = https://newwebsite.ancientrom.xyz/ancient/api/fetch/usersFetchData.php
+
+VARIABLE_DELETE = https://newwebsite.ancientrom.xyz/ancient/api/delete/buildDeleteDATA.php
+VARIABLE_DELETE = https://newwebsite.ancientrom.xyz/ancient/api/delete/device_requestDeleteDATA.php
+VARIABLE_DELETE = https://newwebsite.ancientrom.xyz/ancient/api/delete/deviceDeleteDATA.php
+VARIABLE_DELETE = https://newwebsite.ancientrom.xyz/ancient/api/delete/maintainer_form_completeDeleteDATA.php
+VARIABLE_DELETE = https://newwebsite.ancientrom.xyz/ancient/api/delete/maintainer_registrationDeleteDATA.php
+VARIABLE_DELETE = https://newwebsite.ancientrom.xyz/ancient/api/delete/maintainer_statusDeleteDATA.php
+VARIABLE_DELETE = https://newwebsite.ancientrom.xyz/ancient/api/delete/screenshotsDeleteDATA.php
+VARIABLE_DELETE = https://newwebsite.ancientrom.xyz/ancient/api/delete/source_changelogsDeleteDATA.php
+VARIABLE_DELETE = https://newwebsite.ancientrom.xyz/ancient/api/delete/usersDeleteDATA.php
+
+VARIABLE_INSERT = https://newwebsite.ancientrom.xyz/ancient/api/insert/buildInsertDATA.php
+VARIABLE_INSERT = https://newwebsite.ancientrom.xyz/ancient/api/insert/device_requestInsertDATA.php
+VARIABLE_INSERT = https://newwebsite.ancientrom.xyz/ancient/api/insert/deviceInsertDATA.php
+VARIABLE_INSERT = https://newwebsite.ancientrom.xyz/ancient/api/insert/maintainer_form_completeInsertDATA.php
+VARIABLE_INSERT = https://newwebsite.ancientrom.xyz/ancient/api/insert/maintainer_registrationInsertDATA.php
+VARIABLE_INSERT = https://newwebsite.ancientrom.xyz/ancient/api/insert/maintainer_statusInsertDATA.php
+VARIABLE_INSERT = https://newwebsite.ancientrom.xyz/ancient/api/insert/screenshotsInsertDATA.php
+VARIABLE_INSERT = https://newwebsite.ancientrom.xyz/ancient/api/insert/source_changelogsInsertDATA.php
+VARIABLE_INSERT = https://newwebsite.ancientrom.xyz/ancient/api/insert/usersInsertDATA.php
+
+VARIABLE_UPDATE = https://newwebsite.ancientrom.xyz/ancient/api/insert/buildUpdateDATA.php
+VARIABLE_UPDATE = https://newwebsite.ancientrom.xyz/ancient/api/insert/device_requestUpdateDATA.php
+VARIABLE_UPDATE = https://newwebsite.ancientrom.xyz/ancient/api/insert/deviceUpdateDATA.php
+VARIABLE_UPDATE = https://newwebsite.ancientrom.xyz/ancient/api/insert/maintainer_form_completeUpdateDATA.php
+VARIABLE_UPDATE = https://newwebsite.ancientrom.xyz/ancient/api/insert/maintainer_registrationUpdateDATA.php
+VARIABLE_UPDATE = https://newwebsite.ancientrom.xyz/ancient/api/insert/maintainer_statusUpdateDATA.php
+VARIABLE_UPDATE = https://newwebsite.ancientrom.xyz/ancient/api/insert/screenshotsUpdateDATA.php
+VARIABLE_UPDATE = https://newwebsite.ancientrom.xyz/ancient/api/insert/source_changelogsUpdateDATA.php
+VARIABLE_UPDATE = https://newwebsite.ancientrom.xyz/ancient/api/insert/usersUpdateDATA.php
