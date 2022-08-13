@@ -1,7 +1,7 @@
 import { Box } from "@mui/material";
-import Heading from "../../../components/heading/Heading";
-import GoBack from "../../../components/goBack/GoBack";
-import ButtonBox from "../../../components/buttonBox/ButtonBox";
+import Heading from "../../../../components/heading/Heading";
+import GoBack from "../../../../components/goBack/GoBack";
+import ButtonBox from "../../../../components/buttonBox/ButtonBox";
 
 export default function CompleteForm() {
 	return (
