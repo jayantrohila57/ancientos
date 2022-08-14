@@ -70,12 +70,12 @@ export default function Home() {
 			<Features />
 			<Heading pri="Download Builds" sub="Download AOSP Roms" />
 			<LinkHeading props={download} />
-			<LinkHeading props={patreon} />
+			{/* <LinkHeading props={patreon} /> */}
 			<Heading pri="Screen Shots" sub="See All changes in New UI" />
 			<LinkHeading props={screenshot} />
 			{/* <LinkHeading props={screenshotDonate} /> */}
-			<Heading pri="Build AncientOS" sub="Build AncientOS for your Device" />
-			<LinkHeading props={obj} />
+			{/* <Heading pri="Build AncientOS" sub="Build AncientOS for your Device" /> */}
+			{/* <LinkHeading props={obj} /> */}
 			<Heading pri="Get AncientOS Account" sub="Register Account" />
 			<LinkHeading props={account} />
 			<Heading pri="Change Logs" sub="Builds versions" />
