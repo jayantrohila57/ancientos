@@ -7,13 +7,13 @@ import Typography from "@mui/material/Typography";
 export default function Profile({ data }) {
 	console.log(data);
 	const [DATA, setDATA] = useState({});
-	useEffect(() => {
-		const USERID = JSON.parse(localStorage.getItem("UserID"));
-		const res = data.build_data.filter((item) => item.user_id.includes(USERID));
-		console.log(res);
-		setDATA(res.build_data);
-		console.log("usestate" + DATA);
-	}, []);
+	// useEffect(() => {
+	// 	const USERID = JSON.parse(localStorage.getItem("UserID"));
+	// 	const res = data.build_data.filter((item) => item.user_id.includes(USERID));
+	// 	console.log(res);
+	// 	setDATA(res.build_data);
+	// 	console.log("usestate" + DATA);
+	// }, []);
 
 	const styles = {
 		display: "flex",
