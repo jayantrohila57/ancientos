@@ -24,7 +24,7 @@ export default function Screenshot({ data }) {
 		>
 			<Heading pri="Screenshot" sub="A look at the AncientOS" />
 			<ImageMasonry props={data} />
-			<LinkHeading props={screenshotDonate} />
+			{/* <LinkHeading props={screenshotDonate} /> */}
 			<LinkHeading props={donation} />
 			<GoBack props="/" />
 		</Box>

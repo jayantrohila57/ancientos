@@ -182,7 +182,7 @@ const Appbar = ({ data }) => {
 							</MenuItem>
 						))}
 						<Box sx={{ flexGrow: 0 }}>
-							<Tooltip title="Open settings">
+							<Tooltip title="Light-Dark Mode">
 								<IconButton
 									onClick={data}
 									sx={{
@@ -202,7 +202,7 @@ const Appbar = ({ data }) => {
 					</Box>
 
 					<Box sx={{ flexGrow: 0 }}>
-						<Tooltip title="Open settings">
+						<Tooltip title="Account">
 							<Link href={"/account"}>
 								<IconButton
 									sx={{
@@ -216,7 +216,7 @@ const Appbar = ({ data }) => {
 											color: "text.primary",
 										}}
 										alt=""
-										src="https://avatars.githubusercontent.com/u/58130857?v=4"
+										src=""
 									/>
 								</IconButton>
 							</Link>

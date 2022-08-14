@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Box, Card } from "@mui/material";
 import Heading from "../../components/heading/Heading";
 import GoBack from "../../components/goBack/GoBack";
@@ -11,6 +11,8 @@ import CardActions from "@mui/material/CardActions";
 import HelpRoundedIcon from "@mui/icons-material/HelpRounded";
 import axios from "axios";
 import Link from "next/link";
+import { useRouter } from "next/router";
+
 export default function Signup() {
 	const [signupError, setSignupError] = useState(false);
 	const [signupSucess, setSignupSucess] = useState(false);
@@ -25,6 +27,13 @@ export default function Signup() {
 		if_maintainer: "false",
 		if_admin: "false",
 	});
+	useEffect(() => {
+		const get_login = JSON.parse(localStorage.getItem("Login"));
+		if (get_login === true) {
+			router.push("/");
+		}
+	}, []);
+
 	const HandleInput = (e) => {
 		const name = e.target.name;
 		const value = e.target.value;
@@ -40,11 +49,17 @@ export default function Signup() {
 				userRegistration
 			)
 			.then((result) => {
+				console.log(result.data);
+
 				if (result.data.status === "valid") {
 					setSignupError(false);
 					setSignupSucess(true);
+					setTimeout(() => {
+						setTimeout(() => {
+							router.push("/auth/login");
+						}, 500);
+					}, 1000);
 				} else {
-					alert("There is problem in adding,please try again");
 					setSignupSucess(false);
 					setSignupError(true);
 				}

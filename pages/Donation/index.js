@@ -25,12 +25,12 @@ export default function Donation({ data }) {
 					sx={{
 						m: 2,
 						boxShadow: "10px 10px 35px 0.1px #381f2048",
-						borderRadius: 10,
+						borderRadius: 6,
 					}}
 				>
 					<Typography
 						color="text.primary"
-						variant="h5"
+						variant="body2"
 						sx={(styles, { p: 2, m: 1, maxWidth: 680 })}
 					>
 						We are working hard for you everyday to make this rom more better

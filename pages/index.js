@@ -3,7 +3,7 @@ import LinkHeading from "../components/heading/LinkHeading";
 import Heading from "../components/heading/Heading";
 import Features from "../components/features/Features";
 import IntroDetails from "../components/features/IntroDetails";
-
+import Head from "next/head";
 export default function Home() {
 	const patreon = {
 		primary: "Want Early Build access ?",
@@ -52,6 +52,28 @@ export default function Home() {
 	};
 	return (
 		<>
+			<Head>
+				<meta charset="UTF-8" />
+				<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+				<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+				<title>AncientOS</title>
+				<meta
+					name="description"
+					content="A Custom rom based on AOSP (Android Open Source Porject) CrafetedWithLove. With the Aim To Provide Performance, Security and Stability, with Multiple Customisation option. So that every User can customise thier phone as per their taste."
+				></meta>
+				<link
+					rel="stylesheet"
+					href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+					integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+					crossorigin="anonymous"
+				/>
+				<link rel="stylesheet" href="css/index.min.css" />
+				<script
+					async
+					src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9834213327105017"
+					crossorigin="anonymous"
+				></script>
+			</Head>
 			<LogoInfo />
 			<IntroDetails />
 			<Heading pri="Features" sub="Let's see Our Rom features." />
@@ -61,7 +83,9 @@ export default function Home() {
 			<LinkHeading props={patreon} />
 			<Heading pri="Screen Shots" sub="See All changes in New UI" />
 			<LinkHeading props={screenshot} />
-			<LinkHeading props={screenshotDonate} />
+			{/* <LinkHeading props={screenshotDonate} /> */}
+			<Heading pri="Build AncientOS" sub="Build AncientOS for your Device" />
+			<LinkHeading props={obj} />
 			<Heading pri="Get AncientOS Account" sub="Register Account" />
 			<LinkHeading props={account} />
 			<Heading pri="Change Logs" sub="Builds versions" />
@@ -70,8 +94,6 @@ export default function Home() {
 			<LinkHeading props={team} />
 			<Heading pri="Consider Donation" sub="Let's Contribute to AncientOS" />
 			<LinkHeading props={donation} />
-			<Heading pri="Build AncientOS" sub="Build AncientOS for your Device" />
-			<LinkHeading props={obj} />
 		</>
 	);
 }

@@ -10,7 +10,7 @@ import CardActions from "@mui/material/CardActions";
 import HelpRoundedIcon from "@mui/icons-material/HelpRounded";
 import axios from "axios";
 import Link from "next/link";
-
+import { useRouter } from "next/router";
 import VpnKeyRoundedIcon from "@mui/icons-material/VpnKeyRounded";
 export default function Login() {
 	const [LoginError, setLoginError] = useState(false);
@@ -21,7 +21,7 @@ export default function Login() {
 		user_username: "",
 		user_password: "",
 	});
-
+	const router = useRouter();
 	const HandleLoginInput = (e) => {
 		const name = e.target.name;
 		const value = e.target.value;
@@ -36,12 +36,19 @@ export default function Login() {
 				UserLogin
 			)
 			.then((result) => {
-				// const response = result.data[0];
 				if (result.data.status === "valid") {
-					// const BuildData = result.data[1];
-					// console.log(BuildData);
 					setLoginSuccess(true);
 					setLoginError(false);
+					//////////////////////////////////////////////////
+					const userid = result.data.build_data[0].user_id;
+					console.log(userid);
+					localStorage.setItem("UserID", JSON.stringify(userid));
+					localStorage.setItem("Login", JSON.stringify(true));
+
+					//////////////////////////////////////////////////
+					setTimeout(() => {
+						router.push("/account/profile");
+					}, 500);
 				} else {
 					setLoginError(true);
 					setLoginSuccess(false);

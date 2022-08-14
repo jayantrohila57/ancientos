@@ -1,1 +1,42 @@
-540 797 079
+- Initial 12.1/12L and maybe last before A13 release XD
+- August security patch
+- Seem like A12 ancient, and add more features im lazy write changelog again XD
+- Add smartcharging
+- Add battery health
+- Add AncientUI Clock ( more clock style ) and switchable to stock AOSP UI
+- Add Ancient Settings Style ( more style)
+- Add Custom Background Picker for settings homepage, with frosted effect Blur and Layer option
+- Add Custom Settings Avatar
+- Add Landscape Battery Originally by Ancient OS
+- Add 2 Style only Statusbar Dual Bar 
+- Add StatusBar Height Style
+- Add Data Icon Style
+- Add Data Icon Custom Position
+- Add Battery, Wifi, Signal Icon Custom Dimensions
+- Add Custom Charging Icons and Symbols
+- Add Settings Base Layout Style and its customize, include scrim custom
+- Add Corner Radius Style
+- Add Brightness Style
+- Add Volume Style
+- Add Volume and Brightness Percentage
+- Add About Phone Style 
+- Add Ancient Setting Style
+- Add Setting Switch Style 
+- Add Ancient Lockscreen Clock Style
+- Add Navigation Icon Style
+- Add Pill Custom
+- Add Expanded Volume and Left Volume
+- Add Qs Footer Animation
+- Add Qstile Background Style
+- Add QsTile Columns and Rows
+- Add Qs Panel Blur and Custom Background
+- Add QsTile Tint Active Inactive Custom
+- Add Qs Background Opacy
+- Add DataUsage and its Placement ( near the qs clock and bottom of notification shade )
+- Add Ancient Header Image 
+- Add Full Width Notification
+- Add Statusbar Custom Padding
+- Add Ram Info and Style in Launcher3
+- Add Material Dissmiss Button 
+- Add Material Dissmiss Button Custom Icon and Background
+- More you can explorer XD

@@ -8,7 +8,6 @@ import { CacheProvider } from "@emotion/react";
 import createEmotionCache from "../src/createEmotionCache";
 import Appbar from "../components/appbar/Appbar";
 import Footer from "../components/footer/Footer";
-import { AuthContextProvider } from "../context/AuthContext";
 import { grey, deepOrange } from "@mui/material/colors";
 const clientSideEmotionCache = createEmotionCache();
 const ColorModeContext = React.createContext({ toggleColorMode: () => {} });
@@ -127,33 +126,50 @@ export default function MyApp(props) {
 
 	const { Component, emotionCache = clientSideEmotionCache, pageProps } = props;
 	return (
-		<AuthContextProvider>
-			<CacheProvider value={emotionCache}>
-				<Head>
-					<meta name="viewport" content="initial-scale=1, width=device-width" />
-				</Head>
-				<ColorModeContext.Provider value={colorMode}>
-					<ThemeProvider theme={theme}>
-						<CssBaseline />
-						<div
-						// style={{
-						// 	color: "#000",
-						// 	backgroundColor: "#ffffff",
-						// 	background: "linear-gradient(to left, #FDF6F0, #FDF6F0)",
-						// }}
-						// style={{
-						// 	backgroundColor: "#1c1c322e",
-						// 	background: "linear-gradient(to left, #ff003313, #002aff1a)",
-						// }}
-						>
-							<Appbar data={colorMode.toggleColorMode} />
-							<Component {...pageProps} />
-							<Footer />
-						</div>
-					</ThemeProvider>
-				</ColorModeContext.Provider>
-			</CacheProvider>
-		</AuthContextProvider>
+		<CacheProvider value={emotionCache}>
+			<Head>
+				<meta charset="UTF-8" />
+				<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+				<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+				<title>AncientOS</title>
+				<meta
+					name="description"
+					content="A Custom rom based on AOSP (Android Open Source Porject) CrafetedWithLove. With the Aim To Provide Performance, Security and Stability, with Multiple Customisation option. So that every User can customise thier phone as per their taste."
+				></meta>
+				<link
+					rel="stylesheet"
+					href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+					integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+					crossorigin="anonymous"
+				/>
+				<link rel="stylesheet" href="css/index.min.css" />
+				<script
+					async
+					src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9834213327105017"
+					crossorigin="anonymous"
+				></script>
+			</Head>
+			<ColorModeContext.Provider value={colorMode}>
+				<ThemeProvider theme={theme}>
+					<CssBaseline />
+					<div
+					// style={{
+					// 	color: "#000",
+					// 	backgroundColor: "#ffffff",
+					// 	background: "linear-gradient(to left, #FDF6F0, #FDF6F0)",
+					// }}
+					// style={{
+					// 	backgroundColor: "#1c1c322e",
+					// 	background: "linear-gradient(to left, #ff003313, #002aff1a)",
+					// }}
+					>
+						<Appbar data={colorMode.toggleColorMode} />
+						<Component {...pageProps} />
+						<Footer />
+					</div>
+				</ThemeProvider>
+			</ColorModeContext.Provider>
+		</CacheProvider>
 	);
 }
 
