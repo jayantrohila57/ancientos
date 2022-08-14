@@ -11,33 +11,24 @@ import HelpRoundedIcon from "@mui/icons-material/HelpRounded";
 import axios from "axios";
 import Link from "next/link";
 
-
 import VpnKeyRoundedIcon from "@mui/icons-material/VpnKeyRounded";
 export default function Login() {
 	const [LoginError, setLoginError] = useState(false);
 	const [LoginSuccess, setLoginSuccess] = useState(false);
-	const address = "/Login";
+	// const address = "/Login";
 	// const [LogginVarLink, setLogginVarLink] = useState(address);
 	const [UserLogin, setUserLogin] = useState({
-		username: "",
-		password: "",
+		user_username: "",
+		user_password: "",
 	});
 
 	const HandleLoginInput = (e) => {
 		const name = e.target.name;
 		const value = e.target.value;
-
 		setUserLogin({ ...UserLogin, [name]: value });
 	};
-	const [records1, setrecords1] = useState([]);
 
 	const handleLoginSubmit = async (e) => {
-		e.preventDefault();
-
-		const newRecord1 = { ...UserLogin, id: new Date().getTime().toString() };
-
-		setrecords1([...records1, newRecord1]);
-
 		e.preventDefault();
 		await axios
 			.post(
@@ -45,7 +36,10 @@ export default function Login() {
 				UserLogin
 			)
 			.then((result) => {
+				// const response = result.data[0];
 				if (result.data.status === "valid") {
+					// const BuildData = result.data[1];
+					// console.log(BuildData);
 					setLoginSuccess(true);
 					setLoginError(false);
 				} else {
@@ -53,6 +47,8 @@ export default function Login() {
 					setLoginSuccess(false);
 				}
 			});
+
+		// localStorage.setItem("darkMode", JSON.stringify(mode));
 	};
 
 	const styles = {
@@ -95,9 +91,10 @@ export default function Login() {
 							fullWidth
 							type="text"
 							label="Username"
-							name="username"
-							id="username"
-							value={UserLogin.username}
+							name="user_username"
+							id="user_username"
+							autoComplete="username"
+							value={UserLogin.user_username}
 							onChange={HandleLoginInput}
 						/>
 						<TextField
@@ -108,12 +105,12 @@ export default function Login() {
 							required
 							fullWidth
 							variant="filled"
-							name="password"
+							name="user_password"
 							label="Password"
 							type="password"
-							id="password"
+							id="user_password"
 							autoComplete="current-password"
-							value={UserLogin.password}
+							value={UserLogin.user_password}
 							onChange={HandleLoginInput}
 						/>
 						<Button

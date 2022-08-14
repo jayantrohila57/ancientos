@@ -14,10 +14,7 @@ export default function Donation() {
 				alignItems: "center",
 			}}
 		>
-			<Heading
-				pri="Welcome to Maintainer"
-				sub="Build AncientOS for your Device"
-			/>
+			<Heading pri="Welcom to Admin Panel" sub="Manage Everything from here" />
 
 			<Box
 				sx={{
@@ -29,15 +26,14 @@ export default function Donation() {
 					alignItems: "center",
 				}}
 			>
-				<ButtonBox
-					link="/maintainer/maintainer-form"
-					title="Apply for Maintainer"
-				/>
-				{/* <ButtonBox link="" title="maintainer Form Status" />
-				<ButtonBox link="" title="Complete Your from" />
-				<ButtonBox link="" title="Publish New Build" />
-				<ButtonBox link="" title="Request for New Device" />
-				<ButtonBox link="" title="Manage your builds" /> */}
+				<ButtonBox link="" title="Manage All Users" />
+				{/* can maintain admin, user & maintainer */}
+				<ButtonBox link="" title="Manage All Devices" />
+				<ButtonBox link="" title="Manage All Maintainer" />
+				{/* manage all mantainer stuff form, */}
+				<ButtonBox link="" title="Manage All ChangeLogs" />
+				<ButtonBox link="" title="Manage All Builds" />
+				<ButtonBox link="" title="Manage All Screenshots" />
 			</Box>
 			<GoBack props="/" />
 		</Box>

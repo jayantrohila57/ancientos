@@ -56,12 +56,12 @@ export default function Home() {
 			<IntroDetails />
 			<Heading pri="Features" sub="Let's see Our Rom features." />
 			<Features />
-			<Heading pri="Screen Shots" sub="See All changes in New UI" />
-			<LinkHeading props={screenshot} />
-			<LinkHeading props={screenshotDonate} />
 			<Heading pri="Download Builds" sub="Download AOSP Roms" />
 			<LinkHeading props={download} />
 			<LinkHeading props={patreon} />
+			<Heading pri="Screen Shots" sub="See All changes in New UI" />
+			<LinkHeading props={screenshot} />
+			<LinkHeading props={screenshotDonate} />
 			<Heading pri="Get AncientOS Account" sub="Register Account" />
 			<LinkHeading props={account} />
 			<Heading pri="Change Logs" sub="Builds versions" />

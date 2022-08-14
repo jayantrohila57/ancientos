@@ -25,6 +25,7 @@ import { Card, filledInputClasses, SwipeableDrawer } from "@mui/material";
 import ArrowCircleRightRoundedIcon from "@mui/icons-material/ArrowCircleRightRounded";
 import ExpandCircleDownRoundedIcon from "@mui/icons-material/ExpandCircleDownRounded";
 import MenuRoundedIcon from "@mui/icons-material/MenuRounded";
+
 const Appbar = ({ data }) => {
 	////////////////////////////////////////////
 	const link = ["download", "Updates", "Team", "Donation", "Screenshot"];
@@ -210,13 +211,12 @@ const Appbar = ({ data }) => {
 								>
 									<Avatar
 										sx={{
-											p: 0,
-											fontSize: 60,
+											fontSize: 36,
 											bgcolor: "primary.main",
 											color: "text.primary",
 										}}
 										alt=""
-										src=""
+										src="https://avatars.githubusercontent.com/u/58130857?v=4"
 									/>
 								</IconButton>
 							</Link>

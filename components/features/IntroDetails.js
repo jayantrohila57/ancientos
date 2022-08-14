@@ -5,7 +5,7 @@ import { Paper, Box, Grid } from "@mui/material";
 import Typography from "@mui/material/Typography";
 import Card from "@mui/material/Card";
 import ScreenShotCarousel from "../../components/screenshotCarousel/ScreenShotCarousel";
-
+import Comp2 from "../../components/svgBox/Comp2";
 export default function IntroDetails() {
 	useEffect(() => {
 		Aos.init({ duration: 600 });
@@ -29,6 +29,7 @@ export default function IntroDetails() {
 					background: "transparent",
 				}}
 			>
+				<Comp2 />
 				<ScreenShotCarousel />
 
 				<Card
