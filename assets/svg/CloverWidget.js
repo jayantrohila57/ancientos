@@ -1,4 +1,4 @@
-import * as React from "react";
+import * as React from 'react'
 
 const SvgCloverWidget = (props) => (
   <svg
@@ -13,6 +13,6 @@ const SvgCloverWidget = (props) => (
       fill="#D3E3FD"
     />
   </svg>
-);
+)
 
-export default SvgCloverWidget;
+export default SvgCloverWidget

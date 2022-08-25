@@ -14,7 +14,7 @@ This is the official API Documentation for AncientOS Website.
 - device-requests (maintainer request for new device ).
 - publish-screenshots ( to publish screenshots ).
 
---------------------------------------------------------------------------------
+---
 
 ## [ Users Registration ]
 
@@ -35,7 +35,7 @@ users:{ # table name
 }
 ```
 
---------------------------------------------------------------------------------
+---
 
 ### MAINATINER SECTION
 
@@ -104,9 +104,9 @@ maintainer_form_complete:{
 }
 ```
 
---------------------------------------------------------------------------------
+---
 
-## [ Publish Builds  ]
+## [ Publish Builds ]
 
 - These values Upload from (Publish New build form).
 - When the new build will publish by the maintainer.
@@ -129,7 +129,7 @@ build:{
 }
 ```
 
----------
+---
 
 ## [ Publish Changelogs ]
 

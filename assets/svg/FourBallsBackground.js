@@ -1,13 +1,7 @@
-import * as React from "react";
+import * as React from 'react'
 
 const SvgFourBallsBackground = (props) => (
-  <svg
-    width={88}
-    height={88}
-    fill="none"
-    xmlns="http://www.w3.org/2000/svg"
-    {...props}
-  >
+  <svg width={88} height={88} fill="none" xmlns="http://www.w3.org/2000/svg" {...props}>
     <path
       d="M24 84c11.042 0 20-8.958 20-20s-8.958-20-20-20S4 52.958 4 64s8.958 20 20 20ZM64 84c11.042 0 20-8.958 20-20s-8.958-20-20-20-20 8.958-20 20 8.958 20 20 20Z"
       fill="#FEEFC3"
@@ -21,6 +15,6 @@ const SvgFourBallsBackground = (props) => (
       fill="#FEEFC3"
     />
   </svg>
-);
+)
 
-export default SvgFourBallsBackground;
+export default SvgFourBallsBackground
