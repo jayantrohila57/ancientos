@@ -1,8 +1,7 @@
-import { useState, useEffect } from 'react'
+import React, { useState, useEffect } from 'react'
 import { Box, Button } from '@mui/material'
-import Heading from '../../../components/heading/Heading'
-import GoBack from '../../../components/goBack/GoBack'
 import Typography from '@mui/material/Typography'
+import { Heading, GoBack } from '@/components'
 
 export default function Profile({ data }) {
   console.log(data)
@@ -23,6 +22,7 @@ export default function Profile({ data }) {
     justifyContent: 'center',
     alignItems: 'center'
   }
+
   return (
     <Box sx={(styles, { pt: 5, minHeight: '100vh' })}>
       <Heading pri="profile" sub="View Your Profile" />

@@ -1,6 +1,6 @@
-import GoBack from '../../components/goBack/GoBack'
+import React from 'react'
 import { Box } from '@mui/material'
-import Heading from '../../components/heading/Heading'
+import { GoBack, Heading } from '@/components'
 
 const DonateScreenshot = () => {
   return (

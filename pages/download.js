@@ -1,8 +1,6 @@
 import { Box } from '@mui/material'
-import Heading from '../../components/heading/Heading'
-import GoBack from '../../components/goBack/GoBack'
-import ButtonBox from '../../components/buttonBox/ButtonBox'
 import useSWR from 'swr'
+import { Heading, GoBack, ButtonBox } from '@/components'
 
 const Download = () => {
   // const {data} = useSWR("https://raw.githubusercontent.com/ancient-devices/releases/main/website_api.json")

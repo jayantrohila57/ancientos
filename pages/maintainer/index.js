@@ -1,9 +1,8 @@
+import React from 'react'
 import { Box } from '@mui/material'
-import Heading from '../../components/heading/Heading'
-import GoBack from '../../components/goBack/GoBack'
-import ButtonBox from '../../components/buttonBox/ButtonBox'
+import { Heading, GoBack, ButtonBox } from '@/components'
 
-export default function Donation() {
+const Donation = () => {
   return (
     <Box
       sx={{
@@ -26,7 +25,7 @@ export default function Donation() {
           alignItems: 'center'
         }}
       >
-        <h1>Open Soon...</h1>
+        <h1>Will be opened soon...</h1>
         {/* <ButtonBox
 					link="/maintainer/maintainer-form"
 					title="Apply for Maintainer"
@@ -41,3 +40,5 @@ export default function Donation() {
     </Box>
   )
 }
+
+export default Donation

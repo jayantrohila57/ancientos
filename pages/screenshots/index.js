@@ -1,18 +1,13 @@
+import React from 'react'
 import { Box } from '@mui/material'
-import Heading from '../../components/heading/Heading'
-import ImageMasonry from '../../components/screenshotCarousel/ImageMasonry'
-import GoBack from '../../components/goBack/GoBack'
-import LinkHeading from '../../components/heading/LinkHeading'
+import { Heading, ImageMasonry, GoBack, LinkHeading } from '@/components'
+import data from '@/data/screenshots.json'
 
 const Screenshots = () => {
-  const { data } = useSWR(
-    'https://raw.githubusercontent.com/jayantrohila57/API/main/screenshot.json'
-  )
-
   const donateScreenshot = {
     primary: 'Donate Screenshot',
     secondary: "Let's Share what we discover",
-    link: '/Screenshot/Donate-Screenshot'
+    link: '/screenshots/donate-screenshot'
   }
 
   return (

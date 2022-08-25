@@ -1,13 +1,10 @@
 import { Box, Card } from '@mui/material'
-import Heading from '../../components/heading/Heading'
-import GoBack from '../../components/goBack/GoBack'
 import Typography from '@mui/material/Typography'
-import ButtonBox from '../../components/buttonBox/ButtonBox'
 import useSWR from 'swr'
+import { Heading, GoBack, ButtonBox } from '@/components'
+import data from '@/data/donation.json'
 
 const Donation = () => {
-  const { data } = useSWR('https://raw.githubusercontent.com/jayantrohila57/API/main/donation.json')
-
   const styles = {
     display: 'flex',
     flexDirection: 'row',

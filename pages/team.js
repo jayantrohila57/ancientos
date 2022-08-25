@@ -1,13 +1,9 @@
+import React from 'react'
 import { Box } from '@mui/material'
-import GoBack from '../../components/goBack/GoBack'
-import LinkHeading from '../../components/heading/LinkHeading'
-import Heading from '../../components/heading/Heading'
-import TeamBox from '../../components/teamBox/TeamBox'
-import useSWR from 'swr'
+import data from '@/data/team.json'
+import { GoBack, LinkHeading, Heading, TeamBox } from '@/components'
 
 const Team = () => {
-  const { data } = useSWR('https://raw.githubusercontent.com/jayantrohila57/API/main/team.json')
-
   const obj = {
     primary: 'Apply for Mantainer Ship',
     secondary: 'Join and grow the community of AncientOS.',

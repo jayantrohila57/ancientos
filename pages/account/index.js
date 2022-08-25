@@ -1,10 +1,8 @@
 import React, { useState, useEffect } from 'react'
 import { Box } from '@mui/material'
-import Heading from '../../components/heading/Heading'
-import GoBack from '../../components/goBack/GoBack'
-import ButtonBox from '../../components/buttonBox/ButtonBox'
+import { Heading, GoBack, ButtonBox } from '@/components'
 
-export default function Account() {
+const Account = () => {
   const [Login, setLogin] = useState('')
 
   const styles = {
@@ -15,12 +13,14 @@ export default function Account() {
     justifyContent: 'center',
     alignItems: 'center'
   }
+
   useEffect(() => {
     const get_login = JSON.parse(localStorage.getItem('Login'))
     if (get_login === true) {
       setLogin(true)
     }
   }, [])
+
   return (
     <Box sx={(styles, { pt: 5, minHeight: '100vh' })}>
       <Heading pri="Account" sub="View Your Account Details" />
@@ -39,3 +39,5 @@ export default function Account() {
     </Box>
   )
 }
+
+export default Login
